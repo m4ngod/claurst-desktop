@@ -1,0 +1,9 @@
+.DS_Store
+.build-tools/
+.build/
+downloads/
+**/target/
+*.app/
+*.dmg
+.swiftpm/
+__pycache__/

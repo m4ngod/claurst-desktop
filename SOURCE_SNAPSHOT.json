@@ -1,0 +1,8 @@
+{
+  "local_snapshot_revision": "2c5be6d6b34c72a40573b0f778ed9e4672c218a0",
+  "application_build_revision": "d2f8f76f75519b9a9b898e46d79845a512c5d709",
+  "build_inputs_match": true,
+  "file_count": 681,
+  "git_history_included": false,
+  "description": "A fresh source tree; public Git history begins here. Historical build references in docs refer to local development records, not commits available in this repository."
+}

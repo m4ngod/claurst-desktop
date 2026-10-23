@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "tectonic_commit": "8c0126a9653239a2e6e0a5274af9b8510f643030",
+  "cargo_lock_sha256": "4a6e5c44fdb10188005cba9ae6a253fe60d79676b1cef999da669ec71c3850e9",
+  "target": "aarch64-apple-darwin",
+  "selected_registry_packages": 303,
+  "selected_local_packages": 24,
+  "input_manifests": [
+    {
+      "input": "research",
+      "path": "source-collection-manifest.json",
+      "size": 31433,
+      "sha256": "e5b2c6d8ed710bfbec5456e5c2d1342173d4c7d6d8b78b6523623359747498ec"
+    },
+    {
+      "input": "research",
+      "path": "rebuild-research/default-aarch64-normal-build.json",
+      "size": 370892,
+      "sha256": "17472486146e47515e2d4ada96ec63577be727b8a867a3f3b432ea6f854c92fd"
+    },
+    {
+      "input": "research",
+      "path": "distribution-review/retrieved-originals.json",
+      "size": 7571,
+      "sha256": "9be5d4c9cf27b34d51b97159ae750d1104d72daac324f3a6fb1b2edc44a02ef6"
+    },
+    {
+      "input": "research",
+      "path": "distribution-review/rust-1.97.1-notices.json",
+      "size": 25519,
+      "sha256": "a033e4a6096bd757d33c0b860db0ac6a1d0e6a23007c0ff4b6b7094658610579"
+    },
+    {
+      "input": "crates",
+      "path": "manifest.json",
+      "size": 436300,
+      "sha256": "f7a71e9545574bd34160f4d876b46f367b2f070dde2a9e9ed5289d1d3bf95b71"
+    },
+    {
+      "input": "freetype",
+      "path": "manifest.json",
+      "size": 1209,
+      "sha256": "c5265c0303416434725ebfc3238215954d7d5eb0e60bf2244b488370cea52728"
+    }
+  ],
+  "rust_standard_library": {
+    "path": "distribution-review/rust-src-1.97.1.tar.xz",
+    "size": 5660384,
+    "sha256": "e9a1e616d04c6845895c827a178b9227f7c7199f3f4a80af81ab3aff7b80156b",
+    "url": "https://static.rust-lang.org/dist/2026-07-16/rust-src-1.97.1.tar.xz"
+  }
+}

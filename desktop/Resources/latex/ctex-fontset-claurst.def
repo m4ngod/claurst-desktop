@@ -1,0 +1,21 @@
+\ProvidesFile{ctex-fontset-claurst.def}[2026/10/22 Claurst Source Han font set]
+\setCJKmainfont[
+  BoldFont=SourceHanSerifCN-Bold.otf,
+  ItalicFont=SourceHanSerifCN-Regular.otf,
+  ItalicFeatures={FakeSlant=0.2},
+  BoldItalicFont=SourceHanSerifCN-Bold.otf,
+  BoldItalicFeatures={FakeSlant=0.2}
+]{SourceHanSerifCN-Regular.otf}
+\setCJKsansfont[
+  BoldFont=SourceHanSansCN-Bold.otf,
+  ItalicFont=SourceHanSansCN-Regular.otf,
+  ItalicFeatures={FakeSlant=0.2},
+  BoldItalicFont=SourceHanSansCN-Bold.otf,
+  BoldItalicFeatures={FakeSlant=0.2}
+]{SourceHanSansCN-Regular.otf}
+\setCJKmonofont[BoldFont=SourceHanSansCN-Bold.otf]{SourceHanSansCN-Regular.otf}
+\setCJKfamilyfont{zhsong}[BoldFont=SourceHanSerifCN-Bold.otf]{SourceHanSerifCN-Regular.otf}
+\setCJKfamilyfont{zhhei}[BoldFont=SourceHanSansCN-Bold.otf]{SourceHanSansCN-Regular.otf}
+\newcommand{\songti}{\CJKfamily{zhsong}}
+\newcommand{\heiti}{\CJKfamily{zhhei}}
+\endinput

@@ -1,0 +1,701 @@
+// claurst-plugins: Plugin runtime for the Claurst CLI.
+//
+// This crate handles plugin discovery, manifest parsing, hook registration,
+// and the /plugin + /reload-plugins command definitions.
+//
+// Dependency order: cc-plugins → cc-core only.
+// cc-commands → cc-plugins (not the other way around).
+
+pub mod hooks;
+pub mod loader;
+pub mod manifest;
+pub mod marketplace;
+pub mod plugin;
+pub mod registry;
+
+// Re-export the most commonly used items at the crate root.
+pub use hooks::parse_hooks_value;
+pub use loader::{default_user_plugins_dir, discover_plugins, project_plugins_dir};
+pub use manifest::{
+    PluginAuthor, PluginHooksConfig,
+    PluginLspServer, PluginManifest, PluginMcpServer, UserConfigValueType,
+};
+pub use plugin::{
+    CommandRunAction, LoadedPlugin, PluginCommandDef, PluginError, PluginSource, ReloadDiff,
+};
+pub use registry::PluginRegistry;
+
+// ---------------------------------------------------------------------------
+// Capability enforcement
+// ---------------------------------------------------------------------------
+
+/// Check whether a plugin command is allowed to execute based on its declared
+/// capability grants and the capability the action requires.
+///
+/// # Policy
+/// - If the manifest has **no `capabilities` field** (`None`), the plugin
+///   predates capability enforcement and is trusted unconditionally (backwards
+///   compatibility with existing plugins).
+/// - If the manifest declares an explicit list (even an empty one), the
+///   required capability **must** appear in that list.
+///
+/// Returns `Ok(())` when execution is permitted, or `Err(reason)` when it
+/// should be blocked.  The caller should convert `Err` into a `ToolResult::error`.
+pub fn check_plugin_capability(def: &PluginCommandDef) -> Result<(), String> {
+    // Determine what capability this action needs.
+    let required = match def.run_action.required_capability() {
+        None => return Ok(()), // StaticResponse — no capability needed.
+        Some(cap) => cap,
+    };
+
+    match &def.plugin_capabilities {
+        // No `capabilities` field — old-style manifest, allow everything.
+        None => Ok(()),
+        // Explicit capability list — enforce it.
+        Some(granted) => {
+            if granted.iter().any(|g| g.as_str() == required) {
+                Ok(())
+            } else {
+                Err(format!(
+                    "Plugin '{}' is not allowed to use capability '{}'. \
+                     Add '{}' to the 'capabilities' list in its manifest to enable this action.",
+                    def.plugin_name, required, required
+                ))
+            }
+        }
+    }
+}
+
+use std::path::Path;
+use std::sync::OnceLock;
+
+// ---------------------------------------------------------------------------
+// Global plugin registry (set once at startup, read by commands / tools)
+// ---------------------------------------------------------------------------
+
+static GLOBAL_PLUGIN_REGISTRY: OnceLock<PluginRegistry> = OnceLock::new();
+
+/// Store the fully-loaded `PluginRegistry` into a process-global static so
+/// that slash commands and tools can query it without carrying the registry
+/// through every call frame.
+pub fn set_global_registry(registry: PluginRegistry) {
+    // OnceLock::set fails silently if already initialised (e.g. during tests).
+    let _ = GLOBAL_PLUGIN_REGISTRY.set(registry);
+}
+
+/// Access the global `PluginRegistry`, if it has been set.
+pub fn global_plugin_registry() -> Option<&'static PluginRegistry> {
+    GLOBAL_PLUGIN_REGISTRY.get()
+}
+
+/// Register the hooks of `registry`'s enabled plugins with the core hook
+/// engine, replacing any registered before. They then run for every event,
+/// after settings hooks. Plugins loaded from a project's `.claurst/plugins/`
+/// contribute no hooks: like project settings hooks (#430), they come from
+/// the repository, not the user.
+pub fn set_global_hooks(registry: &PluginRegistry) {
+    for plugin in registry.enabled() {
+        let has_hooks = plugin.hooks_config.as_ref().is_some_and(|c| !c.events.is_empty());
+        if has_hooks && plugin.source == PluginSource::Project {
+            tracing::warn!(
+                plugin = %plugin.name,
+                "Ignoring hooks from project plugin; install it as a user plugin to run its hooks"
+            );
+        }
+    }
+    claurst_core::hooks::set_plugin_hooks(registry.hook_map());
+}
+
+// ---------------------------------------------------------------------------
+// Top-level async API (called from cc-commands / cc-cli)
+// ---------------------------------------------------------------------------
+
+/// Discover and load all plugins from the standard locations.
+///
+/// Search order:
+/// 1. `~/.claurst/plugins/`  (user-global)
+/// 2. `<project_dir>/.claurst/plugins/`  (project-local)
+/// 3. Any paths listed in `extra_paths`
+///
+/// Returns a fully populated `PluginRegistry`.  Errors encountered during
+/// loading are stored in `registry.errors` rather than propagated, so the
+/// caller always gets a usable registry even when individual plugins fail.
+pub async fn load_plugins(
+    project_dir: &Path,
+    extra_paths: &[std::path::PathBuf],
+) -> PluginRegistry {
+    let mut registry = PluginRegistry::new();
+
+    // User plugins.
+    let user_dir = default_user_plugins_dir();
+    if let Some(user_dir) = &user_dir {
+        let (plugins, errors) =
+            discover_plugins(std::slice::from_ref(user_dir), PluginSource::User).await;
+        registry.extend(plugins, errors);
+    }
+
+    // Project plugins. With the legacy `~/.claurst` layout and cwd == $HOME
+    // the project dir *is* the user dir; scanning it again would re-register
+    // every user plugin as a project plugin (and gate its MCP servers).
+    let proj_dir = project_plugins_dir(project_dir);
+    if !user_dir.as_deref().is_some_and(|user_dir| same_dir(user_dir, &proj_dir)) {
+        let (plugins, errors) = discover_plugins(&[proj_dir], PluginSource::Project).await;
+        registry.extend(plugins, errors);
+    }
+
+    // Extra paths.
+    for path in extra_paths {
+        let (plugins, errors) =
+            discover_plugins(std::slice::from_ref(path), PluginSource::Extra(path.to_string_lossy().into_owned())).await;
+        registry.extend(plugins, errors);
+    }
+
+    registry
+}
+
+/// Whether two paths name the same directory, resolving symlinks when both
+/// exist (e.g. a symlinked `$HOME`).
+fn same_dir(a: &Path, b: &Path) -> bool {
+    a == b
+        || matches!(
+            (std::fs::canonicalize(a), std::fs::canonicalize(b)),
+            (Ok(a), Ok(b)) if a == b
+        )
+}
+
+/// Reload plugins: produce a new registry, compute the diff, and replace the old one.
+///
+/// Returns the new registry and a `ReloadDiff` describing what changed.
+pub async fn reload_plugins(
+    old_registry: &PluginRegistry,
+    project_dir: &Path,
+    extra_paths: &[std::path::PathBuf],
+) -> (PluginRegistry, ReloadDiff) {
+    let new_registry = load_plugins(project_dir, extra_paths).await;
+    let diff = new_registry.diff_against(old_registry);
+    (new_registry, diff)
+}
+
+// ---------------------------------------------------------------------------
+// /plugin command definition (data-only, no SlashCommand impl here)
+// ---------------------------------------------------------------------------
+
+/// Sub-commands supported by `/plugin`.
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub enum PluginSubCommand {
+    /// `/plugin list` — show all installed plugins with enabled/disabled status.
+    List,
+    /// `/plugin enable <name>` — enable a plugin.
+    Enable(String),
+    /// `/plugin disable <name>` — disable a plugin.
+    Disable(String),
+    /// `/plugin info <name>` — show details about a plugin.
+    Info(String),
+    /// `/plugin install <path>` — install a plugin from a local path.
+    Install(String),
+    /// `/plugin reload` — reload plugins from disk.
+    Reload,
+    /// Show usage / help.
+    Help,
+}
+
+/// Parse the arguments string for `/plugin`.
+pub fn parse_plugin_args(args: &str) -> PluginSubCommand {
+    let args = args.trim();
+    // No args → show list
+    if args.is_empty() {
+        return PluginSubCommand::List;
+    }
+    let parts: Vec<&str> = args.splitn(3, char::is_whitespace).collect();
+    match parts.first().map(|s| s.to_lowercase()).as_deref() {
+        Some("list") | Some("ls") => PluginSubCommand::List,
+        Some("enable") => PluginSubCommand::Enable(
+            parts.get(1).unwrap_or(&"").to_string(),
+        ),
+        Some("disable") => PluginSubCommand::Disable(
+            parts.get(1).unwrap_or(&"").to_string(),
+        ),
+        Some("info") | Some("show") => PluginSubCommand::Info(
+            parts.get(1).unwrap_or(&"").to_string(),
+        ),
+        Some("install") | Some("i") => PluginSubCommand::Install(
+            parts.get(1).unwrap_or(&"").to_string(),
+        ),
+        Some("reload") | Some("refresh") => PluginSubCommand::Reload,
+        Some("help") | Some("--help") | Some("-h") => PluginSubCommand::Help,
+        _ => PluginSubCommand::Help,
+    }
+}
+
+/// Build the text output for `/plugin list`.
+pub fn format_plugin_list(registry: &PluginRegistry) -> String {
+    let mut out = String::new();
+    let mut all: Vec<&LoadedPlugin> = registry.all();
+    all.sort_by(|a, b| a.name.cmp(&b.name));
+
+    if all.is_empty() {
+        return "No plugins installed.\n\nUse `/plugin install <path>` to install a plugin from a local directory.".to_string();
+    }
+
+    let total = all.len();
+    let enabled_count = all.iter().filter(|p| registry.is_enabled(&p.name)).count();
+    out.push_str(&format!(
+        "Installed plugins: {} ({} enabled)\n\n",
+        total, enabled_count
+    ));
+    for p in &all {
+        let status = if registry.is_enabled(&p.name) {
+            "enabled"
+        } else {
+            "disabled"
+        };
+        let version = p.manifest.version.as_deref().unwrap_or("(no version)");
+        let desc = p.manifest.description.as_deref().unwrap_or("");
+
+        // Count commands and hooks for this plugin.
+        let cmd_count = loader::collect_command_defs(p).len();
+        let hook_count = p.hooks_config.as_ref().map_or(0, hooks::hook_count);
+
+        out.push_str(&format!("  {} [{}] v{}", p.name, status, version));
+        if !desc.is_empty() {
+            out.push_str(&format!(" — {}", desc));
+        }
+        let mut extras: Vec<String> = Vec::new();
+        if cmd_count > 0 {
+            extras.push(format!("{} cmd{}", cmd_count, if cmd_count == 1 { "" } else { "s" }));
+        }
+        if hook_count > 0 {
+            extras.push(format!("{} hook{}", hook_count, if hook_count == 1 { "" } else { "s" }));
+        }
+        if !extras.is_empty() {
+            out.push_str(&format!(" ({})", extras.join(", ")));
+        }
+        out.push('\n');
+    }
+
+    if registry.error_count() > 0 {
+        out.push_str(&format!(
+            "\n{} plugin{} failed to load. Use `/plugin info <name>` for details.\n",
+            registry.error_count(),
+            if registry.error_count() == 1 { "" } else { "s" }
+        ));
+    }
+
+    out
+}
+
+/// Build the text output for `/plugin info <name>`.
+pub fn format_plugin_info(registry: &PluginRegistry, name: &str) -> String {
+    match registry.get(name) {
+        None => format!("Plugin '{}' not found. Use `/plugin list` to see installed plugins.", name),
+        Some(p) => {
+            let mut out = String::new();
+            out.push_str(&format!("Plugin: {}\n", p.name));
+            if let Some(v) = &p.manifest.version {
+                out.push_str(&format!("Version: {}\n", v));
+            }
+            if let Some(d) = &p.manifest.description {
+                out.push_str(&format!("Description: {}\n", d));
+            }
+            if let Some(author) = &p.manifest.author {
+                out.push_str(&format!("Author: {}\n", author.name));
+            }
+            out.push_str(&format!(
+                "Status: {}\n",
+                if registry.is_enabled(name) { "enabled" } else { "disabled" }
+            ));
+            out.push_str(&format!("Source: {}\n", p.source_id));
+            out.push_str(&format!("Path: {}\n", p.path.display()));
+
+            // Count commands.
+            let cmd_defs = loader::collect_command_defs(p);
+            if !cmd_defs.is_empty() {
+                out.push_str(&format!("\nCommands ({}):\n", cmd_defs.len()));
+                for cmd in &cmd_defs {
+                    out.push_str(&format!("  /{} — {}\n", cmd.name, cmd.description));
+                }
+            }
+
+            // Hooks.
+            if let Some(ref hooks_config) = p.hooks_config {
+                let hook_count = hooks::hook_count(hooks_config);
+                if hook_count > 0 {
+                    out.push_str(&format!("\nHooks ({}):\n", hook_count));
+                    if p.source == PluginSource::Project {
+                        out.push_str("  (not run: hooks from project plugins are ignored)\n");
+                    }
+                    for event in claurst_core::config::HookEvent::ALL {
+                        for group in hooks_config.events.get(&event).into_iter().flatten() {
+                            let matcher = group.matcher.as_deref().unwrap_or("*");
+                            for hook in &group.hooks {
+                                out.push_str(&format!("  {} [{}] {}\n", event.as_str(), matcher, hook.command));
+                            }
+                        }
+                    }
+                }
+            }
+
+            // MCP servers.
+            if !p.manifest.mcp_servers.is_empty() {
+                out.push_str(&format!("\nMCP servers ({}):\n", p.manifest.mcp_servers.len()));
+                if p.source == PluginSource::Project {
+                    out.push_str("  (project plugin: each server needs your approval before it starts)\n");
+                }
+                for srv in &p.manifest.mcp_servers {
+                    out.push_str(&format!("  {}\n", srv.name));
+                }
+            }
+
+            // LSP servers.
+            if !p.manifest.lsp_servers.is_empty() {
+                out.push_str(&format!("\nLSP servers ({}):\n", p.manifest.lsp_servers.len()));
+                for srv in &p.manifest.lsp_servers {
+                    out.push_str(&format!("  {}\n", srv.name));
+                }
+            }
+
+            out
+        }
+    }
+}
+
+/// Install a plugin from a local path.
+///
+/// Copies the plugin directory into `~/.claurst/plugins/` and returns the
+/// loaded plugin name on success.
+pub fn install_plugin_from_path(
+    source_path: &Path,
+) -> Result<String, PluginError> {
+    // Validate that the source looks like a plugin directory.
+    if !source_path.exists() {
+        return Err(PluginError::Io {
+            path: source_path.to_string_lossy().into_owned(),
+            message: "Path does not exist".to_string(),
+        });
+    }
+
+    let manifest_path = if source_path.join("plugin.json").exists() {
+        source_path.join("plugin.json")
+    } else if source_path.join("plugin.toml").exists() {
+        source_path.join("plugin.toml")
+    } else {
+        return Err(PluginError::InvalidManifest {
+            path: source_path.to_string_lossy().into_owned(),
+            message: "No plugin.json or plugin.toml found in directory".to_string(),
+        });
+    };
+
+    let bytes = std::fs::read(&manifest_path).map_err(|e| PluginError::Io {
+        path: manifest_path.to_string_lossy().into_owned(),
+        message: e.to_string(),
+    })?;
+
+    let manifest = if manifest_path.extension().map(|e| e == "toml").unwrap_or(false) {
+        PluginManifest::from_toml(&bytes)
+    } else {
+        PluginManifest::from_json(&bytes)
+    }
+    .map_err(|e| PluginError::InvalidManifest {
+        path: manifest_path.to_string_lossy().into_owned(),
+        message: e.to_string(),
+    })?;
+
+    let plugin_name = manifest.name.clone();
+
+    // Determine install destination.
+    let dest = match default_user_plugins_dir() {
+        Some(d) => d.join(&plugin_name),
+        None => {
+            return Err(PluginError::Io {
+                path: String::new(),
+                message: "Cannot determine home directory for plugin installation".to_string(),
+            })
+        }
+    };
+
+    // Copy source to dest.
+    copy_dir_all(source_path, &dest).map_err(|e| PluginError::Io {
+        path: dest.to_string_lossy().into_owned(),
+        message: e.to_string(),
+    })?;
+
+    tracing::info!(
+        "Installed plugin '{}' from '{}' to '{}'",
+        plugin_name,
+        source_path.display(),
+        dest.display()
+    );
+
+    Ok(plugin_name)
+}
+
+/// Recursively copy a directory.
+fn copy_dir_all(src: &Path, dst: &Path) -> std::io::Result<()> {
+    std::fs::create_dir_all(dst)?;
+    for entry in std::fs::read_dir(src)? {
+        let entry = entry?;
+        let ty = entry.file_type()?;
+        if ty.is_dir() {
+            copy_dir_all(&entry.path(), &dst.join(entry.file_name()))?;
+        } else {
+            std::fs::copy(entry.path(), dst.join(entry.file_name()))?;
+        }
+    }
+    Ok(())
+}
+
+// ---------------------------------------------------------------------------
+// /reload-plugins summary formatting
+// ---------------------------------------------------------------------------
+
+/// Format the result of a plugin reload into a human-readable string,
+/// suitable for the `/reload-plugins` command output.
+pub fn format_reload_summary(
+    registry: &PluginRegistry,
+    diff: &ReloadDiff,
+) -> String {
+    let enabled = registry.enabled_count();
+    let total = registry.plugin_count();
+
+    let mut parts: Vec<String> = Vec::new();
+    parts.push(format!(
+        "{} plugin{} loaded ({} enabled)",
+        total,
+        if total == 1 { "" } else { "s" },
+        enabled
+    ));
+
+    let cmd_count: usize = registry.all_command_defs().len();
+    parts.push(format!(
+        "{} command{}",
+        cmd_count,
+        if cmd_count == 1 { "" } else { "s" }
+    ));
+
+    let hook_count: usize = registry
+        .hook_map()
+        .values()
+        .flatten()
+        .map(|group| group.hooks.len())
+        .sum();
+    parts.push(format!(
+        "{} hook{}",
+        hook_count,
+        if hook_count == 1 { "" } else { "s" }
+    ));
+
+    let mcp_count = registry.all_mcp_servers().len();
+    parts.push(format!(
+        "{} plugin MCP server{}",
+        mcp_count,
+        if mcp_count == 1 { "" } else { "s" }
+    ));
+
+    let lsp_count = registry.all_lsp_servers().len();
+    parts.push(format!(
+        "{} plugin LSP server{}",
+        lsp_count,
+        if lsp_count == 1 { "" } else { "s" }
+    ));
+
+    let mut msg = format!("Reloaded: {}", parts.join(" · "));
+
+    if !diff.added.is_empty() {
+        msg.push_str(&format!("\nAdded: {}", diff.added.join(", ")));
+    }
+    if !diff.removed.is_empty() {
+        msg.push_str(&format!("\nRemoved: {}", diff.removed.join(", ")));
+    }
+    if !diff.updated.is_empty() {
+        msg.push_str(&format!("\nUpdated: {}", diff.updated.join(", ")));
+    }
+    if diff.error_count > 0 {
+        msg.push_str(&format!(
+            "\n{} error{} during load.",
+            diff.error_count,
+            if diff.error_count == 1 { "" } else { "s" }
+        ));
+    }
+
+    msg
+}
+
+// ---------------------------------------------------------------------------
+// Tests
+// ---------------------------------------------------------------------------
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use tempfile::TempDir;
+
+    fn write_manifest(dir: &Path, json: &serde_json::Value) {
+        let path = dir.join("plugin.json");
+        std::fs::write(path, serde_json::to_vec_pretty(json).unwrap()).unwrap();
+    }
+
+    #[test]
+    fn parse_plugin_args_list() {
+        assert_eq!(parse_plugin_args("list"), PluginSubCommand::List);
+        assert_eq!(parse_plugin_args("ls"), PluginSubCommand::List);
+    }
+
+    #[test]
+    fn parse_plugin_args_enable() {
+        assert_eq!(
+            parse_plugin_args("enable my-plugin"),
+            PluginSubCommand::Enable("my-plugin".to_string())
+        );
+    }
+
+    #[test]
+    fn parse_plugin_args_info() {
+        assert_eq!(
+            parse_plugin_args("info my-plugin"),
+            PluginSubCommand::Info("my-plugin".to_string())
+        );
+    }
+
+    /// Serializes the `load_plugins` tests: one of them points the
+    /// process-global `CLAURST_HOME` (the user plugins dir) at a tempdir.
+    static PLUGIN_HOME_LOCK: tokio::sync::Mutex<()> = tokio::sync::Mutex::const_new(());
+
+    #[tokio::test]
+    async fn load_plugins_empty_dirs() {
+        let _lock = PLUGIN_HOME_LOCK.lock().await;
+        let tmp = TempDir::new().unwrap();
+        let reg = load_plugins(tmp.path(), &[]).await;
+        assert_eq!(reg.plugin_count(), 0);
+        assert_eq!(reg.error_count(), 0);
+    }
+
+    #[tokio::test]
+    async fn load_plugins_finds_project_plugin() {
+        let _lock = PLUGIN_HOME_LOCK.lock().await;
+        let tmp = TempDir::new().unwrap();
+        let plugin_dir = tmp.path().join(".claurst").join("plugins").join("test-plugin");
+        std::fs::create_dir_all(&plugin_dir).unwrap();
+        write_manifest(
+            &plugin_dir,
+            &serde_json::json!({ "name": "test-plugin", "version": "1.0.0", "description": "A test plugin" }),
+        );
+
+        let reg = load_plugins(tmp.path(), &[]).await;
+        assert_eq!(reg.plugin_count(), 1);
+        assert!(reg.get("test-plugin").is_some());
+        assert!(reg.is_enabled("test-plugin"));
+    }
+
+    /// Legacy `~/.claurst` layout with cwd == $HOME: the project plugins dir
+    /// is the user plugins dir, so its plugins must stay user plugins.
+    #[tokio::test]
+    async fn load_plugins_project_dir_equal_to_user_dir_stays_user() {
+        let _lock = PLUGIN_HOME_LOCK.lock().await;
+        let home = TempDir::new().unwrap();
+        let claurst_home = home.path().join(".claurst");
+        let plugin_dir = claurst_home.join("plugins").join("mine");
+        std::fs::create_dir_all(&plugin_dir).unwrap();
+        write_manifest(&plugin_dir, &serde_json::json!({ "name": "mine" }));
+
+        let saved = std::env::var_os("CLAURST_HOME");
+        std::env::set_var("CLAURST_HOME", &claurst_home);
+        let reg = load_plugins(home.path(), &[]).await;
+        match saved {
+            Some(v) => std::env::set_var("CLAURST_HOME", v),
+            None => std::env::remove_var("CLAURST_HOME"),
+        }
+
+        assert_eq!(reg.plugin_count(), 1);
+        assert_eq!(reg.get("mine").unwrap().source, PluginSource::User);
+    }
+
+    #[test]
+    fn manifest_parse_json() {
+        let json = serde_json::json!({
+            "name": "my-plugin",
+            "version": "0.1.0",
+            "description": "Test",
+            "mcpServers": {
+                "my-server": { "command": "node", "args": ["server.js"] }
+            }
+        });
+        let bytes = serde_json::to_vec(&json).unwrap();
+        let manifest = PluginManifest::from_json(&bytes).unwrap();
+        assert_eq!(manifest.name, "my-plugin");
+        assert_eq!(manifest.mcp_servers.len(), 1);
+        assert_eq!(manifest.mcp_servers[0].name, "my-server");
+    }
+
+    #[test]
+    fn format_plugin_list_empty() {
+        let reg = PluginRegistry::new();
+        let out = format_plugin_list(&reg);
+        assert!(out.contains("No plugins installed"));
+    }
+
+    #[test]
+    fn format_reload_summary_basic() {
+        let reg = PluginRegistry::new();
+        let diff = ReloadDiff::default();
+        let out = format_reload_summary(&reg, &diff);
+        assert!(out.contains("Reloaded"));
+    }
+
+    fn write_hooks_plugin(parent: &Path, name: &str, marker: &Path) {
+        let dir = parent.join(name);
+        std::fs::create_dir_all(dir.join("hooks")).unwrap();
+        write_manifest(&dir, &serde_json::json!({ "name": name, "version": "1.0.0" }));
+        let command = format!(
+            "echo \"$CLAUDE_PLUGIN_NAME $CLAUDE_PLUGIN_ROOT\" >> '{}'",
+            marker.display()
+        );
+        std::fs::write(
+            dir.join("hooks").join("hooks.json"),
+            serde_json::to_vec(&serde_json::json!({
+                "hooks": { "PreCompact": [{ "hooks": [{ "type": "command", "command": command }] }] }
+            }))
+            .unwrap(),
+        )
+        .unwrap();
+    }
+
+    /// #447: plugin hooks register with the core engine and fire through it;
+    /// hooks from project plugins never register. PreCompact is used only by
+    /// this test in this crate, so the process-global registry cannot leak
+    /// into other tests.
+    #[cfg(unix)]
+    #[tokio::test]
+    async fn plugin_hooks_register_and_run_through_core_engine() {
+        use claurst_core::config::{HookEvent, HookMap};
+        use claurst_core::hooks::{run_hooks, CompactTrigger, HookEventData, HookPayload};
+
+        let tmp = TempDir::new().unwrap();
+        let marker = tmp.path().join("fired.log");
+        let user_dir = tmp.path().join("user-plugins");
+        let project_dir = tmp.path().join("project-plugins");
+        write_hooks_plugin(&user_dir, "user-hooks", &marker);
+        write_hooks_plugin(&project_dir, "project-hooks", &marker);
+
+        let mut registry = PluginRegistry::new();
+        let (plugins, errors) = discover_plugins(std::slice::from_ref(&user_dir), PluginSource::User).await;
+        registry.extend(plugins, errors);
+        let (plugins, errors) = discover_plugins(&[project_dir], PluginSource::Project).await;
+        registry.extend(plugins, errors);
+        assert_eq!(registry.plugin_count(), 2);
+
+        let map = registry.hook_map();
+        let groups = &map[&HookEvent::PreCompact];
+        assert_eq!(groups.len(), 1, "only the user plugin contributes hooks");
+        let source = groups[0].hooks[0].plugin.as_ref().unwrap();
+        assert_eq!(source.name, "user-hooks");
+        assert_eq!(source.root, user_dir.join("user-hooks"));
+
+        set_global_hooks(&registry);
+        let data = HookEventData::PreCompact { trigger: CompactTrigger::Auto, custom_instructions: "" };
+        run_hooks(&HookMap::new(), &HookPayload::new("s", tmp.path(), data)).await;
+        claurst_core::hooks::set_plugin_hooks(HookMap::new());
+
+        let fired = std::fs::read_to_string(&marker).unwrap();
+        assert_eq!(fired, format!("user-hooks {}\n", user_dir.join("user-hooks").display()));
+    }
+}

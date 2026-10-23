@@ -1,0 +1,3481 @@
+{
+  "schema_version": 1,
+  "bundle_identifier": "6ffe055852f8faf66c0acbe1a7fb27f87b869a90bad1204f3bf4d9683f597c7c",
+  "source_revisions": {
+    "texlive": "082081a375be008c2e049cd7cf1137314f888b18",
+    "bundler_reference": "8710e253efcde4e84c3d2ba8a54db2d85bc27fb0"
+  },
+  "notice_files": [
+    {
+      "path": "texlive-2022/texmf-dist/doc/latex/base/legal.txt",
+      "source_path": "texmf-dist/doc/latex/base/legal.txt",
+      "package": "latex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/doc/latex/base/legal.txt?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "sha256": "a258aa1193a2012f9deb25c7c09507b0744b97875cc80ddf11a975919fa0ce20",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18"
+    },
+    {
+      "path": "texlive-2022/texmf-dist/doc/latex/base/lppl.txt",
+      "source_path": "texmf-dist/doc/latex/base/lppl.txt",
+      "package": "latex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/doc/latex/base/lppl.txt?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "sha256": "ca3227f672053cb608959d7e1d476c7a13efea11be3f6e53758a68b650c918e8",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18"
+    },
+    {
+      "path": "texlive-2022/texmf-dist/doc/latex/base/manifest.txt",
+      "source_path": "texmf-dist/doc/latex/base/manifest.txt",
+      "package": "latex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/doc/latex/base/manifest.txt?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "sha256": "b908af23074df86c49155ef1f34cef412bcbcef26a34d4f17683f52d9fdcd75b",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18"
+    },
+    {
+      "path": "texlive-2022/texmf-dist/doc/latex/ctex/README.md",
+      "source_path": "texmf-dist/doc/latex/ctex/README.md",
+      "package": "ctex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/doc/latex/ctex/README.md?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "sha256": "0156e6b4e5161e6deb1926f157598273dd2469f5c821af396046c797e565a38b",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18"
+    },
+    {
+      "path": "texlive-2022/texmf-dist/doc/xelatex/xecjk/README.md",
+      "source_path": "texmf-dist/doc/xelatex/xecjk/README.md",
+      "package": "xecjk",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/doc/xelatex/xecjk/README.md?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "sha256": "441286cddfc31178aa16e23c126e6583dfb64c26e9df4dab63712a9efe4a97d9",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18"
+    },
+    {
+      "path": "texlive-2022/texmf-dist/doc/latex/fontspec/LICENSE",
+      "source_path": "texmf-dist/doc/latex/fontspec/LICENSE",
+      "package": "fontspec",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/doc/latex/fontspec/LICENSE?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "sha256": "5f05fcf6ef25a6c31bccd2df7c0c46b23107bbeb2ce5cdba74efb5cc357f4dbb",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18"
+    },
+    {
+      "path": "texlive-2022/texmf-dist/doc/generic/unicode-data/README.md",
+      "source_path": "texmf-dist/doc/generic/unicode-data/README.md",
+      "package": "unicode-data",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/doc/generic/unicode-data/README.md?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "sha256": "39648292bbef208400943776a75c2483c49e2886450bd717d014cf72408f5924",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18"
+    },
+    {
+      "path": "texlive-2022/texmf-dist/doc/latex/cjk/doc/COPYING",
+      "source_path": "texmf-dist/doc/latex/cjk/doc/COPYING",
+      "package": "cjk",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/doc/latex/cjk/doc/COPYING?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "sha256": "c4120c6752c910c299e3bd9cb3a46ff262c268303ca2069b61f92f10a5656c18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18"
+    },
+    {
+      "path": "texlive-2022/texmf-dist/source/generic/hyph-utf8/README",
+      "source_path": "texmf-dist/source/generic/hyph-utf8/README",
+      "package": "hyph-utf8",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/source/generic/hyph-utf8/README?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "sha256": "16c8d814c9917bc21b751d1e0b01f277edc169f679e59a8716347cfe7018502c",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18"
+    },
+    {
+      "path": "texlive-2022/texmf-dist/doc/generic/hyph-utf8/hyphenation-distribution.tex",
+      "source_path": "texmf-dist/doc/generic/hyph-utf8/hyphenation-distribution.tex",
+      "package": "hyph-utf8",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/doc/generic/hyph-utf8/hyphenation-distribution.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "sha256": "b5b93889ec91010a1ff0ef2b442a47bf0871add1e3c612fd538d9c98ea671e2f",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18"
+    },
+    {
+      "path": "texlive-2022/texmf-dist/doc/fonts/amsfonts/README",
+      "source_path": "texmf-dist/doc/fonts/amsfonts/README",
+      "package": "amsfonts",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/doc/fonts/amsfonts/README?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "sha256": "2e2ced3494d3e5f04345804b85c1acb67c23bdd742f3e71f8772f768a59ed451",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18"
+    },
+    {
+      "path": "texlive-2022/texmf-dist/doc/fonts/amsfonts/OFL.txt",
+      "source_path": "texmf-dist/doc/fonts/amsfonts/OFL.txt",
+      "package": "amsfonts",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/doc/fonts/amsfonts/OFL.txt?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "sha256": "aa783fdd47e92743bafe79277ac4067d20339344dc5b64a09c2d0f869b2999dc",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18"
+    },
+    {
+      "path": "texlive-2022/texmf-dist/doc/fonts/amsfonts/OFL-FAQ.txt",
+      "source_path": "texmf-dist/doc/fonts/amsfonts/OFL-FAQ.txt",
+      "package": "amsfonts",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/doc/fonts/amsfonts/OFL-FAQ.txt?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "sha256": "f1c022008dc7e763b1625c121ac50f4bf635179c809ca987af65e984659ce492",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18"
+    },
+    {
+      "path": "texlive-2022/texmf-dist/source/latex/amsfonts/manifest.txt",
+      "source_path": "texmf-dist/source/latex/amsfonts/manifest.txt",
+      "package": "amsfonts",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/source/latex/amsfonts/manifest.txt?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "sha256": "7fc17d6a09c16fe6e5b534c100687a99a4553ccaa4d1671cb4fe05d5d00d599d",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18"
+    },
+    {
+      "path": "texlive-2022/texmf-dist/doc/fonts/cm/README",
+      "source_path": "texmf-dist/doc/fonts/cm/README",
+      "package": "cm",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/doc/fonts/cm/README?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "sha256": "df37bc99ee2ed981004fc36690f9dbd44045348ae1b63b7ef2894e5b02d0f1a5",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18"
+    },
+    {
+      "path": "texlive-2022/texmf-dist/doc/fonts/cm/README-cmps.txt",
+      "source_path": "texmf-dist/doc/fonts/cm/README-cmps.txt",
+      "package": "cm",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/doc/fonts/cm/README-cmps.txt?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "sha256": "8486ab502a86e9cfa29c87b4047f592a9e3e3ebb24a54acbdb34069d9da8c061",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18"
+    },
+    {
+      "path": "texlive-2022/texmf-dist/doc/fonts/latex-fonts/README",
+      "source_path": "texmf-dist/doc/fonts/latex-fonts/README",
+      "package": "latex-fonts",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/doc/fonts/latex-fonts/README?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "sha256": "22a3f6b41ae95c63ca9e4c535dd9b36894a7924759792ff80d1f15034875c46c",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18"
+    },
+    {
+      "path": "texlive-2022/texmf-dist/doc/fonts/latex-fonts/legal.txt",
+      "source_path": "texmf-dist/doc/fonts/latex-fonts/legal.txt",
+      "package": "latex-fonts",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/doc/fonts/latex-fonts/legal.txt?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "sha256": "46e28d4efe2ca60abf46188adb7d536df5a59fa5d0d54879fe1968569698d70c",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18"
+    },
+    {
+      "path": "texlive-2022/texmf-dist/doc/xetex/base/README",
+      "source_path": "texmf-dist/doc/xetex/base/README",
+      "package": "xetex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/doc/xetex/base/README?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "sha256": "28e4059f4a062cd8a71bfb7b136d2222086851c55cfa0332a87ed7594fe847ac",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18"
+    },
+    {
+      "path": "texlive-2022/texmf-dist/fonts/misc/xetex/fontmapping/base/tex-text.map",
+      "source_path": "texmf-dist/fonts/misc/xetex/fontmapping/base/tex-text.map",
+      "package": "xetex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/fonts/misc/xetex/fontmapping/base/tex-text.map?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "sha256": "65a1cf61ec924a1a8b8494760586a098bbf68046f004339108556c6465f75ada",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18"
+    },
+    {
+      "path": "texlive-2022/texmf-dist/fonts/source/public/cm/cmr10.mf",
+      "source_path": "texmf-dist/fonts/source/public/cm/cmr10.mf",
+      "package": "cm",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/fonts/source/public/cm/cmr10.mf?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "sha256": "32efefa5813c6d5a256ab3824a90f0a7a79688e872926db87e4510ef0f3ee382",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18"
+    }
+  ],
+  "matches": [
+    {
+      "cache": "CJKfntef.sty",
+      "sha256": "d06dc529270d63296ae382551930b086aba07d654c089d882ec1b6db5689c658",
+      "package": "cjk",
+      "source_path": "texmf-dist/tex/latex/cjk/texinput/CJKfntef.sty",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/cjk/texinput/CJKfntef.sty?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "CaseFolding.txt",
+      "sha256": "a566cd48687b2cd897e02501118b2413c14ae86d318f9abbbba97feb84189f0f",
+      "package": "unicode-data",
+      "source_path": "texmf-dist/tex/generic/unicode-data/CaseFolding.txt",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/unicode-data/CaseFolding.txt?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "SpecialCasing.txt",
+      "sha256": "c667b45908fd269af25fd55d2fc5bbc157fb1b77675936e25c513ce32e080334",
+      "package": "unicode-data",
+      "source_path": "texmf-dist/tex/generic/unicode-data/SpecialCasing.txt",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/unicode-data/SpecialCasing.txt?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "UnicodeData.txt",
+      "sha256": "36018e68657fdcb3485f636630ffe8c8532e01c977703d2803f5b89d6c5feafb",
+      "package": "unicode-data",
+      "source_path": "texmf-dist/tex/generic/unicode-data/UnicodeData.txt",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/unicode-data/UnicodeData.txt?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "amsbsy.sty",
+      "sha256": "7f25c33d4010066ff2eed0286f62854867698b06d10ebad93b1b1ab96d12f936",
+      "package": "amsmath",
+      "source_path": "texmf-dist/tex/latex/amsmath/amsbsy.sty",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/amsmath/amsbsy.sty?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "amsfonts.sty",
+      "sha256": "dab8b0e621267acfd89736cf97bdcc02647c545c0719c4997be8a7d1bf98f9c3",
+      "package": "amsfonts",
+      "source_path": "texmf-dist/tex/latex/amsfonts/amsfonts.sty",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/amsfonts/amsfonts.sty?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "amsgen.sty",
+      "sha256": "d90cfa74087e9f8678fb81bde57f809f0d4043f2674cb23b73a85958ec4a0fb6",
+      "package": "amsmath",
+      "source_path": "texmf-dist/tex/latex/amsmath/amsgen.sty",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/amsmath/amsgen.sty?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "amsmath.sty",
+      "sha256": "027b292408d989f370f160c9b5f5b89641f69cd19027b0342beb022dd74d7c83",
+      "package": "amsmath",
+      "source_path": "texmf-dist/tex/latex/amsmath/amsmath.sty",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/amsmath/amsmath.sty?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "amsopn.sty",
+      "sha256": "18c28b99321d0f4576cb42e2793d2654828b273700224cd9ee27047f803e99f5",
+      "package": "amsmath",
+      "source_path": "texmf-dist/tex/latex/amsmath/amsopn.sty",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/amsmath/amsopn.sty?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "amssymb.sty",
+      "sha256": "70838b061b56569dd3ed9f339b1bdd1c78ba185de49f27ceae331c97f48b5986",
+      "package": "amsfonts",
+      "source_path": "texmf-dist/tex/latex/amsfonts/amssymb.sty",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/amsfonts/amssymb.sty?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "amstext.sty",
+      "sha256": "49426425d82407dc702c77236fdeb4b82568ebb9566b8dd849bcfbf9eb9644de",
+      "package": "amsmath",
+      "source_path": "texmf-dist/tex/latex/amsmath/amstext.sty",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/amsmath/amstext.sty?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "array.sty",
+      "sha256": "1518422cc09b174c47105e41e3606260714b8f99049e3005a87f3c2ce034d157",
+      "package": "tools",
+      "source_path": "texmf-dist/tex/latex/tools/array.sty",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/tools/array.sty?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "article.cls",
+      "sha256": "988fb3e599df7e5b545e4253829dab11f0c7bd7827b79d32c2aaadfb52db6f6c",
+      "package": "latex",
+      "source_path": "texmf-dist/tex/latex/base/article.cls",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/base/article.cls?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "atbegshi-ltx.sty",
+      "sha256": "815582a920087c3a3c7dbf4d357b22db05e087f87b7fdcadf606d9f1fe750cb4",
+      "package": "latex",
+      "source_path": "texmf-dist/tex/latex/base/atbegshi-ltx.sty",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/base/atbegshi-ltx.sty?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "atbegshi.sty",
+      "sha256": "a73003b4bb2dc8a814533ddbd31600e6626827799c2a465d03ef42e7a33fa71b",
+      "package": "atbegshi",
+      "source_path": "texmf-dist/tex/generic/atbegshi/atbegshi.sty",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/atbegshi/atbegshi.sty?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "atveryend-ltx.sty",
+      "sha256": "5cf523f1f8f87a365b9b2d16d79e62e0363a833dfdfa889e99f5251064661e83",
+      "package": "latex",
+      "source_path": "texmf-dist/tex/latex/base/atveryend-ltx.sty",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/base/atveryend-ltx.sty?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "atveryend.sty",
+      "sha256": "a62143db8b3bf1e52082c32e3feb7450bc90c000c6c48a38fa51cf96a6075eae",
+      "package": "atveryend",
+      "source_path": "texmf-dist/tex/latex/atveryend/atveryend.sty",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/atveryend/atveryend.sty?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "auxhook.sty",
+      "sha256": "1d9f36f4e9674bef594a47cac7d5781e9f7e0c7c8edf9f72769f4dc6f10d1b5f",
+      "package": "auxhook",
+      "source_path": "texmf-dist/tex/latex/auxhook/auxhook.sty",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/auxhook/auxhook.sty?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "bigintcalc.sty",
+      "sha256": "050f2ad3a3671a1f4f9bcf97784836301bc751507e7ada546632379406aea103",
+      "package": "bigintcalc",
+      "source_path": "texmf-dist/tex/generic/bigintcalc/bigintcalc.sty",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "bitset.sty",
+      "sha256": "af5c7196c69dc9d28225189169b60c9b9039125bc1756c04d54886f0a3e1891e",
+      "package": "bitset",
+      "source_path": "texmf-dist/tex/generic/bitset/bitset.sty",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/bitset/bitset.sty?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "booktabs.sty",
+      "sha256": "3fe694a5406f84847143e56ba1841385364277cfe7694a9f4bc0072ca8656abc",
+      "package": "booktabs",
+      "source_path": "texmf-dist/tex/latex/booktabs/booktabs.sty",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/booktabs/booktabs.sty?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "ckx.map",
+      "sha256": "52859584f1baa4aea9e5c6318ded82b1b5bfa713dcdc945bda7e26b206c8bdc4",
+      "package": "dvipdfmx",
+      "source_path": "texmf-dist/fonts/map/dvipdfmx/ckx.map",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/fonts/map/dvipdfmx/ckx.map?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "cmex10.pfb",
+      "sha256": "791b31aa1db8608d0144b3a40fc0fe53383a60f6b00d0e8fd9f06ac4a11df8cb",
+      "package": "amsfonts",
+      "source_path": "texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "cmex10.tfm",
+      "sha256": "0890bccea1dd4d27f001ac30e86c63af35bc803e0557c35aafb1903c8d208e92",
+      "package": "cm",
+      "source_path": "texmf-dist/fonts/tfm/public/cm/cmex10.tfm",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/fonts/tfm/public/cm/cmex10.tfm?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "cmex7.pfb",
+      "sha256": "df327fc28dc3ce615dc91399f335ec2e1e646e34929936be16836875d5ffaf54",
+      "package": "amsfonts",
+      "source_path": "texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "cmex7.tfm",
+      "sha256": "373172fe340e4aede5129b89d65f576bfb1fe6932bd55c38f60bcaa84f3d1188",
+      "package": "amsfonts",
+      "source_path": "texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "cmex8.pfb",
+      "sha256": "778a2aaea4bf9d19ce2a7342864fa2696c07770c86d36a62e2ef799ad0724b05",
+      "package": "amsfonts",
+      "source_path": "texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "cmex8.tfm",
+      "sha256": "3f56ab22f7fc6a015813976c6c6cc2fd55736bbaec4958a4562e10719fa18062",
+      "package": "amsfonts",
+      "source_path": "texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "cmex9.pfb",
+      "sha256": "b7aacad3b24221cf6ccfedb08708444a00ded5d3f24c5cff79dcc4450d65ab16",
+      "package": "amsfonts",
+      "source_path": "texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "cmex9.tfm",
+      "sha256": "70ca3442c95cd6cf3437ab7c2d0e4b9797531eacfe400dccc61d04bda288bae0",
+      "package": "amsfonts",
+      "source_path": "texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex9.tfm",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex9.tfm?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "cmmi10.pfb",
+      "sha256": "e3661061e8aa474d6de5ffa916edceb0e3d8b998862018c147f0357fce00bcd7",
+      "package": "amsfonts",
+      "source_path": "texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "cmmi10.tfm",
+      "sha256": "e442c5487f84df70218ff37f775c87060856f5b6e04c011b6cadbbadfcf46645",
+      "package": "cm",
+      "source_path": "texmf-dist/fonts/tfm/public/cm/cmmi10.tfm",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "cmmi12.pfb",
+      "sha256": "80fa6aa5f49d52e1f7e5120d053b32d463cd0392a68588ef17c0d1523fba7786",
+      "package": "amsfonts",
+      "source_path": "texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "cmmi12.tfm",
+      "sha256": "79563547084d85388e6909888f9fa7f5cad33bdda44ca6b25b362e1d301db539",
+      "package": "cm",
+      "source_path": "texmf-dist/fonts/tfm/public/cm/cmmi12.tfm",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "cmmi5.pfb",
+      "sha256": "35048e58e53f4aa53025069c1d0de33a16d8d4c111bfa329669e6456ec0a967b",
+      "package": "amsfonts",
+      "source_path": "texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "cmmi5.tfm",
+      "sha256": "8839e40838381a0a3c976bdd5becf72afd60bde5a965c3d9b985c3479c6cf75e",
+      "package": "cm",
+      "source_path": "texmf-dist/fonts/tfm/public/cm/cmmi5.tfm",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/fonts/tfm/public/cm/cmmi5.tfm?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "cmmi6.pfb",
+      "sha256": "c31dbaffb861162eadf3a7210bdf271b0dda577841aed4c0572069b0d52662b6",
+      "package": "amsfonts",
+      "source_path": "texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "cmmi6.tfm",
+      "sha256": "ab6ecb4aaba9ca1b4259b1d1f64309a785bbaeb09183fd79a066b7764a448a28",
+      "package": "cm",
+      "source_path": "texmf-dist/fonts/tfm/public/cm/cmmi6.tfm",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/fonts/tfm/public/cm/cmmi6.tfm?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "cmmi7.pfb",
+      "sha256": "5b293a581ddb937b02559c3ce1a60184cc434295533204a2cd3864a6ad8a1f53",
+      "package": "amsfonts",
+      "source_path": "texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "cmmi7.tfm",
+      "sha256": "ce55681703aae565f17286d800ea9780223132589bdbaeda1751b869aba26a38",
+      "package": "cm",
+      "source_path": "texmf-dist/fonts/tfm/public/cm/cmmi7.tfm",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/fonts/tfm/public/cm/cmmi7.tfm?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "cmmi8.pfb",
+      "sha256": "f396f52d9ed3498c15aa7e694baef74c0a11119624fcd6db66dad4ac76972cb0",
+      "package": "amsfonts",
+      "source_path": "texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "cmmi8.tfm",
+      "sha256": "65af8c1e162a952cab8e93c834fcf43ce09b508e6c16e512ebb673cd850b0d41",
+      "package": "cm",
+      "source_path": "texmf-dist/fonts/tfm/public/cm/cmmi8.tfm",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/fonts/tfm/public/cm/cmmi8.tfm?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "cmmi9.pfb",
+      "sha256": "c7d9ebe6b8313e0eeee8f9ed4d4e7069c74cfa9d9b64295f0f487e4662281a62",
+      "package": "amsfonts",
+      "source_path": "texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "cmmi9.tfm",
+      "sha256": "20672649a2f07eef8fe07ccb42eeb731023e48f2e0797ecef57c0887da46c032",
+      "package": "cm",
+      "source_path": "texmf-dist/fonts/tfm/public/cm/cmmi9.tfm",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/fonts/tfm/public/cm/cmmi9.tfm?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "cmr10.pfb",
+      "sha256": "fdcede8794018df5f2b58f0905fb20a2b418ed8f67b73ee12445855dfbe5b1be",
+      "package": "amsfonts",
+      "source_path": "texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "cmr10.tfm",
+      "sha256": "87f2d8981927644cbecaf3d639e96e348ea4e7be49d8804468bd8ba9ff3f5244",
+      "package": "cm",
+      "source_path": "texmf-dist/fonts/tfm/public/cm/cmr10.tfm",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/fonts/tfm/public/cm/cmr10.tfm?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "cmr12.pfb",
+      "sha256": "9b58bfa828b9553b7c8331cf26c45443b836f8aab62e820b40a5b65c8531dd42",
+      "package": "amsfonts",
+      "source_path": "texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "cmr12.tfm",
+      "sha256": "1ce8af37ed38e93940829d3540e494eaaddc5201758d036b9074467e70a738dc",
+      "package": "cm",
+      "source_path": "texmf-dist/fonts/tfm/public/cm/cmr12.tfm",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/fonts/tfm/public/cm/cmr12.tfm?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "cmr17.pfb",
+      "sha256": "465827b4702e12f7deea159c8084753ffc27998963de516e490bd7bd5bed41dd",
+      "package": "amsfonts",
+      "source_path": "texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "cmr17.tfm",
+      "sha256": "86b6e8a52aae6ad1655e32099e12bd2904b158aba4c8afb74143266d2d9cd18f",
+      "package": "cm",
+      "source_path": "texmf-dist/fonts/tfm/public/cm/cmr17.tfm",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/fonts/tfm/public/cm/cmr17.tfm?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "cmr5.pfb",
+      "sha256": "84d38aac226b5274baca7a292e2039f5284a35d8a2ae31074a475fad87da310b",
+      "package": "amsfonts",
+      "source_path": "texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "cmr5.tfm",
+      "sha256": "581be818f67bd11a1792d05e129abe3ea30c5cbdfce3bed8da7c5fb50f5ba95b",
+      "package": "cm",
+      "source_path": "texmf-dist/fonts/tfm/public/cm/cmr5.tfm",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/fonts/tfm/public/cm/cmr5.tfm?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "cmr6.pfb",
+      "sha256": "9fe20cb9ef24a0f4c74d38a65d4eee5cff3165f3b8600407ceba396aeb2b7617",
+      "package": "amsfonts",
+      "source_path": "texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "cmr6.tfm",
+      "sha256": "106afa9172f0c00e58b9f5cbc72b302a18aaeeaddf50caca145af9cc0b81afd2",
+      "package": "cm",
+      "source_path": "texmf-dist/fonts/tfm/public/cm/cmr6.tfm",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/fonts/tfm/public/cm/cmr6.tfm?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "cmr7.pfb",
+      "sha256": "b37e8671820b0753c6e233eaa3230c6ab9cff04e6c4baee312d60ae261e5aba1",
+      "package": "amsfonts",
+      "source_path": "texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "cmr7.tfm",
+      "sha256": "28f9f4d237bdae4babef4a59d90f17686a09d6f9df0b2c3c23b2ba15f20eee82",
+      "package": "cm",
+      "source_path": "texmf-dist/fonts/tfm/public/cm/cmr7.tfm",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/fonts/tfm/public/cm/cmr7.tfm?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "cmr8.pfb",
+      "sha256": "8150cbfac5cfe53040327df171c3059f10730b32cabf2504b01713d639a11feb",
+      "package": "amsfonts",
+      "source_path": "texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "cmr8.tfm",
+      "sha256": "4c5ae243ac0aa254e7ec7f0602cc2a4351e5011ff0cb6dc150a5f6de19585de6",
+      "package": "cm",
+      "source_path": "texmf-dist/fonts/tfm/public/cm/cmr8.tfm",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/fonts/tfm/public/cm/cmr8.tfm?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "cmr9.pfb",
+      "sha256": "ba5207eea69eaa9b598de2bd3d9aef27c4ff9831524400f70ff6a0dd3e36059b",
+      "package": "amsfonts",
+      "source_path": "texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "cmr9.tfm",
+      "sha256": "2ffa73e8446c1d46c3509a0f65ff97d4d09de46f48e1ce578a1004498b67dba9",
+      "package": "cm",
+      "source_path": "texmf-dist/fonts/tfm/public/cm/cmr9.tfm",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/fonts/tfm/public/cm/cmr9.tfm?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "cmsy10.pfb",
+      "sha256": "62ee8cef552017551cd3e026a483e700730103eceaad959c87b7730017f59cff",
+      "package": "amsfonts",
+      "source_path": "texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "cmsy10.tfm",
+      "sha256": "0ca13d421ac7133271aed7c935099ecf3d1d08ac9e15f81acb34a16564ab8a46",
+      "package": "cm",
+      "source_path": "texmf-dist/fonts/tfm/public/cm/cmsy10.tfm",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "cmsy5.pfb",
+      "sha256": "46da57e5a06866efa9a20f3dd350811b5d3279a5ae789af63e530f1f570e3c7f",
+      "package": "amsfonts",
+      "source_path": "texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "cmsy5.tfm",
+      "sha256": "6b7dc18cba9ca8996d7b146f1ed78d9227577b26248083310fec227692198ca5",
+      "package": "cm",
+      "source_path": "texmf-dist/fonts/tfm/public/cm/cmsy5.tfm",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/fonts/tfm/public/cm/cmsy5.tfm?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "cmsy6.pfb",
+      "sha256": "73eed8a83a07d8ef04d240da22bce1fd3646074f46179e3677f4f42a542f20b6",
+      "package": "amsfonts",
+      "source_path": "texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "cmsy6.tfm",
+      "sha256": "137eb9f38f661c66309614066a7b5d63d8969d33aba0c9efee9f844a4ce65b50",
+      "package": "cm",
+      "source_path": "texmf-dist/fonts/tfm/public/cm/cmsy6.tfm",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "cmsy7.pfb",
+      "sha256": "583b65bd1857bffc2ab184fcb4aad4e70e12eb05c9ca9f1c58c9a00a86c8bccf",
+      "package": "amsfonts",
+      "source_path": "texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "cmsy7.tfm",
+      "sha256": "4f59bbf683e947c807158641621982dc83f55fec042fea7963d8ce9f9da98256",
+      "package": "cm",
+      "source_path": "texmf-dist/fonts/tfm/public/cm/cmsy7.tfm",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/fonts/tfm/public/cm/cmsy7.tfm?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "cmsy8.pfb",
+      "sha256": "2313392f0f4cd974d9da5fb54a52feae126059759edc04a4e47e33ea6027418b",
+      "package": "amsfonts",
+      "source_path": "texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "cmsy8.tfm",
+      "sha256": "84c37f07ca360c41ad0a0fba7387d279d72457c69bdae03653208c683d8de6bc",
+      "package": "cm",
+      "source_path": "texmf-dist/fonts/tfm/public/cm/cmsy8.tfm",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "cmsy9.pfb",
+      "sha256": "8049871d56d74fe3f8f2375afbb1e59b149bf6835027b4a101051cfca1c1a779",
+      "package": "amsfonts",
+      "source_path": "texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "cmsy9.tfm",
+      "sha256": "b57c5c42a7991a004ee1b40b340d7bd12cc75ab0a6f7daf7a207827504f91712",
+      "package": "cm",
+      "source_path": "texmf-dist/fonts/tfm/public/cm/cmsy9.tfm",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/fonts/tfm/public/cm/cmsy9.tfm?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "color.cfg",
+      "sha256": "a3529ccdadc8248b4c5d7c34ceea53bdc1509b54f18a192ad51b924bd297d8df",
+      "package": "graphics-cfg",
+      "source_path": "texmf-dist/tex/latex/graphics-cfg/color.cfg",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/graphics-cfg/color.cfg?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "ctex-c5size.clo",
+      "sha256": "18f19188a0f138e4228169dc9a8fdfcd1cb860f0077b55a013888fc22bcd6327",
+      "package": "ctex",
+      "source_path": "texmf-dist/tex/latex/ctex/ctex-c5size.clo",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/ctex/ctex-c5size.clo?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "ctex-engine-xetex.def",
+      "sha256": "5aa334d69a242d01e98db20e333579f555eb4b8b6fbfdd737e3543d8332adabe",
+      "package": "ctex",
+      "source_path": "texmf-dist/tex/latex/ctex/engine/ctex-engine-xetex.def",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/ctex/engine/ctex-engine-xetex.def?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "ctex-fontset-fandol.def",
+      "sha256": "2ab01af8bcb28476fd9888045a0441d939405468beaedf22996cadd0e75462d1",
+      "package": "ctex",
+      "source_path": "texmf-dist/tex/latex/ctex/fontset/ctex-fontset-fandol.def",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-fandol.def?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "ctex-name-utf8.cfg",
+      "sha256": "a54d7b26a8e5b24ff93b9184d36216c72c9a070df07c77af5a81b069adfd1478",
+      "package": "ctex",
+      "source_path": "texmf-dist/tex/latex/ctex/config/ctex-name-utf8.cfg",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/ctex/config/ctex-name-utf8.cfg?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "ctex-scheme-chinese-article.def",
+      "sha256": "496ecb893ebdd27b51a68f59f248db430b3f4d18fa6c1cf8995005e2d519fdd1",
+      "package": "ctex",
+      "source_path": "texmf-dist/tex/latex/ctex/scheme/ctex-scheme-chinese-article.def",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/ctex/scheme/ctex-scheme-chinese-article.def?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "ctex.cfg",
+      "sha256": "d96f2029f04b72a736ee890616d1bf942e75d5680a09969a7e21eabffe766bba",
+      "package": "ctex",
+      "source_path": "texmf-dist/tex/latex/ctex/config/ctex.cfg",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/ctex/config/ctex.cfg?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "ctexart.cls",
+      "sha256": "80e434fb161f5f6d56126606845962b296a2375d9e403b428183d730d16f5d98",
+      "package": "ctex",
+      "source_path": "texmf-dist/tex/latex/ctex/ctexart.cls",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/ctex/ctexart.cls?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "ctexbackend.cfg",
+      "sha256": "dfadc67e91e6ad619fdf8a304f07af9d4bd92d6f5807ed09801e4aa1b8b8d794",
+      "package": "ctex",
+      "source_path": "texmf-dist/tex/latex/ctex/config/ctexbackend.cfg",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/ctex/config/ctexbackend.cfg?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "ctexhook.sty",
+      "sha256": "1c1b7e806ae828b1aa6fac1a2fa949cd40c769fdcf3c52c131ae4957cba5277b",
+      "package": "ctex",
+      "source_path": "texmf-dist/tex/latex/ctex/ctexhook.sty",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/ctex/ctexhook.sty?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "ctexopts.cfg",
+      "sha256": "89074893c094568ba989e3f266a2d27c064f779b75791dbb7ce2e6576887d49d",
+      "package": "ctex",
+      "source_path": "texmf-dist/tex/latex/ctex/config/ctexopts.cfg",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/ctex/config/ctexopts.cfg?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "ctexpatch.sty",
+      "sha256": "aad27ba596a537e44b1a9c7ae4d12485dc436c8e720de7ad5147e7e863bf8bab",
+      "package": "ctex",
+      "source_path": "texmf-dist/tex/latex/ctex/ctexpatch.sty",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/ctex/ctexpatch.sty?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "dehyphn-x-2022-03-16.pat",
+      "sha256": "72e371729891000698d0e29b5514625733e5529ca5d619bc706f69c81778052f",
+      "package": "dehyph-exptl",
+      "source_path": "texmf-dist/tex/generic/dehyph-exptl/dehyphn-x-2022-03-16.pat",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/dehyph-exptl/dehyphn-x-2022-03-16.pat?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "dehyphn-x-2022-03-16.tex",
+      "sha256": "2909d9b18ab2a94854c5c8270eae7b51788d0edb849985fd04fa602d7aa0adc6",
+      "package": "dehyph-exptl",
+      "source_path": "texmf-dist/tex/generic/dehyph-exptl/dehyphn-x-2022-03-16.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/dehyph-exptl/dehyphn-x-2022-03-16.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "dehypht-x-2022-03-16.pat",
+      "sha256": "063c15918921ad5d4a95a73853453929a14df34ced1bd8b9ae1113fc34831e12",
+      "package": "dehyph-exptl",
+      "source_path": "texmf-dist/tex/generic/dehyph-exptl/dehypht-x-2022-03-16.pat",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/dehyph-exptl/dehypht-x-2022-03-16.pat?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "dehypht-x-2022-03-16.tex",
+      "sha256": "a25d30636a6b342c6dfd41bde80ab38e500e28236166fc8f1a061a0a4e9f709d",
+      "package": "dehyph-exptl",
+      "source_path": "texmf-dist/tex/generic/dehyph-exptl/dehypht-x-2022-03-16.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/dehyph-exptl/dehypht-x-2022-03-16.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "dumyhyph.tex",
+      "sha256": "99d210320228a242478c36c0dfde48c7513e4495d4feea7fe3997aab27582dfc",
+      "package": "hyphen-base",
+      "source_path": "texmf-dist/tex/generic/hyphen/dumyhyph.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyphen/dumyhyph.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "etexcmds.sty",
+      "sha256": "a7db2834e02bd11be0e62a3be15e3dc293ba1be9196f19b29b9d98bfdbeb7514",
+      "package": "etexcmds",
+      "source_path": "texmf-dist/tex/generic/etexcmds/etexcmds.sty",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/etexcmds/etexcmds.sty?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "expl3-code.tex",
+      "sha256": "496aa058ffd3c379d77df9d842ae931575f1ea12db5f806cbeea1634d505b6a1",
+      "package": "l3kernel",
+      "source_path": "texmf-dist/tex/latex/l3kernel/expl3-code.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/l3kernel/expl3-code.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "expl3.ltx",
+      "sha256": "5a61e07f882337465d24c17e9d3865d1849e3baf37a12e2b7956af4dacf745ab",
+      "package": "l3kernel",
+      "source_path": "texmf-dist/tex/latex/l3kernel/expl3.ltx",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/l3kernel/expl3.ltx?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "expl3.sty",
+      "sha256": "d25966b6774e1153ada51b5c52eb5084b76708181861fa090844a18c2092a905",
+      "package": "l3kernel",
+      "source_path": "texmf-dist/tex/latex/l3kernel/expl3.sty",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/l3kernel/expl3.sty?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "fix-cm.sty",
+      "sha256": "bc40dfd4efc0c827a3845afbf1c09d26170d44ae79e4dbd5d3c884f2d1670f5e",
+      "package": "latex",
+      "source_path": "texmf-dist/tex/latex/base/fix-cm.sty",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/base/fix-cm.sty?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "fontenc.sty",
+      "sha256": "d088c75e16c3c9f6b979a59571b96e5dd9e487a720bc74591580878388b82918",
+      "package": "latex",
+      "source_path": "texmf-dist/tex/latex/base/fontenc.sty",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/base/fontenc.sty?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "fontmath.cfg",
+      "sha256": "d3f100870b4ddd3f7b31fc799d01fbfb3bfa125d6fc473e64ce273901555b0c4",
+      "package": "latex",
+      "source_path": "texmf-dist/tex/latex/base/fontmath.cfg",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/base/fontmath.cfg?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "fontmath.ltx",
+      "sha256": "f16b8c352292d9bb9ae82fa6764651e7f61d21e7bb5fdb039c18dca704700855",
+      "package": "latex",
+      "source_path": "texmf-dist/tex/latex/base/fontmath.ltx",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/base/fontmath.ltx?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "fontspec-xetex.sty",
+      "sha256": "7d9dbc9c795bcfe13930a88fc0d6066f064eea04fb1006c6ded73d54c863e12b",
+      "package": "fontspec",
+      "source_path": "texmf-dist/tex/latex/fontspec/fontspec-xetex.sty",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/fontspec/fontspec-xetex.sty?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "fontspec.cfg",
+      "sha256": "f31d038ca5322ef4fc3fbe391f42695bf1305567a04b6ac1005964703dd1232a",
+      "package": "fontspec",
+      "source_path": "texmf-dist/tex/latex/fontspec/fontspec.cfg",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/fontspec/fontspec.cfg?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "fontspec.sty",
+      "sha256": "a13fef368454be939bc947e688700508adbf75b2b3d3dbe9730521808945fe7e",
+      "package": "fontspec",
+      "source_path": "texmf-dist/tex/latex/fontspec/fontspec.sty",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/fontspec/fontspec.sty?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "fonttext.cfg",
+      "sha256": "2d7fcaf04dba33fb4344c3f8b0be1f200379f8f08fbe14b412a461c1d3578736",
+      "package": "latex",
+      "source_path": "texmf-dist/tex/latex/base/fonttext.cfg",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/base/fonttext.cfg?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "fonttext.ltx",
+      "sha256": "adb63677a08ed1904346996fa43c165f6c2ed2a869661b37f24ead11c23e0dad",
+      "package": "latex",
+      "source_path": "texmf-dist/tex/latex/base/fonttext.ltx",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/base/fonttext.ltx?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "geometry.sty",
+      "sha256": "d5d36ad74051ad36288242b51438e2d9a5db2bd6c063b9b5704d0931fbc9f439",
+      "package": "geometry",
+      "source_path": "texmf-dist/tex/latex/geometry/geometry.sty",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/geometry/geometry.sty?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "gettitlestring.sty",
+      "sha256": "26ab10fd43fd5a90f98bcbed3a99978808da8878eb73835db4e0346371aee41e",
+      "package": "gettitlestring",
+      "source_path": "texmf-dist/tex/generic/gettitlestring/gettitlestring.sty",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "glyphlist.txt",
+      "sha256": "1d090feeb2cef487186d67f42d0b106bf09abf67e2cd94ab99e238d57c561d56",
+      "package": "glyphlist",
+      "source_path": "texmf-dist/fonts/map/glyphlist/glyphlist.txt",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/fonts/map/glyphlist/glyphlist.txt?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "graphics.cfg",
+      "sha256": "feb91e48789a21e4acced98e952c77a2e2cf4a77e01bf147b59fa56a1b3f2008",
+      "package": "graphics-cfg",
+      "source_path": "texmf-dist/tex/latex/graphics-cfg/graphics.cfg",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/graphics-cfg/graphics.cfg?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "graphics.sty",
+      "sha256": "63cb7c6ae98653209d8f77ee842849676930fd694bc45a771309e0486c1cd9b5",
+      "package": "graphics",
+      "source_path": "texmf-dist/tex/latex/graphics/graphics.sty",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/graphics/graphics.sty?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "graphicx.sty",
+      "sha256": "da1e0ad80baeea2859059307358257c506069c91bdd29fde9e12ee957cc5db44",
+      "package": "graphics",
+      "source_path": "texmf-dist/tex/latex/graphics/graphicx.sty",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/graphics/graphicx.sty?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hxetex.def",
+      "sha256": "e75c6f3b53051c998018e827df34d74c86ff643f76111bd94efa716ba6ab7ea2",
+      "package": "hyperref",
+      "source_path": "texmf-dist/tex/latex/hyperref/hxetex.def",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/hyperref/hxetex.def?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hycolor.sty",
+      "sha256": "8acaa03eda19a8158780356701e905e354e1dc47dc736e6e26fc860c12a15e14",
+      "package": "hycolor",
+      "source_path": "texmf-dist/tex/latex/hycolor/hycolor.sty",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/hycolor/hycolor.sty?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyperref.sty",
+      "sha256": "deda7321a95e6307e3c6d03975704440ce0ab81b5dbadecf82acce4365091e4e",
+      "package": "hyperref",
+      "source_path": "texmf-dist/tex/latex/hyperref/hyperref.sty",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/hyperref/hyperref.sty?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-af.tex",
+      "sha256": "9c413b121d989ad8f0c95c0a4e4fa3bb78d412404919e04b71f609e10a85099f",
+      "package": "hyphen-afrikaans",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-af.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-af.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-as.tex",
+      "sha256": "c0d23a0364983038ee73fdc9ee54dc8faa23d38111991b7c5c2b31833f22a050",
+      "package": "hyphen-indic",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-as.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-as.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-be.tex",
+      "sha256": "ce0c69d86e03c40bdd0ab9f4535cee2503fe2894590380e45a99974f029cea6f",
+      "package": "hyphen-belarusian",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-be.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-be.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-bg.tex",
+      "sha256": "d37886f8cecea60bf829e4dd9dc1107aea8e8ee3eb92425423534bafac5f59b0",
+      "package": "hyphen-bulgarian",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-bg.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-bg.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-bn.tex",
+      "sha256": "b44ca65373a702020d5ffbf1acdffa78f5b4d3259b4f18a12a88b2a71ae2445d",
+      "package": "hyphen-indic",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-bn.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-bn.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-ca.tex",
+      "sha256": "153b51e2a9f8afdd87a8848f73f4462a902c58d597aa55c66506af65c5596e7a",
+      "package": "hyphen-catalan",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-ca.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-ca.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-cop.tex",
+      "sha256": "e66cbaa15da902f47cf955bd654f2eb0afe2abe5d1c819db1fd8186b98c7bb40",
+      "package": "hyphen-coptic",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-cop.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-cop.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-cs.tex",
+      "sha256": "37b16173109c9c1a34d04c87eeb4ea8206d55e636c380dbcd72e912b4ca5033a",
+      "package": "hyphen-czech",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-cs.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-cs.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-cu.tex",
+      "sha256": "f4636573f2e35ac367159d286bf4b8f65fb68d3bc2712b3e763ad53d498a56ca",
+      "package": "hyphen-churchslavonic",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-cu.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-cu.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-cy.tex",
+      "sha256": "22c4d441e790c035bd208c4cccbe9a8254ab81c3da0ca0a8b062f8ed34f3e14c",
+      "package": "hyphen-welsh",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-cy.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-cy.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-da.tex",
+      "sha256": "23e0a50f0c20d632be06f973e700323463961eac737bb14f6c3787675a4f5575",
+      "package": "hyphen-danish",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-da.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-da.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-de-1901.tex",
+      "sha256": "0ddaf40840131da550564a606d9f806f001ca3e72e67475ef3c4f79a1ab1e9c9",
+      "package": "hyphen-german",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-de-1901.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-de-1901.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-de-1996.tex",
+      "sha256": "162ae879d2e61112bf7ab37b2bf47027e3df409f2641fb9b8cd6e6388c6d547d",
+      "package": "hyphen-german",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-de-1996.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-de-1996.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-de-ch-1901.tex",
+      "sha256": "8ec39fd63d22fc935fe2a2839dd73c88d061b51225e7218a6b90e67be7c2f937",
+      "package": "hyphen-german",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-de-ch-1901.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-de-ch-1901.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-el-monoton.tex",
+      "sha256": "abfd086443070d6c7e89710dc87429dce51bda1b55a6afd03e43f1d1cd04ff4a",
+      "package": "hyphen-greek",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-el-monoton.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-el-monoton.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-el-polyton.tex",
+      "sha256": "716cc8bd2e46a52e66a5d86ebe2f886a222d1ce0941378c7a5ab56bd8eee43f7",
+      "package": "hyphen-greek",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-el-polyton.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-el-polyton.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-en-gb.tex",
+      "sha256": "e95bb4ab350f620c41c231c4785d7bdb4f91949d3e631b30e08b3ead3c340a52",
+      "package": "hyphen-english",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-en-gb.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-en-gb.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-en-us.tex",
+      "sha256": "f4ffcd96c5cbc886bdad23f95dcae8edc3cd3620eae62f7946eceda97c4e68f8",
+      "package": "hyphen-english",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-en-us.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-en-us.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-eo.tex",
+      "sha256": "6892e3758fd35a1cb509556bb06fcb008eda3e975a867ee87eb828f204460d18",
+      "package": "hyphen-esperanto",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-eo.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-eo.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-es.tex",
+      "sha256": "6a2e5f39a991a23d1cd8a23dbd0f6fe96a9f07561a6695f4f3320f47030e236c",
+      "package": "hyphen-spanish",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-es.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-es.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-et.tex",
+      "sha256": "617abc528446e33c1690a3d13ae7629292d2f00557b1b4ec96cb2a1d790ac090",
+      "package": "hyphen-estonian",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-et.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-et.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-eu.tex",
+      "sha256": "e080a1e42ac443d8451df46d9d6628e64e8317aa53d826f99099652aaba613d0",
+      "package": "hyphen-basque",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-eu.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-eu.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-fi-x-school.tex",
+      "sha256": "264a2ba2ab5237246f0bd902c7b3f111b03662ddd55c4dab03a9897e47e5491c",
+      "package": "hyphen-finnish",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-fi-x-school.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-fi-x-school.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-fi.tex",
+      "sha256": "cf68be5eb003d299f85f2b7185f31d8ff5799c19dfad3f0300eaf9843e9cc8d3",
+      "package": "hyphen-finnish",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-fi.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-fi.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-fr.tex",
+      "sha256": "526cad6fe8f52fcd3caa3fcaf667cb1740cfc14bca198680e00dc343a84594de",
+      "package": "hyphen-french",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-fr.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-fr.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-fur.tex",
+      "sha256": "1987a744179d443677258f9ac0ef941fd2673e235aa576c20da64e352c95f6aa",
+      "package": "hyphen-friulan",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-fur.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-fur.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-ga.tex",
+      "sha256": "7856cb341fd978b910c3807aa6918b39791e2f507d803253daccb5c71bbc02c6",
+      "package": "hyphen-irish",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-ga.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-ga.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-gl.tex",
+      "sha256": "a0756f747765a075edd1ee7d2be8fcf9ff8068f554166a79f5a760659307fde3",
+      "package": "hyphen-galician",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-gl.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-gl.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-grc.tex",
+      "sha256": "dee55cf442ba4f4c5655622571ee796bede243a65ef2286858b28db7f1b40d78",
+      "package": "hyphen-ancientgreek",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-grc.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-grc.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-gu.tex",
+      "sha256": "7b9f11a5fb0ab27bad7ed3a0b9dbb1ef33d67050069610cc7630de35d2a34cda",
+      "package": "hyphen-indic",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-gu.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-gu.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-hi.tex",
+      "sha256": "a55a2766d7e1c2d36991f4fccfef639016721b41593029043c2d13bc340ef632",
+      "package": "hyphen-indic",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-hi.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-hi.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-hr.tex",
+      "sha256": "69d684289c626c2576678112699c960d5821b52e7addbd473c0e8d0ef0c1694e",
+      "package": "hyphen-croatian",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-hr.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-hr.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-hsb.tex",
+      "sha256": "0b961d89317523960f41b2f32742abf807a253717200d9756b8d69c12f895fcf",
+      "package": "hyphen-uppersorbian",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-hsb.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-hsb.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-hu.tex",
+      "sha256": "c6f02d2b6f49d5068035f7bbc91aaeefd0b691ff806c17539a033a716c374692",
+      "package": "hyphen-hungarian",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-hu.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-hu.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-hy.tex",
+      "sha256": "a132d1fdfafbc601da8540c3bc8419335dde455369b80c3a0a8ce06116eec449",
+      "package": "hyphen-armenian",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-hy.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-hy.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-ia.tex",
+      "sha256": "c2e570831d02831f2c2c26e17ebe68d81c02a1c2cfbf4ac9d182610d6a0c6e3d",
+      "package": "hyphen-interlingua",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-ia.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-ia.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-id.tex",
+      "sha256": "95bb9f56044f5f4bcceb838224a13d560df0188f0d91543c8d3b4c9a2abfc032",
+      "package": "hyphen-indonesian",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-id.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-id.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-is.tex",
+      "sha256": "2707969ebe34a9ddfd861aaef40619e75ac78453718a56401aed91c5cbdcfcec",
+      "package": "hyphen-icelandic",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-is.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-is.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-it.tex",
+      "sha256": "6ce56ed6ed2ca7c0688838e366e6595e0429f984f4fc6e96ec045cebb1e76a47",
+      "package": "hyphen-italian",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-it.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-it.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-ka.tex",
+      "sha256": "8044f2b27b802b996209cdbf8594f4c2fbf6f7a3cbb142eb529ddf2a50bc1e3b",
+      "package": "hyphen-georgian",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-ka.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-ka.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-kmr.tex",
+      "sha256": "2299d69ff2e093291338275b20fa85a35c62abc156835647d5d91a9dfad476eb",
+      "package": "hyphen-kurmanji",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-kmr.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-kmr.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-kn.tex",
+      "sha256": "2f88ea093e99239f7c22a2b26455fcebec7a9dbcbfbfd73683582ea3af5fc99c",
+      "package": "hyphen-indic",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-kn.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-kn.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-la-x-classic.tex",
+      "sha256": "68257e2ce6ee077f635e38c700734ede7d1ebb4f4708546b878a0bee68bd7d8f",
+      "package": "hyphen-latin",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-la-x-classic.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-la-x-classic.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-la-x-liturgic.tex",
+      "sha256": "60fea9390492d86bf701f77da8ac818a027da7ea9badb2965e9889ddeb95a5d0",
+      "package": "hyphen-latin",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-la-x-liturgic.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-la-x-liturgic.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-la.tex",
+      "sha256": "84e0be1877beaf6d1d7a83d5639fb65a0e0645cd2447b0dbccfa5e63565abdfd",
+      "package": "hyphen-latin",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-la.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-la.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-lt.tex",
+      "sha256": "6162b566620367abb827ba1457567e7a79680596919886a7138e48b346e983d1",
+      "package": "hyphen-lithuanian",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-lt.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-lt.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-lv.tex",
+      "sha256": "209e0a5b09aaf68517724a2cecc7b7bbd278355ffdd918051ce23110687e3d3c",
+      "package": "hyphen-latvian",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-lv.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-lv.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-mk.tex",
+      "sha256": "3cd8cf3ad015adec006523ba0c087069ee262f06625275ad4a332d3051f655fd",
+      "package": "hyphen-macedonian",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-mk.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-mk.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-ml.tex",
+      "sha256": "b37b1446d79587003d85887731df822aa01afea2f6d8cc5728d55e00a92edb8d",
+      "package": "hyphen-indic",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-ml.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-ml.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-mn-cyrl-x-lmc.tex",
+      "sha256": "fd41a62b83e0229b188756eb0afe27555bf425f94354a8adeadc23406676c238",
+      "package": "hyphen-mongolian",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-mn-cyrl-x-lmc.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-mn-cyrl-x-lmc.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-mn-cyrl.tex",
+      "sha256": "22903e12e25e5348d7c2285f8d3173215540296e1b47f38515936618993988fa",
+      "package": "hyphen-mongolian",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-mn-cyrl.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-mn-cyrl.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-mr.tex",
+      "sha256": "dd033b789f381081fbf05a976e34790b566f40ddcd276790f581b15b62eca844",
+      "package": "hyphen-indic",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-mr.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-mr.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-mul-ethi.tex",
+      "sha256": "df702eec647db16b37056d7850b066fb7e006a0c9753006e2cd761f19f642bff",
+      "package": "hyphen-ethiopic",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-mul-ethi.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-mul-ethi.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-nb.tex",
+      "sha256": "b111264f46d59089d4cf96691c66b637166f5aae5b86719a5b9fe32737cc0169",
+      "package": "hyphen-norwegian",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-nb.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-nb.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-nl.tex",
+      "sha256": "c3749c79c435edc8273b701148462dc3751f38f4d4e4381f7850ae4432a0a5f4",
+      "package": "hyphen-dutch",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-nl.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-nl.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-nn.tex",
+      "sha256": "f217dca0e815443bc9feac27d9eb48cf795b3f4f222afacf7f87fb6c2b0e196e",
+      "package": "hyphen-norwegian",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-nn.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-nn.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-no.tex",
+      "sha256": "05a2ac5fbf88bdc78c580e5cb8a158e6aa760d13756604f9523aa99feec3ec65",
+      "package": "hyphen-norwegian",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-no.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-no.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-oc.tex",
+      "sha256": "0a968a3588697da7c0ef13f219f45973fc75c08e8ee9253ff1a4bf567167c8fb",
+      "package": "hyphen-occitan",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-oc.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-oc.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-or.tex",
+      "sha256": "a028fb9f5554f709cbc3f073873e5771b2b669e3725c9888d917c38152d8ea0b",
+      "package": "hyphen-indic",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-or.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-or.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-pa.tex",
+      "sha256": "7582a5ac2e6959d64c13b3f2cee41222c810f1e0ed6b29c870da657fee09442a",
+      "package": "hyphen-indic",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-pa.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-pa.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-pi.tex",
+      "sha256": "d27f9141dc55bfff0a00a204fd8af2031a1fd23ead83836ffec61debf4eb9033",
+      "package": "hyphen-indic",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-pi.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-pi.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-pl.tex",
+      "sha256": "83ddbbd21bc06a44bc4f4a4c49c38782e809cff5f026b764c044daa29e818843",
+      "package": "hyphen-polish",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-pl.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-pl.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-pms.tex",
+      "sha256": "a5af2db65a7bc27318c3d0300d1a3ef332997a6d447a572aa728e0710ac3243e",
+      "package": "hyphen-piedmontese",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-pms.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-pms.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-pt.tex",
+      "sha256": "59fe5ef9929d5f82fb6fff2df4119ba30fcbb9c6a119953f8561679193e3c53d",
+      "package": "hyphen-portuguese",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-pt.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-pt.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-quote-af.tex",
+      "sha256": "80a2d5493c62f62f9df6959d4b7867d5a8158efc958d252235e00db81836b0e2",
+      "package": "hyphen-afrikaans",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/quote/hyph-quote-af.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/quote/hyph-quote-af.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-quote-be.tex",
+      "sha256": "9a055ed4d781da3111e6522862ac51d50f6670de7cf823de646f1b3bf1676b9f",
+      "package": "hyphen-belarusian",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/quote/hyph-quote-be.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/quote/hyph-quote-be.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-quote-fr.tex",
+      "sha256": "708975d63ba0777eed42b57046d4514c88170c1c924ec714837870d753bd794d",
+      "package": "hyphen-french",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/quote/hyph-quote-fr.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/quote/hyph-quote-fr.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-quote-fur.tex",
+      "sha256": "6d50da6af4bb9aaf13d4bb26692421056c7af508d71f5e9940eb5b85959182f5",
+      "package": "hyphen-friulan",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/quote/hyph-quote-fur.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/quote/hyph-quote-fur.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-quote-it.tex",
+      "sha256": "063fe294c0389c1b17383135a2d109fef2bb9bdc8e018e18113ae615576a60bd",
+      "package": "hyphen-italian",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/quote/hyph-quote-it.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/quote/hyph-quote-it.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-quote-oc.tex",
+      "sha256": "063fe294c0389c1b17383135a2d109fef2bb9bdc8e018e18113ae615576a60bd",
+      "package": "hyphen-occitan",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/quote/hyph-quote-oc.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/quote/hyph-quote-oc.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-quote-pms.tex",
+      "sha256": "bbdf4a6a82ffcb11fd4e155c132250bad1815bdd1958f65b0ce8a8b16faeb941",
+      "package": "hyphen-piedmontese",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/quote/hyph-quote-pms.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/quote/hyph-quote-pms.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-quote-rm.tex",
+      "sha256": "3af69b37f4b4b0f524d92fbe51262b9983fb4b3ecd62bdabdc4ea70c85167f76",
+      "package": "hyphen-romansh",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/quote/hyph-quote-rm.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/quote/hyph-quote-rm.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-quote-uk.tex",
+      "sha256": "e41dcb8e394702c3958128cbfe5a9e50ffd22a4a3de72809720fba5b6f8fe73e",
+      "package": "hyphen-ukrainian",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/quote/hyph-quote-uk.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/quote/hyph-quote-uk.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-rm.tex",
+      "sha256": "c413cce7a61040348c271775786c63005050a716b69b11d2483a379d1cf44726",
+      "package": "hyphen-romansh",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-rm.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-rm.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-ro.tex",
+      "sha256": "6f09c53cc65cb6fcf4435396371c49bf50aaa88e40af7931a9e6bccc405f1fab",
+      "package": "hyphen-romanian",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-ro.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-ro.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-ru.tex",
+      "sha256": "ce988fcc66e5e29d7474df5ab5b489d3f52a50ebccf570997f992d84221b922a",
+      "package": "hyphen-russian",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-ru.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-ru.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-sa.tex",
+      "sha256": "7f895b18be9ef598dfbc490ed19a24200712652eb0c5068f5c6fd88c363759c8",
+      "package": "hyphen-sanskrit",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-sa.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-sa.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-sh-cyrl.tex",
+      "sha256": "9b0f8f489868d3f98d4dec8a5d71f465ad5a70afde6857c6c2d79ec0344618fc",
+      "package": "hyphen-serbian",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-sh-cyrl.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-sh-cyrl.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-sh-latn.tex",
+      "sha256": "5aea49c845df3c21b95e417abfc28349909a4c9565523702055a122153486a4a",
+      "package": "hyphen-serbian",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-sh-latn.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-sh-latn.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-sk.tex",
+      "sha256": "a3d18dada329f0893c55d56b456877472234304ce9c63480325dfe9ce211e257",
+      "package": "hyphen-slovak",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-sk.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-sk.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-sl.tex",
+      "sha256": "27da982d03b881fe84f1c4fb42ba0948f33e01a3a44eaa5ebd07e01d20c72691",
+      "package": "hyphen-slovenian",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-sl.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-sl.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-sv.tex",
+      "sha256": "102253382bd91cdb7535de5c20744254c9ac9aaa4ca12ed420eb835e5004c0b3",
+      "package": "hyphen-swedish",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-sv.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-sv.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-ta.tex",
+      "sha256": "7154ee4519ae5fcebbb2c1d05fd7f19820b53db8b84dbaea34e6a6f6a8fd4642",
+      "package": "hyphen-indic",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-ta.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-ta.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-te.tex",
+      "sha256": "101a8f1664ea5a7520e06f07f0275c9bdf6ad3de63d6f74c4f44fd1369396ccd",
+      "package": "hyphen-indic",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-te.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-te.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-th.tex",
+      "sha256": "2d59071f549c68419362e9489044f67cc94bd395c004479afce9dc37338fc0c5",
+      "package": "hyphen-thai",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-th.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-th.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-tk.tex",
+      "sha256": "801ef59c14dab4fec0a9ae178632e63b8ef9f0362dcea74f4a3689a4a7908690",
+      "package": "hyphen-turkmen",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-tk.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-tk.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-tr.tex",
+      "sha256": "9243b6fc1426b07dae71c6136bd7d4a907e01a36ab6326f349ee6c310e6bb2b5",
+      "package": "hyphen-turkish",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-tr.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-tr.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-uk.tex",
+      "sha256": "05fdacf5a771f5c528dd65f6f67b63fedb6f6caf768902c24ec81676e500966f",
+      "package": "hyphen-ukrainian",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-uk.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-uk.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyph-zh-latn-pinyin.tex",
+      "sha256": "c007e61bd59a16a00e12603b9a97968d730b955627d1aed5d856c5e425f7970e",
+      "package": "hyphen-chinese",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-zh-latn-pinyin.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-zh-latn-pinyin.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyphen.cfg",
+      "sha256": "b68e6ae011a0a15c12f6ab72b70a0b6e3893be885a00ef3853c67fd989c9975c",
+      "package": "babel",
+      "source_path": "texmf-dist/tex/generic/babel/hyphen.cfg",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/babel/hyphen.cfg?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "hyphen.tex",
+      "sha256": "2c18acdc04c1a066aeb1759905e7ca449f0616c314b5ed6aebe55b9d4a89b8d4",
+      "package": "hyphen-base",
+      "source_path": "texmf-dist/tex/generic/hyphen/hyphen.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyphen/hyphen.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "ibyhyph.tex",
+      "sha256": "b12db81b0c101b38b5570c21a560e71236dc16ea5540012394a6f700f9b9d59d",
+      "package": "hyphen-ancientgreek",
+      "source_path": "texmf-dist/tex/generic/hyphen/ibyhyph.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyphen/ibyhyph.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "iftex.sty",
+      "sha256": "2de50639c1f27201f2b4d04e9083e0a51fc5a73b8908eea2e80d6e3205636d4a",
+      "package": "iftex",
+      "source_path": "texmf-dist/tex/generic/iftex/iftex.sty",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/iftex/iftex.sty?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "ifvtex.sty",
+      "sha256": "1138730b9ad7d9f664b4760a4ea0ae0945afd21c006b76b67e623e863bbf3756",
+      "package": "iftex",
+      "source_path": "texmf-dist/tex/generic/iftex/ifvtex.sty",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/iftex/ifvtex.sty?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "infwarerr.sty",
+      "sha256": "8c3e23b8bb7d940ff26cb0cf96e0151f540acf55020dc3c1aa8bcdb2eb66305c",
+      "package": "infwarerr",
+      "source_path": "texmf-dist/tex/generic/infwarerr/infwarerr.sty",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/infwarerr/infwarerr.sty?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "intcalc.sty",
+      "sha256": "1343ba1b10b245bfd199c22947249af1d756808690c7811c90f07fe0a3772080",
+      "package": "intcalc",
+      "source_path": "texmf-dist/tex/generic/intcalc/intcalc.sty",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/intcalc/intcalc.sty?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "keyval.sty",
+      "sha256": "cdac603619a4c129511ef8a3abfbb4d2068b1bb67626cb30568baa0ceb26aea2",
+      "package": "graphics",
+      "source_path": "texmf-dist/tex/latex/graphics/keyval.sty",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/graphics/keyval.sty?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "kvdefinekeys.sty",
+      "sha256": "c42f0c2628dc5fbd95b535cf8cd3cc964347653c099d38c0d416f896d84e8240",
+      "package": "kvdefinekeys",
+      "source_path": "texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "kvoptions.sty",
+      "sha256": "28be410832fdddeb9c853ceb14d49845de1c62316acfe4406f8b5b60f2e13e62",
+      "package": "kvoptions",
+      "source_path": "texmf-dist/tex/latex/kvoptions/kvoptions.sty",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/kvoptions/kvoptions.sty?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "kvsetkeys.sty",
+      "sha256": "00c8665544687fea57c27a6be454f832c5190e710545102ef0507238bad1365e",
+      "package": "kvsetkeys",
+      "source_path": "texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "l3backend-xetex.def",
+      "sha256": "47e2f4fc8bda65ba3f5d295145da3f7bb783b71f2a07f11a4038e84b2fd5cd13",
+      "package": "Tectonic bundle patch/extra",
+      "source_path": "bundles/tlextras/patched/l3backend-xetex.def",
+      "url": "https://github.com/tectonic-typesetting/tectonic-texlive-bundles/blob/8710e253efcde4e84c3d2ba8a54db2d85bc27fb0/bundles/tlextras/patched/l3backend-xetex.def",
+      "revision": "8710e253efcde4e84c3d2ba8a54db2d85bc27fb0",
+      "source_kind": "bundler_patch_or_extra"
+    },
+    {
+      "cache": "l3keys2e.sty",
+      "sha256": "5420457e8d55f6c83eb4c62be750cb6a0302241dafb3f0a82e262b8ac783b0ba",
+      "package": "l3packages",
+      "source_path": "texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "latex.ltx",
+      "sha256": "70ba1d0d113a986e4966e5a7ebb5afa3fbb17843ec4395bd0187d2aa266b5646",
+      "package": "Tectonic bundle patch/extra",
+      "source_path": "bundles/tlextras/patched/latex.ltx",
+      "url": "https://github.com/tectonic-typesetting/tectonic-texlive-bundles/blob/8710e253efcde4e84c3d2ba8a54db2d85bc27fb0/bundles/tlextras/patched/latex.ltx",
+      "revision": "8710e253efcde4e84c3d2ba8a54db2d85bc27fb0",
+      "source_kind": "bundler_patch_or_extra"
+    },
+    {
+      "cache": "latex2e-first-aid-for-external-files.ltx",
+      "sha256": "1519a32708089df30c05e2ecbb61584dcb6bd325a485e4bfb90b79b46f097a27",
+      "package": "firstaid",
+      "source_path": "texmf-dist/tex/latex/firstaid/latex2e-first-aid-for-external-files.ltx",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/firstaid/latex2e-first-aid-for-external-files.ltx?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "lcircle10.tfm",
+      "sha256": "f5aaff47e226ff644ae94765b8d6012e0ffb6d62956993acac2f2dd4ad589929",
+      "package": "latex-fonts",
+      "source_path": "texmf-dist/fonts/tfm/public/latex-fonts/lcircle10.tfm",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/fonts/tfm/public/latex-fonts/lcircle10.tfm?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "lcirclew10.tfm",
+      "sha256": "7906e4c5d770db4002740cba4d8194281b06d6fe7edd9d9949b60a291b753646",
+      "package": "latex-fonts",
+      "source_path": "texmf-dist/fonts/tfm/public/latex-fonts/lcirclew10.tfm",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/fonts/tfm/public/latex-fonts/lcirclew10.tfm?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "letltxmacro.sty",
+      "sha256": "3a5e77870557530b7bef361a2d5af7346121807e335dcc291cb6fb6a773b569a",
+      "package": "letltxmacro",
+      "source_path": "texmf-dist/tex/latex/letltxmacro/letltxmacro.sty",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "line10.tfm",
+      "sha256": "250200d9efa885fecff118d72e5239adacd0783ccb00c4fb96fa677708ce5217",
+      "package": "latex-fonts",
+      "source_path": "texmf-dist/fonts/tfm/public/latex-fonts/line10.tfm",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/fonts/tfm/public/latex-fonts/line10.tfm?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "linew10.tfm",
+      "sha256": "925de632e8afb641692c58bf6c464fb1aa79782212523532590dd6b91b78c40f",
+      "package": "latex-fonts",
+      "source_path": "texmf-dist/fonts/tfm/public/latex-fonts/linew10.tfm",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/fonts/tfm/public/latex-fonts/linew10.tfm?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "load-unicode-data.tex",
+      "sha256": "399edc983618f5e9dfa2877ec9f99b6c3b082358f278a492f8178243aa2f11ed",
+      "package": "unicode-data",
+      "source_path": "texmf-dist/tex/generic/unicode-data/load-unicode-data.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/unicode-data/load-unicode-data.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "loadhyph-af.tex",
+      "sha256": "a5aad224dd2c22e9e7d001c212b0a8684903efc6cf7860516614aca10afc42ce",
+      "package": "hyphen-afrikaans",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-af.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-af.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "loadhyph-as.tex",
+      "sha256": "417ff8e76faddd7154db8f9360b3244c091216d9003ee8527cc8045ec2c66f7e",
+      "package": "hyphen-indic",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-as.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-as.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "loadhyph-be.tex",
+      "sha256": "a019fb953181b941c4ff71f04c86ff9d0e3e178f7b2e7ccfa111b48370a2659a",
+      "package": "hyphen-belarusian",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-be.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-be.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "loadhyph-bg.tex",
+      "sha256": "840416a612b28a8c7e7487dc12c81328c9133a51a86f86f01c925041354ea98f",
+      "package": "hyphen-bulgarian",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-bg.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-bg.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "loadhyph-bn.tex",
+      "sha256": "34718be2d55b622cb30614f3730073386bf319403b05e52420ec615a95e54d05",
+      "package": "hyphen-indic",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-bn.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-bn.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "loadhyph-ca.tex",
+      "sha256": "175daa786bb191aef9312d53d47bd93edf44e5df6dd0cb0cb15736ad42c41444",
+      "package": "hyphen-catalan",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-ca.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-ca.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "loadhyph-cop.tex",
+      "sha256": "81035bc2f5e9599b8bc50ba9d5bcd41240b948eb320b9b5c24b80c74e58f66b3",
+      "package": "hyphen-coptic",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-cop.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-cop.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "loadhyph-cs.tex",
+      "sha256": "cf224cb3f26a9af859e3cb0b0c4ead28313bb33b2d94f618516d65e3e6804b7d",
+      "package": "hyphen-czech",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-cs.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-cs.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "loadhyph-cu.tex",
+      "sha256": "b39d8195b52b2dffcf1a88eb81a79f6191b691c90511beda29a2e5b14b81ea6b",
+      "package": "hyphen-churchslavonic",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-cu.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-cu.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "loadhyph-cy.tex",
+      "sha256": "b7c20c72b80d07f2f99571c952c3e51b68013492cd7d5fb0a8ff1f41c4c53914",
+      "package": "hyphen-welsh",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-cy.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-cy.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "loadhyph-da.tex",
+      "sha256": "5e57a6f6d2ab2bbbf34ea213487ae1e76031516427c5a9ef8d15fa54c5c9d50d",
+      "package": "hyphen-danish",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-da.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-da.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "loadhyph-de-1901.tex",
+      "sha256": "dd90647d1078f6de0dd48228518f531fddd0414658333996c889137257b3ce3d",
+      "package": "hyphen-german",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-de-1901.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-de-1901.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "loadhyph-de-1996.tex",
+      "sha256": "0ad838f07ef23416d4b8ced7f4c230563f3a0959f0b6f81cfd66e88a2c675733",
+      "package": "hyphen-german",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-de-1996.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-de-1996.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "loadhyph-de-ch-1901.tex",
+      "sha256": "2c5757bab22bdbf1e82a33b79d47784f179e6961bea445a994c1867133d21d22",
+      "package": "hyphen-german",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-de-ch-1901.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-de-ch-1901.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "loadhyph-el-monoton.tex",
+      "sha256": "ed2fbc731e08e263959548008e9c39288c93bde48a39ab3f8613c74b55f8ff65",
+      "package": "hyphen-greek",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-el-monoton.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-el-monoton.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "loadhyph-el-polyton.tex",
+      "sha256": "f64a7db14ed565fcfbec6acad4dee8faac4cc5a3f8197f9229715547cb69820e",
+      "package": "hyphen-greek",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-el-polyton.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-el-polyton.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "loadhyph-en-gb.tex",
+      "sha256": "f79b49f8146271eab67a01e568262ebe0d817bfc13f8aec25ce311d6177b624f",
+      "package": "hyphen-english",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-en-gb.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-en-gb.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "loadhyph-en-us.tex",
+      "sha256": "fc9ed1c52e4e909a31d0a42c0c0f423c9e7b622ae7878ed47f1883e48ac53d21",
+      "package": "hyphen-english",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-en-us.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-en-us.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "loadhyph-eo.tex",
+      "sha256": "5e7c2ccef97aecd22dd3deb4c677912de6678da05764d4ba4e3ccf06e3a49068",
+      "package": "hyphen-esperanto",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-eo.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-eo.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "loadhyph-es.tex",
+      "sha256": "503984db3fd0c1a8167aebf6cde8de8dadb6d5a24c153963cae5f8138e6c24ad",
+      "package": "hyphen-spanish",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-es.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-es.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "loadhyph-et.tex",
+      "sha256": "c766f3e9cbb65ad0b11f7beb3c84c02115f7c4686dad3be08332874f4eaa8fbb",
+      "package": "hyphen-estonian",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-et.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-et.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "loadhyph-eu.tex",
+      "sha256": "eccbeaaad617afff54fad6bb35c3294982ff4ac3720b06c4c66d577adc174d99",
+      "package": "hyphen-basque",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-eu.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-eu.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "loadhyph-fi-x-school.tex",
+      "sha256": "8affc6e962e8ec85a08e478e31ac503ddcb7b8a75dcaf7fb2cf48400b2c94465",
+      "package": "hyphen-finnish",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-fi-x-school.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-fi-x-school.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "loadhyph-fi.tex",
+      "sha256": "6ee635777b5ce280e323aeaef1fac8be8fb4f6492f4d5faa5b08d6a4252bb7c9",
+      "package": "hyphen-finnish",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-fi.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-fi.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "loadhyph-fr.tex",
+      "sha256": "a6180a6456b37c37fd80e5fed6c8366c7694c0816f75b71464ddad5e062bed05",
+      "package": "hyphen-french",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-fr.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-fr.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "loadhyph-fur.tex",
+      "sha256": "6540ab775fb5fccb2bcfe490ec1d2a5e0a77bc4d506ec05d04d7b505651bae81",
+      "package": "hyphen-friulan",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-fur.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-fur.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "loadhyph-ga.tex",
+      "sha256": "73ebe8a7770b2d7862e96c588f656f78699b9ada41d79a64c0ecfa4579e632d1",
+      "package": "hyphen-irish",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-ga.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-ga.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "loadhyph-gl.tex",
+      "sha256": "5d99aee8b934fe80ee6bdfb227ddff0051959fa4742300061f90eb7e1e8bdb39",
+      "package": "hyphen-galician",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-gl.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-gl.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "loadhyph-grc.tex",
+      "sha256": "08c7932549bf7f6c6fd2913feb6772706575824b24616f546afeabfc1f492ac6",
+      "package": "hyphen-ancientgreek",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-grc.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-grc.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "loadhyph-gu.tex",
+      "sha256": "453f8ae9517d7f19de52f69ca7873e595be14cec8f2f92f3c596566bca4df2f6",
+      "package": "hyphen-indic",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-gu.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-gu.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "loadhyph-hi.tex",
+      "sha256": "b5e50dcef1a49ff2acb8cc57f046ce34817bcf9789011147af86ca7dd6b7dcc1",
+      "package": "hyphen-indic",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-hi.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-hi.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "loadhyph-hr.tex",
+      "sha256": "0baadea799304f1b80dfa08c97a99d5cf58293b625293846080f94343ca0538f",
+      "package": "hyphen-croatian",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-hr.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-hr.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "loadhyph-hsb.tex",
+      "sha256": "bd15223abf31b7729286a4ffc70d5c0a5414abbed054a91bdb6f7a38c01519fd",
+      "package": "hyphen-uppersorbian",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-hsb.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-hsb.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "loadhyph-hu.tex",
+      "sha256": "ed49bb9f763b55360c671b9619a43c207e8c2e36710d21ee55e739fdaece3f3e",
+      "package": "hyphen-hungarian",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-hu.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-hu.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "loadhyph-hy.tex",
+      "sha256": "9c74e9b56b27cdfeb01537becfddf881882e72753e54f76bf7c7aefdb29a1209",
+      "package": "hyphen-armenian",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-hy.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-hy.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "loadhyph-ia.tex",
+      "sha256": "cd3b533cf647edafde5bdeedb193003cdd8b2c1480a5a1785bc75664db34589c",
+      "package": "hyphen-interlingua",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-ia.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-ia.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "loadhyph-id.tex",
+      "sha256": "435ddde8c3f95e986035e27247c630415d7c9176c28b116d16c65b702b41d62d",
+      "package": "hyphen-indonesian",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-id.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-id.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "loadhyph-is.tex",
+      "sha256": "82e2a9411d09cdd8086b810f630aff051bb2b9bd13af92eccb6a42254b5f4729",
+      "package": "hyphen-icelandic",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-is.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-is.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "loadhyph-it.tex",
+      "sha256": "9e1497131da40926e9a1b5b70635bf6dccaea012509c8dbc0245489cd3df48b7",
+      "package": "hyphen-italian",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-it.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-it.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "loadhyph-ka.tex",
+      "sha256": "af388325534fb4fd9f43dbd93e104afb1003b35b6df57ce4183031244e7fac48",
+      "package": "hyphen-georgian",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-ka.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-ka.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "loadhyph-kmr.tex",
+      "sha256": "3fc2dcc231fdcf1fbea89dd678cefccc2c7446cd1a56358aa36d298bc888b841",
+      "package": "hyphen-kurmanji",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-kmr.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-kmr.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "loadhyph-kn.tex",
+      "sha256": "feb851c91571c86b264f5206f78591fea29be7086b13008a0917ece05f18e11b",
+      "package": "hyphen-indic",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-kn.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-kn.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "loadhyph-la-x-classic.tex",
+      "sha256": "ecd5b7d5572a0032cea6ff682be89169fed4eab8b9db97709ff176b47b661d9c",
+      "package": "hyphen-latin",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-la-x-classic.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-la-x-classic.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "loadhyph-la-x-liturgic.tex",
+      "sha256": "9fbeb42d27f532d77a8841f22a62f6a11f7a9cf865447cae2fecf6eb3f85aed9",
+      "package": "hyphen-latin",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-la-x-liturgic.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-la-x-liturgic.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "loadhyph-la.tex",
+      "sha256": "71ff015d8acdab67451e3cc2322f756b30eedf0dd9bb42857f52f9c09e350a98",
+      "package": "hyphen-latin",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-la.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-la.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "loadhyph-lt.tex",
+      "sha256": "912c29539d3298e221a1c68b8348dbe772be79570b2a193bc1131f46423e5e70",
+      "package": "hyphen-lithuanian",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-lt.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-lt.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "loadhyph-lv.tex",
+      "sha256": "64f4b0d5fb8101b7611d5d5e52608616ff934cf4141239eb7006b0844cb2ea9d",
+      "package": "hyphen-latvian",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-lv.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-lv.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "loadhyph-mk.tex",
+      "sha256": "3ef5c3ca2fd9a65b3f69d535d06ec5f13cfc4f74e3effe3b774e62a584419714",
+      "package": "hyphen-macedonian",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-mk.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-mk.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "loadhyph-ml.tex",
+      "sha256": "2f778adae962bd27184780ebc8f075a22f0d5d9b8235089fdad4ab6f04cc1142",
+      "package": "hyphen-indic",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-ml.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-ml.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "loadhyph-mn-cyrl-x-lmc.tex",
+      "sha256": "365268856ade0363c499273fd3585f1d5fe9cdd0fb4705ed4bdd0c4d21f539a0",
+      "package": "hyphen-mongolian",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-mn-cyrl-x-lmc.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-mn-cyrl-x-lmc.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "loadhyph-mn-cyrl.tex",
+      "sha256": "93d1eddd54976804afc9f8ceb4d9bd472955cc3445f47031ecfe3ffc3af7e2df",
+      "package": "hyphen-mongolian",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-mn-cyrl.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-mn-cyrl.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "loadhyph-mr.tex",
+      "sha256": "b22f6ba8e4e25b58eb0641ec54f398e9f11e3f394f923d986484a5c7ad4d6f23",
+      "package": "hyphen-indic",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-mr.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-mr.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "loadhyph-mul-ethi.tex",
+      "sha256": "98122d76bbf7597db51c8d34557d678de5cead25eb55d17a4736596be027b284",
+      "package": "hyphen-ethiopic",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-mul-ethi.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-mul-ethi.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "loadhyph-nb.tex",
+      "sha256": "3391a46e9a38de1c515df413627ba5578c3fd330fe970192612a5652a12e5f41",
+      "package": "hyphen-norwegian",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-nb.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-nb.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "loadhyph-nl.tex",
+      "sha256": "bcb8585191394743e5a391a211ef520b59ebdcc99846a4c0bfab7cf99070f1ef",
+      "package": "hyphen-dutch",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-nl.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-nl.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "loadhyph-nn.tex",
+      "sha256": "c2bbeb64f76afcf813ea2bc81da05137e02975623e01bae7fbf5b8ee3f1367dc",
+      "package": "hyphen-norwegian",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-nn.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-nn.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "loadhyph-oc.tex",
+      "sha256": "1a316945c723748b56d74a44d6d656750c83185407fb5e66f3b0f684401862e5",
+      "package": "hyphen-occitan",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-oc.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-oc.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "loadhyph-or.tex",
+      "sha256": "940d94d70e19ca0403a5311f7c5b3ef834542025915766b9abdf15c5788488ee",
+      "package": "hyphen-indic",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-or.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-or.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "loadhyph-pa.tex",
+      "sha256": "e742577a3ab4fed70d0dd972d1890ff7f75659e844ffa7b99a20951b4e88da5f",
+      "package": "hyphen-indic",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-pa.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-pa.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "loadhyph-pi.tex",
+      "sha256": "cf13042fa65c08101e4cb6b4cbfc5da94db0d84cd4f4147979cfc9b2ed9c3ce4",
+      "package": "hyphen-indic",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-pi.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-pi.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "loadhyph-pl.tex",
+      "sha256": "6a0d24ab87f1b6da2d5ec92d48f26a6e9847d49c8d4b158040feef0e860831b0",
+      "package": "hyphen-polish",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-pl.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-pl.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "loadhyph-pms.tex",
+      "sha256": "3825f71105f9b7b51b2c4e000204970622ea6755326759867079bab74d233024",
+      "package": "hyphen-piedmontese",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-pms.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-pms.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "loadhyph-pt.tex",
+      "sha256": "87c3428d0bae37568adc07479dacbea5a4ba0bb422d52ab82fc3c8823d7c5eb8",
+      "package": "hyphen-portuguese",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-pt.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-pt.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "loadhyph-rm.tex",
+      "sha256": "14fff5ecc58d1a7e1fa644bc79a72465821716e8afed9de7afe67a239dffae1b",
+      "package": "hyphen-romansh",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-rm.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-rm.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "loadhyph-ro.tex",
+      "sha256": "2688729d0648204273954d5ee044fe37aa0388414c1d49918727457db2749a0f",
+      "package": "hyphen-romanian",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-ro.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-ro.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "loadhyph-ru.tex",
+      "sha256": "c98ac4dfaed22d86afb806bf876641db4c7dc9b02b8e40dd265654c978bd7b81",
+      "package": "hyphen-russian",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-ru.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-ru.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "loadhyph-sa.tex",
+      "sha256": "466259ac8ef63d0443f4b0ea8d2d9a9af9bfe117bf59f55fd6c448c264d918e4",
+      "package": "hyphen-sanskrit",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-sa.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-sa.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "loadhyph-sk.tex",
+      "sha256": "cc5a71990cd3967880ed0bd8b8302af509f743f9d6b8cb4b92f868e0dfa45def",
+      "package": "hyphen-slovak",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-sk.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-sk.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "loadhyph-sl.tex",
+      "sha256": "03414b763c952ed508e7486bdaddc0745af8bb3bcdead33f767938f4feb0a9d5",
+      "package": "hyphen-slovenian",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-sl.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-sl.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "loadhyph-sr-cyrl.tex",
+      "sha256": "c53cf8518364a0a6f86c202a13127adbb5b147b5c7f7a8a595ea160f1310aed3",
+      "package": "hyphen-serbian",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-sr-cyrl.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-sr-cyrl.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "loadhyph-sr-latn.tex",
+      "sha256": "7a9f055b2d900f8ced36dd2c2d3ff629aecec34be726f98682069402bf4b4c43",
+      "package": "hyphen-serbian",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-sr-latn.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-sr-latn.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "loadhyph-sv.tex",
+      "sha256": "257938b3f7233ccf186e4d66cfa1b68f27d98bddc3188a81b7d7c8e5e98102cb",
+      "package": "hyphen-swedish",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-sv.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-sv.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "loadhyph-ta.tex",
+      "sha256": "1c55fab31c1d6642864b542b8b9acaaf1d3bd29bccea193f0f48d34279f32538",
+      "package": "hyphen-indic",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-ta.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-ta.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "loadhyph-te.tex",
+      "sha256": "46e6c837db5cb8c2c14dc747fd6b5997a26a320dffa905ba3364913aca02261f",
+      "package": "hyphen-indic",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-te.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-te.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "loadhyph-th.tex",
+      "sha256": "8832d0d3991c1024760682da8c709deb27132cba44a74f9d197df8037b2f41fb",
+      "package": "hyphen-thai",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-th.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-th.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "loadhyph-tk.tex",
+      "sha256": "fa2d534858fad7b9f10b60111bc22871f51ab847f2406812a98b8920b434b037",
+      "package": "hyphen-turkmen",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-tk.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-tk.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "loadhyph-tr.tex",
+      "sha256": "e8ff56c073a30d5e3b068313a15bafb0a12c9be609eeed483de72074d2aa54eb",
+      "package": "hyphen-turkish",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-tr.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-tr.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "loadhyph-uk.tex",
+      "sha256": "8067154e77d85980b4010d876d23e02ce2e3b7b25751bb6603ca82ff3656f928",
+      "package": "hyphen-ukrainian",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-uk.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-uk.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "loadhyph-zh-latn-pinyin.tex",
+      "sha256": "eef5be5a705fa50598f5759017987f35b2e31334c5972042c446e5824900dc71",
+      "package": "hyphen-chinese",
+      "source_path": "texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-zh-latn-pinyin.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-zh-latn-pinyin.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "longtable.sty",
+      "sha256": "196f2a7038e1727c4088a015bf11cac88abfedc5b7ee5eca65f44ab91dbac415",
+      "package": "tools",
+      "source_path": "texmf-dist/tex/latex/tools/longtable.sty",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/tools/longtable.sty?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "ltxcmds.sty",
+      "sha256": "72a45b7f07d85a66605bbec6c0f783527995722e15c3bc5963b3048b9831bbc0",
+      "package": "ltxcmds",
+      "source_path": "texmf-dist/tex/generic/ltxcmds/ltxcmds.sty",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "msam10.tfm",
+      "sha256": "3b54bde5cb0e0bd071eea7bc702ed3a1a284f786779ef8e75b06eba4104bb9f2",
+      "package": "amsfonts",
+      "source_path": "texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "msam5.tfm",
+      "sha256": "c800d1dfd533040219fcc06d52e0e00c2a20fb9b0039fe9f58ccec53fd003a9f",
+      "package": "amsfonts",
+      "source_path": "texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "msam7.tfm",
+      "sha256": "719d100c110fa1cfae9ad0b63e6c21753f4980f925fa516c1a04961e206f69d5",
+      "package": "amsfonts",
+      "source_path": "texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "msbm10.pfb",
+      "sha256": "d2121de7e7c14490a2d352e3b62e62882d6c300235464bfa577e6055696e6e62",
+      "package": "amsfonts",
+      "source_path": "texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "msbm10.tfm",
+      "sha256": "d9f5f519ec718e9dbccb8527c1f5d3b4a008dfb946377f97f71611b385d3d010",
+      "package": "amsfonts",
+      "source_path": "texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "msbm5.pfb",
+      "sha256": "4504066336bdfacd4a5ef1abfe80b8447ed712057ec6f66962eab31eb43a93de",
+      "package": "amsfonts",
+      "source_path": "texmf-dist/fonts/type1/public/amsfonts/symbols/msbm5.pfb",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm5.pfb?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "msbm5.tfm",
+      "sha256": "9e0909a297a3097e50960158d324006ddd5302db665400fa1fdf966df14e1a17",
+      "package": "amsfonts",
+      "source_path": "texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "msbm7.pfb",
+      "sha256": "bd86d36def0f2d226cf773a195a88f88e424759f3ddaaf654de2ae670906734e",
+      "package": "amsfonts",
+      "source_path": "texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "msbm7.tfm",
+      "sha256": "361b5530a4b410c6274e9330c11e993843c62e394323aeaa6e0aee61e8042444",
+      "package": "amsfonts",
+      "source_path": "texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "nameref.sty",
+      "sha256": "4a728ad40dd3708c44cb418f4a19bf0ba4f32fdbfa35ee3a5ad205352d5497b6",
+      "package": "hyperref",
+      "source_path": "texmf-dist/tex/latex/hyperref/nameref.sty",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/hyperref/nameref.sty?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "omlcmm.fd",
+      "sha256": "64c6d721bd82e1b1d0cdae0041737e473e7ae4b6a2ef30be5a4cb58504c2bf27",
+      "package": "latex",
+      "source_path": "texmf-dist/tex/latex/base/omlcmm.fd",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/base/omlcmm.fd?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "omlenc.def",
+      "sha256": "1a82bddbbad0234be439dffccefc2fe26ea9216520be7f1fb888293d9bbd63a4",
+      "package": "latex",
+      "source_path": "texmf-dist/tex/latex/base/omlenc.def",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/base/omlenc.def?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "omscmsy.fd",
+      "sha256": "2b7223030a17cc25d00f47cc7fe8bb503049acfce8899f0ae409e79949123ae1",
+      "package": "latex",
+      "source_path": "texmf-dist/tex/latex/base/omscmsy.fd",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/base/omscmsy.fd?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "omsenc.def",
+      "sha256": "b2ac48b774931de1988b88bcfff6076c72ba0a739420a6fdbf1378cddf2c8482",
+      "package": "latex",
+      "source_path": "texmf-dist/tex/latex/base/omsenc.def",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/base/omsenc.def?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "omxcmex.fd",
+      "sha256": "18ef86924d2a8f33abe9fa92aac9416e73bf9cc92b05e964535abb8ae23816fe",
+      "package": "latex",
+      "source_path": "texmf-dist/tex/latex/base/omxcmex.fd",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/base/omxcmex.fd?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "ot1cmr.fd",
+      "sha256": "bcc3699050bd2e0c4214ba93cf28a129f63332a0dea665c2dece1f4a9a1dd57f",
+      "package": "latex",
+      "source_path": "texmf-dist/tex/latex/base/ot1cmr.fd",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/base/ot1cmr.fd?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "ot1cmss.fd",
+      "sha256": "b997a943a79bcad7b88db340e380d87fe4f668de544e1eb76081b929024c0165",
+      "package": "latex",
+      "source_path": "texmf-dist/tex/latex/base/ot1cmss.fd",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/base/ot1cmss.fd?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "ot1cmtt.fd",
+      "sha256": "ed73ac7c8ad40924be86b895ec3bc762fb57e58963ea87d267122b98ceb9f942",
+      "package": "latex",
+      "source_path": "texmf-dist/tex/latex/base/ot1cmtt.fd",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/base/ot1cmtt.fd?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "ot1enc.def",
+      "sha256": "3b1c1cb3b065751f28a59223c3cdcbd1639549ed5a57c960f22a033d7d4799fa",
+      "package": "latex",
+      "source_path": "texmf-dist/tex/latex/base/ot1enc.def",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/base/ot1enc.def?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "pd1enc.def",
+      "sha256": "96bf91e42bc16a4038ed9690ab4f03a7c4c7228232bb7813492a58737de4bb06",
+      "package": "hyperref",
+      "source_path": "texmf-dist/tex/latex/hyperref/pd1enc.def",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/hyperref/pd1enc.def?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "pdfescape.sty",
+      "sha256": "b3f0e56366c11b85dae521f9a48a6fd415dec1ce8c83152fde813a9f64445b49",
+      "package": "pdfescape",
+      "source_path": "texmf-dist/tex/generic/pdfescape/pdfescape.sty",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/pdfescape/pdfescape.sty?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "pdfglyphlist.txt",
+      "sha256": "9d7bee92b7cfdaa6e03c7df895003145ed982be0bf6d1e78fdd5eb71bf4945aa",
+      "package": "glyphlist",
+      "source_path": "texmf-dist/fonts/map/glyphlist/pdfglyphlist.txt",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/fonts/map/glyphlist/pdfglyphlist.txt?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "pdftexcmds.sty",
+      "sha256": "2df7e0bd148c99d8097352b8ac9948dccf91d61ba360dcf43f82206933b6045b",
+      "package": "pdftexcmds",
+      "source_path": "texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "plain.bst",
+      "sha256": "19f2cf88686b86aaa8e65d5f0313a92499815761e04b42e84ea2c3dc3685ada9",
+      "package": "bibtex",
+      "source_path": "texmf-dist/bibtex/bst/base/plain.bst",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/bibtex/bst/base/plain.bst?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "preload.cfg",
+      "sha256": "26b89597c49af2ab6b8fda1a3dffc5cd8edb6259a23b9b57c7892bae07b75e5c",
+      "package": "latex",
+      "source_path": "texmf-dist/tex/latex/base/preload.cfg",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/base/preload.cfg?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "preload.ltx",
+      "sha256": "05d0c64b1212bb3e6d733290a504773f64ce030f64ee91b0daf9992f20815404",
+      "package": "latex",
+      "source_path": "texmf-dist/tex/latex/base/preload.ltx",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/base/preload.ltx?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "puenc.def",
+      "sha256": "69ac820f22e954a34cc9b1a24b74107366effd89a196516b58b00c89e748a677",
+      "package": "hyperref",
+      "source_path": "texmf-dist/tex/latex/hyperref/puenc.def",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/hyperref/puenc.def?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "pzdr.tfm",
+      "sha256": "6b4254217851e285d1d5c6dfe677284396eeffc59f709ad775404b76dc99d513",
+      "package": "zapfding",
+      "source_path": "texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "refcount.sty",
+      "sha256": "1bd5d42025520bef74f8808af99cf3f3be7d2e3774b9931bf85c11ba81bb6cab",
+      "package": "refcount",
+      "source_path": "texmf-dist/tex/latex/refcount/refcount.sty",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/refcount/refcount.sty?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "rerunfilecheck.sty",
+      "sha256": "c206a966a49fe47d1c59723d116dac95994468272cda392a56cf7379519c460f",
+      "package": "rerunfilecheck",
+      "source_path": "texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "size10.clo",
+      "sha256": "dee88bc30609ea53e4004f8baf91a2951050a635751fecf1c9b1eb7cf471302e",
+      "package": "latex",
+      "source_path": "texmf-dist/tex/latex/base/size10.clo",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/base/size10.clo?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "size11.clo",
+      "sha256": "efc946da03cfa55c75be27d73012ab866fcc935fd47ac4a674026bbdbdcfa9f1",
+      "package": "latex",
+      "source_path": "texmf-dist/tex/latex/base/size11.clo",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/base/size11.clo?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "size12.clo",
+      "sha256": "750c804ea549929991e6d010d56871ae9dd039ad02007b7d47c3159f49e2199d",
+      "package": "latex",
+      "source_path": "texmf-dist/tex/latex/base/size12.clo",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/base/size12.clo?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "stringenc.sty",
+      "sha256": "b134a7bba648a6987afc83ddfb6a3fcdad43bcae6b616e533eb484306d56ac45",
+      "package": "stringenc",
+      "source_path": "texmf-dist/tex/generic/stringenc/stringenc.sty",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/stringenc/stringenc.sty?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "t1cmr.fd",
+      "sha256": "90dce135f4859c6e3276b9a19a08b8af76457881dbf9523d2313fa23d973af7c",
+      "package": "latex",
+      "source_path": "texmf-dist/tex/latex/base/t1cmr.fd",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/base/t1cmr.fd?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "t1enc.def",
+      "sha256": "537d0535c1eb3d4ff06f28398b4e3ec3c2a7b66d0ad046441e6856bddd6c8871",
+      "package": "latex",
+      "source_path": "texmf-dist/tex/latex/base/t1enc.def",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/base/t1enc.def?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "tectonic-format-latex.tex",
+      "sha256": "86d8d12cfdfbe74a81b9df7c5b38a766303a772d57e7cb0d228e1e7b9294cf34",
+      "package": "Tectonic bundle patch/extra",
+      "source_path": "bundles/tlextras/extras/tectonic-format-latex.tex",
+      "url": "https://github.com/tectonic-typesetting/tectonic-texlive-bundles/blob/8710e253efcde4e84c3d2ba8a54db2d85bc27fb0/bundles/tlextras/extras/tectonic-format-latex.tex",
+      "revision": "8710e253efcde4e84c3d2ba8a54db2d85bc27fb0",
+      "source_kind": "bundler_patch_or_extra"
+    },
+    {
+      "cache": "tex-text.tec",
+      "sha256": "511836c4d363daffa1c789956bdb44b89ac526ef3e4215a846c313b717447d40",
+      "package": "xetex",
+      "source_path": "texmf-dist/fonts/misc/xetex/fontmapping/base/tex-text.tec",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/fonts/misc/xetex/fontmapping/base/tex-text.tec?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "texglyphlist.txt",
+      "sha256": "4b11bf2dcd65b004ee2023c5392339aaf89429bef0d3ace13b7b098d108cd991",
+      "package": "glyphlist",
+      "source_path": "texmf-dist/fonts/map/glyphlist/texglyphlist.txt",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/fonts/map/glyphlist/texglyphlist.txt?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "texsys.cfg",
+      "sha256": "a0986d94c81fd7ce2251695a1affc58060055ccc9430483e64a73f4aa5e53306",
+      "package": "latex",
+      "source_path": "texmf-dist/tex/latex/base/texsys.cfg",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/base/texsys.cfg?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "trig.sty",
+      "sha256": "4af1b021af86649d926eb025a92fa4a3603f0d65893ccdb6fb756b5a16810a51",
+      "package": "graphics",
+      "source_path": "texmf-dist/tex/latex/graphics/trig.sty",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/graphics/trig.sty?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "ts1enc.def",
+      "sha256": "0cb1bfd59bf0af4f46eb9b48af25331a9583d186fff93810a6204ebc4cb45659",
+      "package": "latex",
+      "source_path": "texmf-dist/tex/latex/base/ts1enc.def",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/base/ts1enc.def?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "ts1lmr.fd",
+      "sha256": "ecda20924242346d91d241e19c89a9a36c7423dc76b1c94e4a3d4d8b51d235d7",
+      "package": "lm",
+      "source_path": "texmf-dist/tex/latex/lm/ts1lmr.fd",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/lm/ts1lmr.fd?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "tuenc.def",
+      "sha256": "9893474e5e84d8015aebe5094efbc9383ad4adee1a41553f80dfc468c8e483c6",
+      "package": "latex",
+      "source_path": "texmf-dist/tex/latex/base/tuenc.def",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/base/tuenc.def?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "tulmr.fd",
+      "sha256": "043558fa61747653d027ba166253292ef24348c1ebe393792f5e1d93f5ed64d7",
+      "package": "latex",
+      "source_path": "texmf-dist/tex/latex/base/tulmr.fd",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/base/tulmr.fd?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "tulmss.fd",
+      "sha256": "ef1e9b4bd9b66df17293e552ecbb60401cdb8fb394e60ae79d30990d1c8297cb",
+      "package": "latex",
+      "source_path": "texmf-dist/tex/latex/base/tulmss.fd",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/base/tulmss.fd?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "tulmtt.fd",
+      "sha256": "f73aad3758a44b0bb462d99b3dad4232ef1a8fbbb31808cbfa75ca0c1f669fa2",
+      "package": "latex",
+      "source_path": "texmf-dist/tex/latex/base/tulmtt.fd",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/base/tulmtt.fd?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "ucmr.fd",
+      "sha256": "85f78f04e6a9625407f86d519344d3135ff5225f18ef624665a4c0b2e1befdd3",
+      "package": "latex",
+      "source_path": "texmf-dist/tex/latex/base/ucmr.fd",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/base/ucmr.fd?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "umsa.fd",
+      "sha256": "48355e960333be747dd7b4500e76fde7c3ef0b1fa9c74ec0f1438af0d3a661a4",
+      "package": "amsfonts",
+      "source_path": "texmf-dist/tex/latex/amsfonts/umsa.fd",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/amsfonts/umsa.fd?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "umsb.fd",
+      "sha256": "e20f21f6ed631cbe3a627d5da5fef82367732a7d51207f8df5ee7e9c77ee342e",
+      "package": "amsfonts",
+      "source_path": "texmf-dist/tex/latex/amsfonts/umsb.fd",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/amsfonts/umsb.fd?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "uniquecounter.sty",
+      "sha256": "9d11c81501953d689787ff14c073d2f1eda5874068db9e882b8dbbf9a9d863b0",
+      "package": "uniquecounter",
+      "source_path": "texmf-dist/tex/generic/uniquecounter/uniquecounter.sty",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "url.sty",
+      "sha256": "2373f56849ac606473e77053e5c1d14c92aba312b3f684e02a130eaf36f2de47",
+      "package": "url",
+      "source_path": "texmf-dist/tex/latex/url/url.sty",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/url/url.sty?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "xcolor.sty",
+      "sha256": "121f45cee5e0a32583909763f95b1aae2c8f0d0a086def03fd958ebdad5e5c02",
+      "package": "xcolor",
+      "source_path": "texmf-dist/tex/latex/xcolor/xcolor.sty",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/xcolor/xcolor.sty?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "xeCJK.cfg",
+      "sha256": "d00c2b56efa858dc83077ae89cf6ca90c38fea38b568bf5082932d371ab6e928",
+      "package": "xecjk",
+      "source_path": "texmf-dist/tex/xelatex/xecjk/xeCJK.cfg",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/xelatex/xecjk/xeCJK.cfg?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "xeCJK.sty",
+      "sha256": "5b9c518115b9cca05d8eccd53f37f77f59618a771d18f8dea83a8963cf66dcb0",
+      "package": "xecjk",
+      "source_path": "texmf-dist/tex/xelatex/xecjk/xeCJK.sty",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/xelatex/xecjk/xeCJK.sty?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "xeCJKfntef.sty",
+      "sha256": "cb3ae7c1ffe3aa2c76beca7dddb4f7af929662e4f656e64b3a37a9c61d5e77ea",
+      "package": "xecjk",
+      "source_path": "texmf-dist/tex/xelatex/xecjk/xeCJKfntef.sty",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/xelatex/xecjk/xeCJKfntef.sty?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "xebabel.def",
+      "sha256": "95718f62527966b22816d91d433f5bb7baf5204e7d7cdb51275ace15bb8ed716",
+      "package": "babel",
+      "source_path": "texmf-dist/tex/generic/babel/xebabel.def",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/babel/xebabel.def?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "xelatex.ini",
+      "sha256": "1f0fd8f63b3244b8d56f245aae51f1003b9fe56599b9a60aa28bd1a9fb8b8628",
+      "package": "tex-ini-files",
+      "source_path": "texmf-dist/tex/generic/tex-ini-files/xelatex.ini",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/tex-ini-files/xelatex.ini?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "xetex.def",
+      "sha256": "17273ae47424a5bdb23bdb9ee10b09f7c0ba27d2332830eb770b59e6aab5ab97",
+      "package": "graphics-def",
+      "source_path": "texmf-dist/tex/latex/graphics-def/xetex.def",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/graphics-def/xetex.def?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "xparse.sty",
+      "sha256": "c10bc5df2c6dc10c1e796988a4095d3a8a2728e33e0d0e7230e4a5d999d3a5ec",
+      "package": "l3packages",
+      "source_path": "texmf-dist/tex/latex/l3packages/xparse/xparse.sty",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/l3packages/xparse/xparse.sty?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "xtemplate.sty",
+      "sha256": "c14a350598ab3f6f75d231d824324d3d3f57fff106e46dbec1aea236a5eed2da",
+      "package": "l3packages",
+      "source_path": "texmf-dist/tex/latex/l3packages/xtemplate/xtemplate.sty",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/l3packages/xtemplate/xtemplate.sty?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "zerohyph.tex",
+      "sha256": "80b6e5b7ff3bcd2ff1d32599f9fcd7d3aa40a4c67aa06f72527dd6eb741b551c",
+      "package": "hyphen-base",
+      "source_path": "texmf-dist/tex/generic/hyphen/zerohyph.tex",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/generic/hyphen/zerohyph.tex?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "zhnumber-utf8.cfg",
+      "sha256": "b217bfb03da50e010f8a754a1a032e8193d4f41d301168f4c68626700d6086ab",
+      "package": "zhnumber",
+      "source_path": "texmf-dist/tex/latex/zhnumber/zhnumber-utf8.cfg",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/zhnumber/zhnumber-utf8.cfg?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    },
+    {
+      "cache": "zhnumber.sty",
+      "sha256": "a324376d169185aa4bfb3aed1afea96de41e2e26510c5cf92842aada82a7fc50",
+      "package": "zhnumber",
+      "source_path": "texmf-dist/tex/latex/zhnumber/zhnumber.sty",
+      "url": "https://git.texlive.info/texlive/plain/Master/texmf-dist/tex/latex/zhnumber/zhnumber.sty?id=082081a375be008c2e049cd7cf1137314f888b18",
+      "revision": "082081a375be008c2e049cd7cf1137314f888b18",
+      "source_kind": "texlive"
+    }
+  ],
+  "source_requirements_complete": false,
+  "limitations": [
+    "This is a partial set of resource provenance and notice evidence, not product redistribution clearance.",
+    "The bundler reference matches individual files; the exact builder HEAD used for the online tar has not been independently established.",
+    "Matched runtime TeX source files are not the complete work or preferred source required by every package.",
+    "Runtime font, metric and conversion files are matched by bytes; this does not make them preferred source or establish the applicable license of every file."
+  ]
+}

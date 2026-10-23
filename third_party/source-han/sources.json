@@ -1,0 +1,64 @@
+{
+  "research_date": "2026-10-22",
+  "sources": [
+    {
+      "repo": "adobe-fonts/source-han-sans",
+      "tag": "2.005R",
+      "commit": "6c709ca72d3d7c46ab42ebecc1a26e7d69595a37",
+      "license_url": "https://github.com/adobe-fonts/source-han-sans/blob/6c709ca72d3d7c46ab42ebecc1a26e7d69595a37/LICENSE.txt",
+      "files": [
+        {
+          "name": "SourceHanSansCN-Bold.otf",
+          "size": 8569308,
+          "git_blob_sha1": "49a623f360e4dfca8e96df4e0681150d76dcaf89",
+          "url": "https://github.com/adobe-fonts/source-han-sans/blob/6c709ca72d3d7c46ab42ebecc1a26e7d69595a37/SubsetOTF/CN/SourceHanSansCN-Bold.otf",
+          "download_url": "https://api.github.com/repos/adobe-fonts/source-han-sans/git/blobs/49a623f360e4dfca8e96df4e0681150d76dcaf89",
+          "sha256": "62383707c086a32f3afd5e293f34c7eff64c7fea31f579fdc6cbe34d920519a6"
+        },
+        {
+          "name": "SourceHanSansCN-Regular.otf",
+          "size": 8429224,
+          "git_blob_sha1": "5e6605995d5cbc432c4273f566a5f2b8c376c682",
+          "url": "https://github.com/adobe-fonts/source-han-sans/blob/6c709ca72d3d7c46ab42ebecc1a26e7d69595a37/SubsetOTF/CN/SourceHanSansCN-Regular.otf",
+          "download_url": "https://api.github.com/repos/adobe-fonts/source-han-sans/git/blobs/5e6605995d5cbc432c4273f566a5f2b8c376c682",
+          "sha256": "e2bc8a2e7f37474b774fff8db758681ece40bb6947a90d571bce9dd60671a8e4"
+        }
+      ],
+      "notice": {
+        "path": "sans/LICENSE.txt",
+        "sha256": "fcac737e761ec63dbfbdce11030a1780161920d80315edba9c8beff1c2bac5a2",
+        "git_blob_sha1": "3ff0ccaba06857bf292ade9a50f16a0f02b3b8d4"
+      }
+    },
+    {
+      "repo": "adobe-fonts/source-han-serif",
+      "tag": "2.003R",
+      "commit": "7889f11bf31170b5d092a083b357c8c8130f89e0",
+      "license_url": "https://github.com/adobe-fonts/source-han-serif/blob/7889f11bf31170b5d092a083b357c8c8130f89e0/LICENSE.txt",
+      "files": [
+        {
+          "name": "SourceHanSerifCN-Bold.otf",
+          "size": 12094680,
+          "git_blob_sha1": "f8528fae3e7790e4e9a7660841590181826be5a1",
+          "url": "https://github.com/adobe-fonts/source-han-serif/blob/7889f11bf31170b5d092a083b357c8c8130f89e0/SubsetOTF/CN/SourceHanSerifCN-Bold.otf",
+          "download_url": "https://api.github.com/repos/adobe-fonts/source-han-serif/git/blobs/f8528fae3e7790e4e9a7660841590181826be5a1",
+          "sha256": "4ee555ae58b3d22f6a95c2c494f2c36b7cccfc1d2224635f6461a03756f0e3c1"
+        },
+        {
+          "name": "SourceHanSerifCN-Regular.otf",
+          "size": 11626108,
+          "git_blob_sha1": "a4feb5f2461886dbf9cfe575974f0a68940c6bf9",
+          "url": "https://github.com/adobe-fonts/source-han-serif/blob/7889f11bf31170b5d092a083b357c8c8130f89e0/SubsetOTF/CN/SourceHanSerifCN-Regular.otf",
+          "download_url": "https://api.github.com/repos/adobe-fonts/source-han-serif/git/blobs/a4feb5f2461886dbf9cfe575974f0a68940c6bf9",
+          "sha256": "3754ea669c530e2473354f8f6d9f79680a44d7e26ec7d00eeabee4a7e0753c5d"
+        }
+      ],
+      "notice": {
+        "path": "serif/LICENSE.txt",
+        "sha256": "9ff5bb567e1b92c801fc1069e5fbf992ff8efccacb9db94e5959a5b3ba9bb903",
+        "git_blob_sha1": "07235a78b936958799812313565ba0d03e7cd7dd"
+      }
+    }
+  ],
+  "schema_version": 1
+}

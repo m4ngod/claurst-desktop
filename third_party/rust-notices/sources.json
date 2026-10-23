@@ -1,0 +1,26 @@
+[
+  {
+    "name": "alloc-stdlib",
+    "version": "0.2.2",
+    "path": "alloc-stdlib-0.2.2/LICENSE",
+    "url": "https://raw.githubusercontent.com/dropbox/rust-alloc-no-stdlib/6032b6a9b20e03737135c55a0270ccffcc1438ef/LICENSE",
+    "vcs_revision": "6032b6a9b20e03737135c55a0270ccffcc1438ef",
+    "sha256": "c0c56f26d9c051cac4d200c34c84e7ae9aaa853e01a982a1df08b09931e518ae"
+  },
+  {
+    "name": "dasp_sample",
+    "version": "0.11.0",
+    "path": "dasp_sample-0.11.0/LICENSE-MIT",
+    "url": "https://raw.githubusercontent.com/rustaudio/sample/97c3bb9b2363c0b46ac1633858bf1054fd02a980/LICENSE-MIT",
+    "vcs_revision": "97c3bb9b2363c0b46ac1633858bf1054fd02a980",
+    "sha256": "b1d6df41ed3aa96806e74c729444d7c121d90e6660a6aed01d298e03fde475a0"
+  },
+  {
+    "name": "rmcp",
+    "version": "1.7.0",
+    "path": "rmcp-1.7.0/LICENSE",
+    "url": "https://raw.githubusercontent.com/modelcontextprotocol/rust-sdk/3529c3675ff64db805bd947ca6ece6090809e43d/LICENSE",
+    "vcs_revision": "3529c3675ff64db805bd947ca6ece6090809e43d",
+    "sha256": "0382b0057770ca05e9c350a50aa3b1c1fea84da0bc81d723bf00b9aa841be58a"
+  }
+]

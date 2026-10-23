@@ -1,0 +1,32 @@
+\documentclass[UTF8,fontset=claurst]{ctexart}
+\usepackage[a4paper,margin=25mm]{geometry}
+\usepackage{amsmath,amssymb,booktabs,longtable,array,graphicx,xcolor,hyperref}
+\title{中文排版资源验收}
+\author{Claurst 合成测试}
+\date{2026年10月22日}
+\begin{document}
+\maketitle
+\begin{abstract}
+中文摘要：Abstract budget 73 + 7 = 80. 本段验证标准摘要字号的离线字体资源。
+\end{abstract}
+\input{sections/intro.tex}
+\begin{equation}73+7=80,\quad x\in\mathbb{R}\end{equation}
+\begin{center}
+\begin{tabular}{lr}
+\toprule 项目 & 金额（元） \\
+\midrule 原预算 & 73 \\ 追加 & 7 \\ 合计 & 80 \\
+\bottomrule
+\end{tabular}
+\end{center}
+\begin{figure}[h]
+\centering\includegraphics[width=30mm]{diagram.png}
+\caption{由程序生成的合成色块，用于验证支持图片随项目保存。}
+\end{figure}
+{\textbf{Bold 加粗} \textit{Italic 斜体} \textsl{Slanted} \textsf{Sans} \texttt{Mono}}
+{\sffamily\bfseries Bold sans} {\sffamily\itshape Italic sans}
+{\ttfamily\bfseries Bold mono} {\ttfamily\itshape Italic mono}
+{\heiti 黑体} {\songti 宋体} {\emph{中文强调}}
+\textcolor{blue}{颜色样本}，第\ref{sec:intro}节验证交叉引用。
+\bibliographystyle{plain}
+\bibliography{references}
+\end{document}

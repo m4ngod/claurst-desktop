@@ -1,0 +1,420 @@
+[
+  {
+    "url": "https://mirrors.ctan.org/fonts/fandol.zip",
+    "archive_sha256": "9278f01b417ded5766d98c3937192a1a6a2c73a5e94a3493fdfc932b2a55005a",
+    "matches": [
+      {
+        "cache": "FandolFang-Regular.otf",
+        "sha256": "d838ad32ce2244d8144f408c37fe71065aba6fbbc80759a4d2aa2033948d5bc9",
+        "archive_paths": [
+          "fandol/FandolFang-Regular.otf"
+        ]
+      },
+      {
+        "cache": "FandolHei-Bold.otf",
+        "sha256": "42ca2de27b45e16a284768673b6205a5add9e17871ee0e7db9c0d03f061d96fd",
+        "archive_paths": [
+          "fandol/FandolHei-Bold.otf"
+        ]
+      },
+      {
+        "cache": "FandolHei-Regular.otf",
+        "sha256": "4afa97aa8751e0118617df88272b58d43691b5cffb7ea024c4580496e9f34d28",
+        "archive_paths": [
+          "fandol/FandolHei-Regular.otf"
+        ]
+      },
+      {
+        "cache": "FandolKai-Regular.otf",
+        "sha256": "ea7e7fb4f9b3ac694a68d43946e04d21deed6e8c29a7c2d3081e1a4138f2f827",
+        "archive_paths": [
+          "fandol/FandolKai-Regular.otf"
+        ]
+      },
+      {
+        "cache": "FandolSong-Bold.otf",
+        "sha256": "ffa76a70e128947a4dd22151d5ee829b23e24ce3cb6fe8ad49891cd1c2d9e9b9",
+        "archive_paths": [
+          "fandol/FandolSong-Bold.otf"
+        ]
+      },
+      {
+        "cache": "FandolSong-Regular.otf",
+        "sha256": "a3820003227d4abe31fe28b493200d94a849ccfd078b50a019264f70353020b0",
+        "archive_paths": [
+          "fandol/FandolSong-Regular.otf"
+        ]
+      }
+    ],
+    "different_same_name": [],
+    "name": "fandol",
+    "version": "0.3",
+    "notice_files": [
+      {
+        "path": "fandol-0.3/README",
+        "archive_path": "fandol/README",
+        "sha256": "32537e063f4c7d4aebf016d5c8279cbce13f34fc8970f24b2578a3c04d0f8ca6"
+      },
+      {
+        "path": "fandol-0.3/COPYING",
+        "archive_path": "fandol/COPYING",
+        "sha256": "853b586f0d520493390e571431afaf36a5fbb27dcfd239338a7ee9b0505cb004"
+      }
+    ]
+  },
+  {
+    "url": "https://mirrors.ctan.org/fonts/lm.zip",
+    "archive_sha256": "71c48809cb50fbfe09c8eddaa251398957c7b243acdf69f7f807268f0d42c939",
+    "matches": [
+      {
+        "cache": "lmmono10-italic.otf",
+        "sha256": "14e6328a5383d2b927c47051093ce0aff60deea07e6df71b8b99ee8d9c2ff8f2",
+        "archive_paths": [
+          "lm/fonts/opentype/public/lm/lmmono10-italic.otf"
+        ]
+      },
+      {
+        "cache": "lmmono10-regular.otf",
+        "sha256": "22deb6d3be3ffcb40b33f0e010afb256c677d97c2a2bdee1f5740cdc97751558",
+        "archive_paths": [
+          "lm/fonts/opentype/public/lm/lmmono10-regular.otf"
+        ]
+      },
+      {
+        "cache": "lmmono12-regular.otf",
+        "sha256": "b826e490fa671f254840abe88afea0975b606f57fb4a8b93f53787c26d8ac319",
+        "archive_paths": [
+          "lm/fonts/opentype/public/lm/lmmono12-regular.otf"
+        ]
+      },
+      {
+        "cache": "lmmono8-regular.otf",
+        "sha256": "17319490d20f24e192bd7e7999484b95111a4654ac2620e7aa215591142ae997",
+        "archive_paths": [
+          "lm/fonts/opentype/public/lm/lmmono8-regular.otf"
+        ]
+      },
+      {
+        "cache": "lmmono9-regular.otf",
+        "sha256": "cdd53c7dc01a1d25f21eaf7cae44bfb8a9665e4cbd60e5f8da14287aca819bb9",
+        "archive_paths": [
+          "lm/fonts/opentype/public/lm/lmmono9-regular.otf"
+        ]
+      },
+      {
+        "cache": "lmmonolt10-bold.otf",
+        "sha256": "2f4ae1bd30d4203a1c74c61d61dddbd5e2c2d5a7001d456b1b98e08b7c47ffb9",
+        "archive_paths": [
+          "lm/fonts/opentype/public/lm/lmmonolt10-bold.otf"
+        ]
+      },
+      {
+        "cache": "lmmonolt10-boldoblique.otf",
+        "sha256": "a739b6deaafe0b9e8ae1eec9db1f425c52e1f6f483ca8e07e359bdd118310bba",
+        "archive_paths": [
+          "lm/fonts/opentype/public/lm/lmmonolt10-boldoblique.otf"
+        ]
+      },
+      {
+        "cache": "lmroman10-bold.otf",
+        "sha256": "102fe06c430a8b681b2bf6876b7cd967ae4d47b4b6b41d915eb7913b726d9fb1",
+        "archive_paths": [
+          "lm/fonts/opentype/public/lm/lmroman10-bold.otf"
+        ]
+      },
+      {
+        "cache": "lmroman10-bolditalic.otf",
+        "sha256": "c37a28eed7a6e03f792b98b5e5f637b2fcda378bb4855f99284f1a88fe35f124",
+        "archive_paths": [
+          "lm/fonts/opentype/public/lm/lmroman10-bolditalic.otf"
+        ]
+      },
+      {
+        "cache": "lmroman10-italic.otf",
+        "sha256": "c1fce25075567bb8dbf2151658c3b442690041db17a2d49fc9e55905ea5b7169",
+        "archive_paths": [
+          "lm/fonts/opentype/public/lm/lmroman10-italic.otf"
+        ]
+      },
+      {
+        "cache": "lmroman10-regular.otf",
+        "sha256": "1aa18cfefa58132c52ce5de70db1fd1154201c19cd2b2cdaffba4906a33e6852",
+        "archive_paths": [
+          "lm/fonts/opentype/public/lm/lmroman10-regular.otf"
+        ]
+      },
+      {
+        "cache": "lmroman12-bold.otf",
+        "sha256": "28c8782ac2b6486958b5dc7610ada7800c53546ff7f36bc65909a876e1cd338e",
+        "archive_paths": [
+          "lm/fonts/opentype/public/lm/lmroman12-bold.otf"
+        ]
+      },
+      {
+        "cache": "lmroman12-italic.otf",
+        "sha256": "ada6b3f451238784e5a5ea75d43efa1eb4329cd75ce65bf047ed2f31b7b5e2f3",
+        "archive_paths": [
+          "lm/fonts/opentype/public/lm/lmroman12-italic.otf"
+        ]
+      },
+      {
+        "cache": "lmroman12-regular.otf",
+        "sha256": "e6be218ae83e61aa8a29990d3cdc401c678c1962188cb9a4a8b6359e4f5e5870",
+        "archive_paths": [
+          "lm/fonts/opentype/public/lm/lmroman12-regular.otf"
+        ]
+      },
+      {
+        "cache": "lmroman17-regular.otf",
+        "sha256": "ed048c80fb4b67663b80899b89fe5fba17d7442e1286d61fd08fe5689c6b7c3c",
+        "archive_paths": [
+          "lm/fonts/opentype/public/lm/lmroman17-regular.otf"
+        ]
+      },
+      {
+        "cache": "lmroman5-bold.otf",
+        "sha256": "6326fb955d07bedcc8f73684e6b6bfa76706d38f3a85bd89c0659504ace366a1",
+        "archive_paths": [
+          "lm/fonts/opentype/public/lm/lmroman5-bold.otf"
+        ]
+      },
+      {
+        "cache": "lmroman5-regular.otf",
+        "sha256": "954bd9c376597c7043e7b616430163e0158155edf7434fd70082cf8460c08533",
+        "archive_paths": [
+          "lm/fonts/opentype/public/lm/lmroman5-regular.otf"
+        ]
+      },
+      {
+        "cache": "lmroman6-bold.otf",
+        "sha256": "f1ebd52916182bfc2e3f9d4b5ba847ad6acc6c7761354c0dc052fb01ec14f73c",
+        "archive_paths": [
+          "lm/fonts/opentype/public/lm/lmroman6-bold.otf"
+        ]
+      },
+      {
+        "cache": "lmroman6-regular.otf",
+        "sha256": "501396c437f76c260b8724265b8495f318a640ee5a4674852ecbb20daf256696",
+        "archive_paths": [
+          "lm/fonts/opentype/public/lm/lmroman6-regular.otf"
+        ]
+      },
+      {
+        "cache": "lmroman7-bold.otf",
+        "sha256": "063ea9e378b4fca4fd59771cf522faa21eb7c8516c89464745c79725b384fb9a",
+        "archive_paths": [
+          "lm/fonts/opentype/public/lm/lmroman7-bold.otf"
+        ]
+      },
+      {
+        "cache": "lmroman7-italic.otf",
+        "sha256": "19d20f2bb00fbffe5d3d66e9b6a54f0108289068029e9d88649d981d53613ddf",
+        "archive_paths": [
+          "lm/fonts/opentype/public/lm/lmroman7-italic.otf"
+        ]
+      },
+      {
+        "cache": "lmroman7-regular.otf",
+        "sha256": "48c4b46ab255eec96588fb992fba1ed6102e53d051da480738a61cc6cdb328c3",
+        "archive_paths": [
+          "lm/fonts/opentype/public/lm/lmroman7-regular.otf"
+        ]
+      },
+      {
+        "cache": "lmroman8-bold.otf",
+        "sha256": "04d4f633c3da31a169f4c54a7fe8c7e63925b39d030381f8d3eab955f16be7b2",
+        "archive_paths": [
+          "lm/fonts/opentype/public/lm/lmroman8-bold.otf"
+        ]
+      },
+      {
+        "cache": "lmroman8-italic.otf",
+        "sha256": "fb0536b5c3eee5b5622cd827ceb410e6514e36512ebdc51d2cf98a96c06d44e8",
+        "archive_paths": [
+          "lm/fonts/opentype/public/lm/lmroman8-italic.otf"
+        ]
+      },
+      {
+        "cache": "lmroman8-regular.otf",
+        "sha256": "f73015c3827596586faa380c398501caf9b5bcbb6f40b46af6a51277ca97c9fc",
+        "archive_paths": [
+          "lm/fonts/opentype/public/lm/lmroman8-regular.otf"
+        ]
+      },
+      {
+        "cache": "lmroman9-bold.otf",
+        "sha256": "f72feac9ea12eb858d8093d6c0ee710a6c25f59b61278c88ec41c0a680838415",
+        "archive_paths": [
+          "lm/fonts/opentype/public/lm/lmroman9-bold.otf"
+        ]
+      },
+      {
+        "cache": "lmroman9-italic.otf",
+        "sha256": "2106cffcdc9f9cb411d7c3441e34d77a168b998a58b40e727ab5b815437d1975",
+        "archive_paths": [
+          "lm/fonts/opentype/public/lm/lmroman9-italic.otf"
+        ]
+      },
+      {
+        "cache": "lmroman9-regular.otf",
+        "sha256": "8ab7b017fc67ea0e30cbf9e7ebd940010442ea67b40cf65f87d73f3ca11b0e6f",
+        "archive_paths": [
+          "lm/fonts/opentype/public/lm/lmroman9-regular.otf"
+        ]
+      },
+      {
+        "cache": "lmromancaps10-regular.otf",
+        "sha256": "1ab40332a969892c7ed6cb010193b5276ccef1da6798bcbd1a465fee23d29334",
+        "archive_paths": [
+          "lm/fonts/opentype/public/lm/lmromancaps10-regular.otf"
+        ]
+      },
+      {
+        "cache": "lmromanslant10-regular.otf",
+        "sha256": "056ad4d08d2eb58d6b7fd0ac5de3f1fb799f2bb0c16b66c7e6b5bc5b6aef6481",
+        "archive_paths": [
+          "lm/fonts/opentype/public/lm/lmromanslant10-regular.otf"
+        ]
+      },
+      {
+        "cache": "lmromanslant12-regular.otf",
+        "sha256": "25f2ecfb860f2e45e6ebe69d11bc6305f5bfbef8f13476638ba291f47d1f130c",
+        "archive_paths": [
+          "lm/fonts/opentype/public/lm/lmromanslant12-regular.otf"
+        ]
+      },
+      {
+        "cache": "lmromanslant17-regular.otf",
+        "sha256": "4f30eda1d4674a1f4eea513b3baf85e3ba3fb17b2e4cf09bf627aee91dc0a4cc",
+        "archive_paths": [
+          "lm/fonts/opentype/public/lm/lmromanslant17-regular.otf"
+        ]
+      },
+      {
+        "cache": "lmromanslant8-regular.otf",
+        "sha256": "a88ecd1a6b4d5aa1c9d537b98d0de8e19d63b292918fabf0cc36158ed770ca63",
+        "archive_paths": [
+          "lm/fonts/opentype/public/lm/lmromanslant8-regular.otf"
+        ]
+      },
+      {
+        "cache": "lmromanslant9-regular.otf",
+        "sha256": "7441aee0c9dfbca16118fc7fe339c2e6c79ecc966a51ac1f76860351b6a8f02e",
+        "archive_paths": [
+          "lm/fonts/opentype/public/lm/lmromanslant9-regular.otf"
+        ]
+      },
+      {
+        "cache": "lmsans10-bold.otf",
+        "sha256": "a597b710326c1a8a2c7238d808e5d38711638a72a32383478db4829d63afd687",
+        "archive_paths": [
+          "lm/fonts/opentype/public/lm/lmsans10-bold.otf"
+        ]
+      },
+      {
+        "cache": "lmsans10-boldoblique.otf",
+        "sha256": "e45673d84754a94f2f053bd4c15950b4b320144fbb622c630a26fd7b68cfabc5",
+        "archive_paths": [
+          "lm/fonts/opentype/public/lm/lmsans10-boldoblique.otf"
+        ]
+      },
+      {
+        "cache": "lmsans10-oblique.otf",
+        "sha256": "1b38b36efc21f9d3f34edf6a13f9d71f59c41f824e790f5d3ee5ba5b4936f377",
+        "archive_paths": [
+          "lm/fonts/opentype/public/lm/lmsans10-oblique.otf"
+        ]
+      },
+      {
+        "cache": "lmsans10-regular.otf",
+        "sha256": "d431b786b9b603662718e79cfe9b441f47a8b0b3e854dde89d5acb3ed7cfd682",
+        "archive_paths": [
+          "lm/fonts/opentype/public/lm/lmsans10-regular.otf"
+        ]
+      },
+      {
+        "cache": "lmsans12-oblique.otf",
+        "sha256": "1f138e6203f7092f9a01f6193ed97d971b5045b99969f3a62c7e43a7faabc1c0",
+        "archive_paths": [
+          "lm/fonts/opentype/public/lm/lmsans12-oblique.otf"
+        ]
+      },
+      {
+        "cache": "lmsans12-regular.otf",
+        "sha256": "f87ebdea035a96e8787e2c663cfcc78ce73205d37800eafe7948278e2cc7666a",
+        "archive_paths": [
+          "lm/fonts/opentype/public/lm/lmsans12-regular.otf"
+        ]
+      },
+      {
+        "cache": "lmsans17-oblique.otf",
+        "sha256": "0f6a4450c5fc9afd3650f24ad9003684fff3252691bbf2a33be94b383db8a77c",
+        "archive_paths": [
+          "lm/fonts/opentype/public/lm/lmsans17-oblique.otf"
+        ]
+      },
+      {
+        "cache": "lmsans17-regular.otf",
+        "sha256": "f6c395a436e4fa7e88bbf1445e64b9c78ce4effba3668b13cc433077fc71a984",
+        "archive_paths": [
+          "lm/fonts/opentype/public/lm/lmsans17-regular.otf"
+        ]
+      },
+      {
+        "cache": "lmsans8-oblique.otf",
+        "sha256": "7f4227513bfd47b7077bedd125caa4c0a223a2cdad17a1470145cdea83353c88",
+        "archive_paths": [
+          "lm/fonts/opentype/public/lm/lmsans8-oblique.otf"
+        ]
+      },
+      {
+        "cache": "lmsans8-regular.otf",
+        "sha256": "04f0d25ca474494cb707e752170f6c22cdcb8ae2b5fb80872143e18d5cc463f8",
+        "archive_paths": [
+          "lm/fonts/opentype/public/lm/lmsans8-regular.otf"
+        ]
+      },
+      {
+        "cache": "lmsans9-oblique.otf",
+        "sha256": "ac0535d7d4a8eb1b531c5faeb9060a4b9bac397d72cf54191ef53eea6f66b617",
+        "archive_paths": [
+          "lm/fonts/opentype/public/lm/lmsans9-oblique.otf"
+        ]
+      },
+      {
+        "cache": "lmsans9-regular.otf",
+        "sha256": "80ef596460b7b402621780f7cd73a348efedc4cd2c6deca37da58f07ee61b85d",
+        "archive_paths": [
+          "lm/fonts/opentype/public/lm/lmsans9-regular.otf"
+        ]
+      },
+      {
+        "cache": "ts1lmr.fd",
+        "sha256": "ecda20924242346d91d241e19c89a9a36c7423dc76b1c94e4a3d4d8b51d235d7",
+        "archive_paths": [
+          "lm/tex/latex/lm/ts1lmr.fd"
+        ]
+      }
+    ],
+    "different_same_name": [],
+    "name": "lm",
+    "version": "2.005",
+    "notice_files": [
+      {
+        "path": "lm-2.005/README-Latin-Modern.TXT",
+        "archive_path": "lm/doc/fonts/lm/README-Latin-Modern.TXT",
+        "sha256": "7cac4a4a78985ccb1ed429bb2eddf32eeb2e413c94493c7b268385bb7b525250"
+      },
+      {
+        "path": "lm-2.005/GUST-FONT-LICENSE.TXT",
+        "archive_path": "lm/doc/fonts/lm/GUST-FONT-LICENSE.TXT",
+        "sha256": "49ea6cb9257bbee0a3979c48a774cd221550ac1c20c95549efe45fc99cc18050"
+      },
+      {
+        "path": "lm-2.005/MANIFEST-Latin-Modern.TXT",
+        "archive_path": "lm/doc/fonts/lm/MANIFEST-Latin-Modern.TXT",
+        "sha256": "402c79f4ede8548a6fe6f82f42f0288cb0243ba2403dfdeeaadf55d189a46fae"
+      }
+    ]
+  }
+]
