@@ -82,4 +82,4 @@ cargo check --manifest-path vendor/claurst/src-rust/Cargo.toml --workspace --loc
 
 开发构建显式指定 Apple 芯片 macOS 13 目标，并核对五个实际二进制的架构、最低系统、系统动态依赖和固定签名身份。macOS 13 是编译目标，当前实际验证宿主仍为 macOS 27.0.1，尚不能承诺其它系统版本已通过安装验收。构建期间源码发生变化会停止发布最新应用路径。
 
-提交构建输入并重新构建后，可运行 `sh scripts/package-desktop.sh` 生成 `.build/packages/candidate-*`。其中包含本地签名应用 ZIP、与构建输入逐文件匹配的提交源码 ZIP、构建记录、包检查报告、解压功能回归日志和 SHA-256 校验值。打包必须通过当前 DesktopCore 驱动包内组件的混合研究检查；这不替代打包 UI 或无开发环境验证。`candidate-mpGA4v` 已有独立的干净 Mac 功能验收证据，后续包须按实际变化复验。GPLv3 许可选择已确认；最新 `candidate-lxG7UT` 已完成说明窗口、原文导出和包内回归，见[复验记录](docs/build/verification-19-notices.md)。Developer ID 分发与公证及 GitHub 公开下载仍未完成。
+提交构建输入并重新构建后，可运行 `sh scripts/package-desktop.sh` 生成 `.build/packages/candidate-*`。其中包含本地签名应用 ZIP、与构建输入逐文件匹配的提交源码 ZIP、构建记录、包检查报告、解压功能回归日志和 SHA-256 校验值。打包必须通过当前 DesktopCore 驱动包内组件的混合研究检查；这不替代打包 UI 或无开发环境验证。`candidate-mpGA4v` 已有独立的干净 Mac 功能验收证据，后续包须按实际变化复验。GPLv3 许可选择已确认；最新 `candidate-lxG7UT` 已完成说明窗口、原文导出和包内回归，见[复验记录](docs/build/verification-19-notices.md)。GitHub 已公开上述未公证预览版及源码材料；Developer ID 分发与公证尚不具备账户条件。实际浏览器下载后的启动验收见[公开下载记录](docs/build/public-download-verification.md)。
