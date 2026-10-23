@@ -1,10 +1,16 @@
-# Claurst Desktop（开发中）
+# Claurst Desktop
 
 基于 Claurst 0.2.0 的独立 Apple 芯片 Mac 应用。原生 SwiftUI 界面采用对话为主的 A 布局，按需展开成果侧栏。执行通过 Claurst ACP，不依赖官方 Claude Code。
 
 Claurst Desktop 的项目新增代码按 **GNU General Public License 第 3 版（GPL-3.0-only）** 发布。你可以按该许可证使用、修改和再分发；软件不提供担保。上游 Claurst 和第三方组件保留各自版权及适用条款，详见 [LICENSE](LICENSE)、[第三方说明](THIRD_PARTY_NOTICES.md) 和随 Release 提供的对应源码材料。
 
-当前支持新任务、流式回复、任务隔离、模型设置与系统钥匙串存储，以及文本文件读取、来源行号、文件创建与覆盖、真实差异和越界授权。已加入停止、补充要求、关键问题回答，以及退出后查看历史并继续。已接入文字型 PDF、DOCX 正文解析、XLSX/CSV 读取和分组求和、本地扫描识别、经能力检查的模型图像读取、联网搜索与网页来源，以及离线 LaTeX 编译和 PDF 预览。混合素材串联回归及真实研究窗口验收已通过，正式发布仍在推进，没有公开下载版本。阿里云服务上的 Qwen 和 Deepseek 均已完成可复现的搜索状态修复样例；Qwen 经人工纠正与续行交付十页研究报告并完成页面核对。2026-10-22 用户取消第二家独立服务的首版验收要求。实际验证范围与已观察到的限制见 [模型兼容记录](docs/build/model-compatibility.md)。
+当前支持新任务、流式回复、任务隔离、模型设置与系统钥匙串存储，以及文本文件读取、来源行号、文件创建与覆盖、真实差异和越界授权。已加入停止、补充要求、关键问题回答，以及退出后查看历史并继续。已接入文字型 PDF、DOCX 正文解析、XLSX/CSV 读取和分组求和、本地扫描识别、经能力检查的模型图像读取、联网搜索与网页来源，以及离线 LaTeX 编译和 PDF 预览。混合素材串联回归及真实研究窗口验收已通过。首个未公证预览版已公开，实际浏览器下载与启动验收仍在进行。阿里云服务上的 Qwen 和 Deepseek 均已完成可复现的搜索状态修复样例；Qwen 经人工纠正与续行交付十页研究报告并完成页面核对。2026-10-22 用户取消第二家独立服务的首版验收要求。实际验证范围与已观察到的限制见 [模型兼容记录](docs/build/model-compatibility.md)。
+
+## 下载与安装
+
+[下载 0.1.0-preview.1（Apple 芯片 Mac）](https://github.com/m4ngod/claurst-desktop/releases/tag/v0.1.0-preview.1)。这是使用 Apple Development 证书签名的未公证预览版，首次打开可能需要在 macOS「隐私与安全性」中手动允许。请先阅读发布说明并核对 `SHA256SUMS`；不要关闭 Gatekeeper 或移除隔离属性。
+
+同一 Release 提供匹配的项目源码、第三方对应源码与重建材料。实际系统提示和下载验收结果见 [公开下载与启动记录](docs/build/public-download-verification.md)。应用运行无需安装 Xcode、Rust 或系统 TeX；需要自行配置有权限使用的模型服务。
 
 ## 构建和运行
 

@@ -21,3 +21,5 @@
 正式下载路径计划使用 **Developer ID Application 签名、公证及附加票据**，随后在干净虚拟机通过浏览器下载并正常启动验证。现有 Apple Development 签名仅有本地候选与共享卷启动证据。Apple 说明 Developer ID 证书用于 App Store 以外的分发，创建者需具备 Developer Program 对应账户权限；公证检查由 Apple 服务执行。[Apple 分发说明](https://developer.apple.com/developer-id/)、[证书创建说明](https://developer.apple.com/help/account/certificates/create-developer-id-certificates/)
 
 用户已确认采用上述 GPLv3 项目许可与组件分支，暂时没有付费会员。继续完成公开源码与本地发布材料；Developer ID 公证下载路线尚不具备账户条件，不将 Apple Development 候选宣称为公证版。是否公开未公证的测试下载包属于分发方式的实际取舍，必须明确说明 Gatekeeper 限制并验证实际下载路径，不自动等同于首版安装验收。不会代用户购买会员、接受条款或处理账号凭据。
+
+2026-10-24：用户明确选择先发布未公证预览版，并验证实际下载与启动。首个预览版使用 `v0.1.0-preview.1` 标签，标记为 GitHub prerelease；保留现有 Apple Development 签名，随包提供匹配源码、第三方材料与摘要。发布说明明确首次打开可能需要用户在「隐私与安全性」中手动允许。继续执行真实浏览器下载和干净虚拟机启动验证，不关闭 Gatekeeper、不移除隔离属性。用户同时选择使用 GitHub 官方 CLI 的浏览器登录补齐写入权限；已进入实际授权页，最终账号授权由用户核对后完成。
