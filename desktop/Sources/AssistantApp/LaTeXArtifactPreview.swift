@@ -33,18 +33,18 @@ import DesktopCore
                     Button("在 Finder 中显示") {
                         if allowed(artifact.pdfFile) { NSWorkspace.shared.activateFileViewerSelecting([artifact.pdfFile]) }
                     }
-                } label: { Image(systemName: "ellipsis.circle") }.help("成果操作").accessibilityLabel("成果操作")
+                } label: { Image(systemName: "ellipsis.circle") }.menuStyle(.borderlessButton).fixedSize().help("成果操作").accessibilityLabel("成果操作")
                 Button { expanded = true } label: { Image(systemName: "arrow.up.left.and.arrow.down.right") }
                     .help("放大 PDF 预览").accessibilityLabel("放大 PDF 预览").disabled(pdfData == nil)
-                Button(action: close) { Image(systemName: "xmark") }.help("关闭素材与成果").accessibilityLabel("关闭素材与成果")
-            }.buttonStyle(.plain)
+                Button(action: close) { Image(systemName: "xmark") }.help("关闭素材与成果").accessibilityLabel("关闭素材与成果").keyboardShortcut(.cancelAction)
+            }.buttonStyle(WorkspaceButtonStyle())
             Text("已编译 \(artifact.pageCount) 页 · \(artifact.compiledAt)")
                 .font(.caption2).foregroundColor(.secondary).lineLimit(1)
             Picker("查看成果", selection: $tab) {
                 Text("PDF").tag("PDF")
                 Text("LaTeX").tag("LaTeX")
                 Text("日志").tag("日志")
-            }.pickerStyle(.segmented)
+            }.pickerStyle(.segmented).labelsHidden()
             Group {
                 if tab == "PDF", let pdfData {
                     PDFPagePreview(data: pdfData, digest: artifact.pdfSHA256, pageCount: artifact.pageCount, page: $page)
@@ -78,7 +78,7 @@ import DesktopCore
                         HStack {
                             Text(artifact.pdfFile.lastPathComponent).font(.headline)
                             Spacer()
-                            Button("关闭放大预览") { expanded = false }
+                            Button("关闭放大预览") { expanded = false }.keyboardShortcut(.cancelAction)
                         }
                         PDFPagePreview(data: pdfData, digest: artifact.pdfSHA256, pageCount: artifact.pageCount, page: $page)
                     }.padding(16)
@@ -144,7 +144,7 @@ import DesktopCore
                 Text("第 \(page + 1) / \(pageCount) 页").font(.caption).monospacedDigit()
                 Button { page += 1 } label: { Image(systemName: "chevron.right") }
                     .help("下一页").accessibilityLabel("下一页").disabled(page + 1 >= pageCount)
-            }.buttonStyle(.plain)
+            }.buttonStyle(WorkspaceButtonStyle())
         }
     }
 }
@@ -196,7 +196,7 @@ struct LaTeXHelp: View {
     @Environment(\.dismiss) private var dismiss
     var body: some View {
         VStack(alignment: .leading, spacing: 14) {
-            HStack { Text("LaTeX 排版组件").font(.headline); Spacer(); Button("关闭") { dismiss() } }
+            HStack { Text("LaTeX 排版组件").font(.headline); Spacer(); Button("关闭") { dismiss() }.keyboardShortcut(.cancelAction) }
             Text("应用使用内置编译器与基础中文排版资源，任务编译时不联网下载。中文主文件可使用 ctexart 和 fontset=claurst，章节、图片与参考文献应保存在项目文件夹中。")
             Text("如果提示组件缺失或不完整，请重新打开完整的应用安装包；源码开发者需先完成构建文档中的排版资源准备步骤。")
             Text("如果提示找不到宏包或字体，请将具体错误留在对话中，让助手采用已包含的基础模板，或把合法可用的支持文件放入项目后再次编译。应用不会自行安装系统软件或发送项目到在线排版服务。")

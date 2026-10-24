@@ -12,7 +12,7 @@ struct SourcePreview: View {
             HStack {
                 Text(source.file.lastPathComponent).font(.headline)
                 Spacer()
-                Button("关闭") { dismiss() }
+                Button("关闭") { dismiss() }.keyboardShortcut(.cancelAction)
             }
             Text(source.file.path).font(.caption).textSelection(.enabled)
             Text((source.documentLocation?.visual == true ? "供模型查看的图像记录 · " :
@@ -36,13 +36,14 @@ struct SourcePreview: View {
             ScrollView([.horizontal, .vertical]) {
                 Text(source.excerpt).font(.system(.body, design: .monospaced)).textSelection(.enabled)
                     .frame(maxWidth: .infinity, alignment: .leading)
-            }.frame(minHeight: 240)
+            }.padding(12).frame(minHeight: 240)
+                .background(WorkspaceStyle.canvas, in: RoundedRectangle(cornerRadius: 8))
             HStack {
                 Text("这是读取时的记录；文件之后可能已改变。").font(.caption).foregroundColor(.secondary)
                 Spacer()
                 Button("打开原文件") { NSWorkspace.shared.open(source.file) }
                 Button("在 Finder 中显示") { NSWorkspace.shared.activateFileViewerSelecting([source.file]) }
             }
-        }.padding(20).frame(minWidth: 560, minHeight: 360)
+        }.padding(24).frame(minWidth: 560, minHeight: 360).background(WorkspaceStyle.surface)
     }
 }

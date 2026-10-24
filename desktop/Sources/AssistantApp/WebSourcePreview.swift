@@ -12,7 +12,7 @@ struct WebSourcePreview: View {
             HStack {
                 Text(source.displayTitle).font(.headline).lineLimit(3)
                 Spacer()
-                Button("关闭") { dismiss() }
+                Button("关闭") { dismiss() }.keyboardShortcut(.cancelAction)
             }
             Text(source.url.absoluteString).font(.caption).textSelection(.enabled)
             if source.requestedURL != source.url {
@@ -25,7 +25,8 @@ struct WebSourcePreview: View {
             ScrollView([.horizontal, .vertical]) {
                 Text(source.excerpt).font(.system(.body, design: .monospaced)).textSelection(.enabled)
                     .frame(maxWidth: .infinity, alignment: .leading)
-            }.frame(minHeight: 240)
+            }.padding(12).frame(minHeight: 240)
+                .background(WorkspaceStyle.canvas, in: RoundedRectangle(cornerRadius: 8))
             HStack {
                 Text(source.lastLine < source.totalLines ? "仅记录上方范围，仍有未读正文。" : "可对照原网页核验内容。").font(.caption).foregroundColor(.secondary)
                 Spacer()
@@ -33,7 +34,7 @@ struct WebSourcePreview: View {
                     if source.isValid { NSWorkspace.shared.open(source.url) }
                 }.disabled(!source.isValid)
             }
-        }.padding(20).frame(minWidth: 560, minHeight: 360)
+        }.padding(24).frame(minWidth: 560, minHeight: 360).background(WorkspaceStyle.surface)
     }
 }
 
