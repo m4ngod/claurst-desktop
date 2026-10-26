@@ -1,8 +1,9 @@
 {
-  "local_snapshot_revision": "2c5be6d6b34c72a40573b0f778ed9e4672c218a0",
-  "application_build_revision": "d2f8f76f75519b9a9b898e46d79845a512c5d709",
+  "local_snapshot_revision": "cb40ee203d808900bc97dd7b6cd5b815d79a4fb4",
+  "application_build_revision": "cb40ee203d808900bc97dd7b6cd5b815d79a4fb4",
   "build_inputs_match": true,
-  "file_count": 681,
-  "git_history_included": false,
-  "description": "A fresh source tree; public Git history begins here. Historical build references in docs refer to local development records, not commits available in this repository."
+  "file_count": 706,
+  "private_development_history_included": false,
+  "release": "v0.1.0-preview.2",
+  "description": "Update to the existing public source history. Only committed source changes were applied; local development history and uncommitted working files were not imported."
 }

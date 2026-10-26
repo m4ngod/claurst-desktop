@@ -56,6 +56,7 @@ final class TaskHistoryStore {
                     }
                     if !activeIDs.contains(record.task.id) { saved[record.task.id] = data }
                     var task = record.task
+                    guard !task.isTemporary else { continue }
                     let anotherOwner = ownedElsewhere(task.id)
                     task.recoveryWarnings = []
                     let references = Set(task.sources.map(\.file) + task.changes.map(\.file)
@@ -101,7 +102,7 @@ final class TaskHistoryStore {
         defer { flock(lock, LOCK_UN) }
         let encoder = JSONEncoder()
         encoder.outputFormatting = [.sortedKeys]
-        for task in tasks where leases[task.id] != nil {
+        for task in tasks where !task.isTemporary && leases[task.id] != nil {
             let data = try encoder.encode(Record(version: 1, task: task))
             guard saved[task.id] != data else { continue }
             let destination = directory.appendingPathComponent(task.id.uuidString + ".json")

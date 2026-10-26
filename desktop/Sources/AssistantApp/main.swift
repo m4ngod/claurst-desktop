@@ -90,7 +90,7 @@ private let accent = WorkspaceStyle.accent
             .onAppear { workspaceWidth = geometry.size.width }
             .onChange(of: geometry.size.width) { workspaceWidth = $0 }
         }
-        .sheet(isPresented: $settings) { ModelSettingsView(service: service, activeProfileID: $activeProfileID) }
+        .sheet(isPresented: $settings) { ModelSettingsView(service: service, activeProfileID: $activeProfileID, workspace: selected?.hasUserWorkspace == false ? nil : (selected?.workspace ?? folder)) }
         .sheet(item: $sourcePreview) { SourcePreview(source: $0) }
         .sheet(item: $webSourcePreview) { WebSourcePreview(source: $0) }
         .sheet(isPresented: $latexHelp) { LaTeXHelp() }
@@ -129,6 +129,9 @@ private let accent = WorkspaceStyle.accent
                     Text("⌘N").font(.caption).foregroundColor(.secondary)
                 }.frame(maxWidth: .infinity, alignment: .leading)
             }.buttonStyle(WorkspaceButtonStyle()).background(WorkspaceStyle.surface, in: RoundedRectangle(cornerRadius: 8))
+            Button(action: { newTask(temporary: true) }) {
+                Label("临时会话", systemImage: "eye.slash").frame(maxWidth: .infinity, alignment: .leading)
+            }.buttonStyle(WorkspaceButtonStyle())
             Button(action: { chooseFolder() }) {
                 Label("选择工作文件夹", systemImage: "folder").frame(maxWidth: .infinity, alignment: .leading)
             }.buttonStyle(WorkspaceButtonStyle())
@@ -143,6 +146,7 @@ private let accent = WorkspaceStyle.accent
                         Button { selection = task.id; folder = task.workspace } label: {
                             VStack(alignment: .leading, spacing: 6) {
                                 Text(task.title).font(.system(size: 13, weight: selection == task.id ? .medium : .regular)).lineLimit(2)
+                                if task.isTemporary { Label("临时会话", systemImage: "eye.slash").font(.caption).foregroundColor(.secondary) }
                                 TaskStatusLabel(status: task.status, compact: true)
                             }.frame(maxWidth: .infinity, alignment: .leading)
                         }.buttonStyle(WorkspaceButtonStyle(selected: selection == task.id))
@@ -169,6 +173,7 @@ private let accent = WorkspaceStyle.accent
                 .popover(isPresented: $showTaskPopover) { taskSidebar.frame(height: 460) }
             Menu {
                 Button("新任务") { newTask() }
+                Button("临时会话") { newTask(temporary: true) }
                 Button("选择工作文件夹") { chooseFolder() }
                 Button("输入任务要求") { composerFocused = true }
                 Divider()
@@ -177,6 +182,7 @@ private let accent = WorkspaceStyle.accent
                 .menuStyle(.borderlessButton).foregroundColor(.primary).tint(.primary).fixedSize(horizontal: false, vertical: true)
                 .help(selected?.title ?? "新任务")
             Spacer(minLength: 8)
+            if selected?.isTemporary == true { Label("临时会话", systemImage: "eye.slash").font(.caption).help("仅保留本次运行中的对话；不使用或保存记忆。") }
             if selected?.isTest == true { Text("测试模型").font(.caption).foregroundColor(accent) }
             TaskStatusLabel(status: selected?.status ?? .ready)
             Button { settings = true } label: { Image(systemName: "slider.horizontal.3").frame(width: 18, height: 18) }
@@ -208,6 +214,21 @@ private let accent = WorkspaceStyle.accent
         }.padding(.vertical, 36).frame(maxWidth: .infinity, alignment: .leading)
     }
 
+    private var taskNotices: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            if selected?.isTemporary == true {
+                Text("临时会话不保存聊天历史，不读取或写入记忆；仍使用自定义指令和 Soul，并将必要内容发给所选模型，提供方的数据保留由其决定。退出后预览与恢复材料消失，实际文件修改会保留。")
+                    .font(.caption).foregroundColor(.secondary).textSelection(.enabled)
+            }
+            if let notice = selected?.controlNotice {
+                Text(notice).font(.callout).foregroundColor(.secondary).textSelection(.enabled)
+            }
+            if let notice = selected?.memoryNotice {
+                Label(notice, systemImage: "brain").font(.caption).foregroundColor(.secondary).textSelection(.enabled)
+            }
+        }
+    }
+
     private var conversation: some View {
         VStack(spacing: 0) {
             ScrollViewReader { proxy in
@@ -234,9 +255,7 @@ private let accent = WorkspaceStyle.accent
                         if let error = selected?.error {
                             Label(error, systemImage: "exclamationmark.triangle").foregroundColor(.red).textSelection(.enabled)
                         }
-                        if let notice = selected?.controlNotice {
-                            Text(notice).font(.callout).foregroundColor(.secondary).textSelection(.enabled)
-                        }
+                        taskNotices
                         ForEach(selected?.recoveryWarnings ?? [], id: \.self) { warning in
                             Text(warning).font(.callout).foregroundColor(.secondary).textSelection(.enabled)
                         }
@@ -445,19 +464,19 @@ private let accent = WorkspaceStyle.accent
         }
     }
 
-    private func chooseFolder() {
+    private func chooseFolder(temporary: Bool = false) {
         let panel = NSOpenPanel()
         panel.canChooseFiles = false; panel.canChooseDirectories = true; panel.allowsMultipleSelection = false
         if panel.runModal() == .OK, let url = panel.url {
             let pending = selection == nil ? newDraft : ""
-            folder = url; selection = service.createTask(workspace: url)
+            folder = url; selection = service.createTask(workspace: url, temporary: temporary)
             composerFocused = true
             if !pending.isEmpty { draft = pending; newDraft = "" }
         }
     }
-    private func newTask() {
-        guard let folder else { chooseFolder(); return }
-        selection = service.createTask(workspace: folder)
+    private func newTask(temporary: Bool = false) {
+        guard let folder else { chooseFolder(temporary: temporary); return }
+        selection = service.createTask(workspace: folder, temporary: temporary)
         composerFocused = true
     }
     private func send() {

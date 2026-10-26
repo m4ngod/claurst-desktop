@@ -103,6 +103,9 @@ pub struct QueryConfig {
     pub degradation_enabled: bool,
     pub system_prompt: Option<String>,
     pub append_system_prompt: Option<String>,
+    /// Refresh revocable reference context at each execution request, outside
+    /// the transcript and compaction input. Never cache it in messages.
+    pub request_context: Option<Arc<dyn Fn() -> String + Send + Sync>>,
     /// Session context gathered at startup (git status, IDE context).
     /// Sent in the dynamic system block, after the cached stable block.
     pub session_context: Option<String>,
@@ -193,6 +196,8 @@ pub struct QueryConfig {
     /// `--no-auto-compact`) leaves the history alone and surfaces overflow
     /// errors; `/compact` still works.
     pub auto_compact: bool,
+    /// Desktop memory is managed exclusively by its task service.
+    pub background_memory: bool,
     /// Writer for the session this loop runs in (issue #449). When set, the
     /// history is journaled after every assistant message, every tool-result
     /// batch and every compaction, so a crash loses at most the step in
@@ -216,6 +221,7 @@ impl Default for QueryConfig {
             degradation_enabled: true,
             system_prompt: None,
             append_system_prompt: None,
+            request_context: None,
             session_context: None,
             output_style: claurst_core::system_prompt::OutputStyle::Default,
             output_style_prompt: None,
@@ -240,6 +246,7 @@ impl Default for QueryConfig {
             continuation: crate::continuation::ContinuationMode::Default,
             retry: claurst_api::RetryConfig::default(),
             auto_compact: true,
+            background_memory: true,
             session_journal: None,
             is_subagent: false,
             sandbox_state: None,
@@ -891,6 +898,16 @@ pub async fn run_query_loop(
             // Build a (possibly patched) config for system-prompt assembly.
             // Agent prompt prefix and todo nudge are both applied here.
             let mut patched = config.clone();
+            if let Some(context) = &config.request_context {
+                let current = context();
+                if !current.is_empty() {
+                    patched.append_system_prompt =
+                        Some(match patched.append_system_prompt.take() {
+                            Some(existing) => format!("{}\n\n{}", existing, current),
+                            None => current,
+                        });
+                }
+            }
 
             // Progressive tool disclosure (issue #233 completion): populate
             // `enabled_tools` from the live tool set this run exposes so
@@ -1945,7 +1962,7 @@ pub async fn run_query_loop(
 
                 // Asynchronously extract and persist session memories if warranted.
                 // Runs in a detached Tokio task so it doesn't block the query loop.
-                if session_memory::SessionMemoryExtractor::should_extract(messages) {
+                if config.background_memory && session_memory::SessionMemoryExtractor::should_extract(messages) {
                     let model_clone = config.model.clone();
                     let messages_clone = messages.clone();
                     let working_dir_clone = tool_ctx.working_dir.clone();
@@ -2003,7 +2020,7 @@ pub async fn run_query_loop(
                 // Some(task), we spawn a background subagent via AgentTool so
                 // the spawn doesn't call run_query_loop recursively from within
                 // its own future (which would make the future !Send).
-                {
+                if config.background_memory {
                     let claurst_home = claurst_core::config::Settings::config_dir();
                     let memory_dir = Some(claurst_home.join("memory"));
                     let conversations_dir = Some(claurst_home.join("conversations"));
@@ -2377,6 +2394,8 @@ mod tests {
             continuation: crate::continuation::ContinuationMode::Default,
             retry: claurst_api::RetryConfig::default(),
             auto_compact: true,
+            request_context: None,
+            background_memory: true,
             session_journal: None,
             is_subagent: false,
             sandbox_state: None,

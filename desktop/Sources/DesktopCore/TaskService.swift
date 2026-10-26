@@ -32,10 +32,14 @@ public struct DesktopTask: Identifiable, Codable {
     public var title = "新任务"
     public var workspace: URL
     public var workspaceIdentity: String?
+    public var hasUserWorkspace: Bool?
+    private(set) var temporary: Bool?
+    public var isTemporary: Bool { temporary == true }
     public var status: TaskStatus = .ready
     public var messages: [ChatMessage] = []
     public var error: String?
     public var controlNotice: String?
+    public var memoryNotice: String?
     public var recoveryWarnings: [String] = []
     public var requiresHistoryRecovery = false
     public var isTest = false
@@ -172,6 +176,18 @@ private struct FileChangeRecord: Decodable {
     @Published public private(set) var modelProfiles: [ModelProfile] = []
     @Published public private(set) var settingsError: String?
     @Published public private(set) var historyError: String?
+    @Published public private(set) var customInstructions = ""
+    @Published public private(set) var soul = ""
+    @Published public private(set) var personalizationError: String?
+    private let personalizationStore: PersonalizationStore
+    @Published public private(set) var memoryEnabled = false
+    @Published public private(set) var memories: [SavedMemory] = []
+    @Published public private(set) var memoryError: String?
+    private let memoryStore: MemoryStore
+    private var ephemeralRecords: [UUID: [String: Data]] = [:]
+    private var latestMemoryJobs: [UUID: UUID] = [:]
+    private var memoryJobs: [UUID: Task<Void, Never>] = [:]
+    private var memoryClients: [UUID: ACPProcess] = [:]
     private let storageDirectory: URL
     private let modelStore: ModelSettingsStore
     private let historyStore: TaskHistoryStore
@@ -194,6 +210,18 @@ private struct FileChangeRecord: Decodable {
         let directory = storageDirectory ?? FileManager.default.homeDirectoryForCurrentUser
             .appendingPathComponent("Library/Application Support/ClaurstDesktop", isDirectory: true)
         self.storageDirectory = directory
+        memoryStore = MemoryStore(directory: directory)
+        do {
+            let state = try memoryStore.load()
+            memoryEnabled = state.enabled; memories = state.records
+        } catch { memoryError = "记忆无法读取，暂不使用或整理；原数据已保留。" }
+        personalizationStore = PersonalizationStore(directory: directory)
+        do {
+            let value = try personalizationStore.load()
+            customInstructions = value.customInstructions
+            soul = value.soul ?? ""
+        }
+        catch { personalizationError = "个性化设置无法读取，原文件已保留。" }
         historyStore = TaskHistoryStore(directory: directory)
         modelStore = ModelSettingsStore(directory: directory, service: keychainService, allowInteraction: allowKeychainUI)
         do { modelProfiles = try modelStore.load() }
@@ -206,8 +234,154 @@ private struct FileChangeRecord: Decodable {
 
     public var historyDirectory: URL { historyStore.directory }
 
+    public func memories(in workspace: URL?) -> [SavedMemory] {
+        let key = workspace.flatMap { memoryWorkspaceKey($0) }
+        return memories.filter { $0.scope == "personal" || (key != nil && $0.workspaceKey == key) }
+    }
+
+    public func setMemoryEnabled(_ enabled: Bool) throws {
+        let state = try memoryStore.change { $0.enabled = enabled; $0.generation = UUID() }
+        applyMemoryState(state)
+        cancelMemoryJobs()
+    }
+
+    public func deleteMemory(id: UUID) throws {
+        let state = try memoryStore.change { state in
+            state.records.removeAll { $0.id == id }; state.generation = UUID()
+        }
+        applyMemoryState(state)
+        cancelMemoryJobs()
+    }
+
+    public func editMemory(id: UUID, content: String) throws {
+        let text = content.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !text.isEmpty, text.utf8.count <= 1024, !text.contains("\0"), MemoryStore.extractionInput(text, secret: "") == text else {
+            throw SettingsFailure("记忆须为不含凭据的文本，长度为 1–1024 字节。")
+        }
+        let state = try memoryStore.change { state in
+            guard let index = state.records.firstIndex(where: { $0.id == id }) else { throw SettingsFailure("这条记忆已不存在，请重新打开记忆列表。") }
+            if state.records[index].scope == "personal" && !MemoryStore.isPersonalPreference(text, category: state.records[index].category) {
+                throw SettingsFailure("个人记忆只保存通用偏好，例如「我偏好简洁回答」；项目详情请留在对应工作区。")
+            }
+            if state.records[index].protectedTopic == nil {
+                state.records[index].protectedTopic = MemoryStore.conflictTopic(state.records[index].content, personal: state.records[index].scope == "personal")
+            }
+            state.records[index].content = text
+            state.records[index].updatedAt = Date()
+            state.records[index].manuallyEdited = true
+            state.generation = UUID()
+        }
+        applyMemoryState(state); cancelMemoryJobs()
+    }
+
+    public func memoryCount(scope: MemoryClearScope, workspace: URL?) -> Int {
+        let key = workspace.flatMap { memoryWorkspaceKey($0) }
+        return memories.filter { memoryMatches($0, scope: scope, workspaceKey: key) }.count
+    }
+
+    public func clearMemories(scope: MemoryClearScope, workspace: URL?) throws {
+        let key = workspace.flatMap { memoryWorkspaceKey($0) }
+        guard scope != .workspace || key != nil else { throw SettingsFailure("请先选择有效工作区。") }
+        let state = try memoryStore.change { state in
+            state.records.removeAll { memoryMatches($0, scope: scope, workspaceKey: key) }
+            state.generation = UUID()
+        }
+        applyMemoryState(state); cancelMemoryJobs()
+    }
+
+    public func memorySource(_ memory: SavedMemory) -> String {
+        guard FileManager.default.fileExists(atPath: historyStore.directory.appendingPathComponent(memory.sourceTask.uuidString + ".json").path),
+              let task = tasks.first(where: { $0.id == memory.sourceTask }) else { return "来源已删除" }
+        return task.title + " · 第 \(memory.sourceTurn) 轮"
+    }
+
+    private func applyMemoryState(_ state: MemoryState) {
+        memoryEnabled = state.enabled; memories = state.records; memoryError = nil
+    }
+
+    private func cancelMemoryJobs() {
+        for taskID in latestMemoryJobs.keys { setMemoryNotice(taskID, "记忆整理已取消；任务成果已保留。") }
+        latestMemoryJobs.removeAll()
+        for job in memoryJobs.values { job.cancel() }
+        for client in memoryClients.values { client.close() }
+        memoryJobs.removeAll(); memoryClients.removeAll()
+    }
+
+    private func collectMemory(taskID: UUID, turn: Int, generation: UUID?, input: String, observations: String, configuration: ModelConfiguration) {
+        guard let generation, let task = tasks.first(where: { $0.id == taskID }), !task.isTemporary, task.status == .completed else { return }
+        let input = MemoryStore.extractionInput(input, secret: configuration.apiKey)
+        let observations = MemoryStore.extractionInput(observations, secret: configuration.apiKey)
+        guard !input.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else { return }
+        do { guard try memoryStore.reserve(task: taskID, turn: turn, generation: generation) else { return } }
+        catch { setMemoryNotice(taskID, "记忆未更新：无法保存处理进度；任务成果已保留。"); return }
+        let jobID = UUID()
+        latestMemoryJobs[taskID] = jobID
+        setMemoryNotice(taskID, "正在整理记忆…")
+        memoryJobs[jobID] = Task { @MainActor [weak self] in
+            guard let self else { return }
+            let runtimeDirectory = self.storageDirectory.appendingPathComponent("memory-runtime/" + jobID.uuidString)
+            defer {
+                self.memoryClients.removeValue(forKey: jobID)?.close()
+                self.memoryJobs[jobID] = nil
+                if self.latestMemoryJobs[taskID] == jobID { self.latestMemoryJobs[taskID] = nil }
+                try? FileManager.default.removeItem(at: runtimeDirectory)
+            }
+            do {
+                try Task.checkCancellation()
+                let client = try ACPProcess(executable: self.executable, secret: configuration.apiKey, runtimeDirectory: runtimeDirectory)
+                self.memoryClients[jobID] = client
+                _ = try await client.request("desktop/configure", ["cwd": task.workspace.path, "endpoint": configuration.endpoint,
+                    "model": configuration.model, "apiKey": configuration.apiKey])
+                try Task.checkCancellation()
+                let result = try await client.request("desktop/extract_memory", ["input": input, "observations": observations])
+                try Task.checkCancellation()
+                guard let text = result["text"] as? String, let data = text.data(using: .utf8), data.count <= 32_768 else { throw ServiceError("返回格式无效") }
+                struct Extraction: Decodable { let memories: [MemoryCandidate] }
+                let candidates = try JSONDecoder().decode(Extraction.self, from: data).memories
+                let accepted = try self.memoryStore.accept(candidates, input: input, observations: observations,
+                    workspaceKey: task.hasUserWorkspace == false ? nil : memoryWorkspaceKey(task.workspace), task: taskID, turn: turn, generation: generation)
+                self.applyMemoryState(accepted.state)
+                guard self.latestMemoryJobs[taskID] == jobID else { return }
+                self.setMemoryNotice(taskID, accepted.state.generation != generation ? "旧记忆整理结果已作废。" : (accepted.skippedConflicts ? "记忆整理完成；与手动更正冲突的候选已跳过。" : "记忆整理完成。"))
+            } catch {
+                guard self.latestMemoryJobs[taskID] == jobID else { return }
+                self.setMemoryNotice(taskID, Task.isCancelled ? "记忆整理已取消；任务成果已保留。" : "记忆未更新：整理失败或返回格式无效；任务成果已保留。")
+            }
+        }
+    }
+
+    private func setMemoryNotice(_ taskID: UUID, _ text: String) {
+        if let i = tasks.firstIndex(where: { $0.id == taskID }) { tasks[i].memoryNotice = text }
+    }
+
+    public func saveCustomInstructions(_ text: String) throws {
+        guard personalizationError == nil else { throw SettingsFailure(personalizationError!) }
+        let value = try personalizationStore.change { $0.customInstructions = text }
+        customInstructions = value.customInstructions; soul = value.soul ?? ""
+    }
+
+    public func saveSoul(_ text: String) throws {
+        if let personalizationError { throw SettingsFailure(personalizationError) }
+        let value = try personalizationStore.change { $0.soul = text }
+        customInstructions = value.customInstructions; soul = value.soul ?? ""
+    }
+
+    /// Import is a draft-only read; it never modifies configuration or executes content.
+    public func importSoul(from file: URL) throws -> String {
+        let handle = try FileHandle(forReadingFrom: file)
+        defer { try? handle.close() }
+        let data = try handle.read(upToCount: 32_769) ?? Data()
+        guard let text = String(data: data, encoding: .utf8) else { throw SettingsFailure("Soul 文件必须使用有效的 UTF-8 编码。") }
+        try PersonalizationStore.validate(text)
+        return text
+    }
+
+    public func exportSoul(to file: URL) throws {
+        try soul.write(to: file, atomically: true, encoding: .utf8)
+    }
+
     public func reloadHistory() {
-        let active = Set(tasks.filter { $0.status.isActive }.map(\.id))
+        let active = Set(tasks.filter { $0.status.isActive || $0.isTemporary }.map(\.id))
         let history = historyStore.load(preserving: active)
         let loaded = Set(history.tasks.map(\.id))
         tasks = (tasks.filter { active.contains($0.id) || !loaded.contains($0.id) }
@@ -398,7 +572,7 @@ private struct FileChangeRecord: Decodable {
             tasks[index].error = "正在恢复文件，请等待恢复结束后发送要求。"
             return
         }
-        do { try historyStore.claim(taskID) }
+        do { if !tasks[index].isTemporary { try historyStore.claim(taskID) } }
         catch {
             tasks[index].error = (error as? SettingsFailure)?.message ?? "无法取得任务历史的使用权，请稍后重试。"
             return
@@ -430,10 +604,13 @@ private struct FileChangeRecord: Decodable {
             tasks[current].error = error.localizedDescription
         }
     }
-    @discardableResult public func createTask(workspace: URL) -> UUID {
-        let canonical = workspace.resolvingSymlinksInPath()
-        let task = DesktopTask(workspace: canonical, workspaceIdentity: workspaceIdentity(canonical))
-        do { try historyStore.claim(task.id) }
+    @discardableResult public func createTask(workspace: URL?, temporary: Bool = false) -> UUID {
+        let id = UUID()
+        let destination = workspace ?? storageDirectory.appendingPathComponent("untitled-workspaces/" + id.uuidString)
+        if workspace == nil { try? FileManager.default.createDirectory(at: destination, withIntermediateDirectories: true, attributes: [.posixPermissions: 0o700]) }
+        let canonical = destination.resolvingSymlinksInPath().standardizedFileURL
+        let task = DesktopTask(id: id, workspace: canonical, workspaceIdentity: workspaceIdentity(canonical), hasUserWorkspace: workspace != nil, temporary: temporary)
+        do { if !temporary { try historyStore.claim(task.id) } }
         catch { historyError = "无法保存新任务，请检查历史目录权限后重试。" }
         tasks.insert(task, at: 0)
         persistHistory()
@@ -453,7 +630,7 @@ private struct FileChangeRecord: Decodable {
             tasks[index].error = "正在恢复文件，请等待恢复结束后发送要求。"
             return
         }
-        do { try historyStore.claim(taskID) }
+        do { if !tasks[index].isTemporary { try historyStore.claim(taskID) } }
         catch {
             historyError = (error as? SettingsFailure)?.message ?? "无法取得任务历史的使用权，请检查历史目录权限后重试。"
             tasks[index].error = historyError
@@ -475,7 +652,7 @@ private struct FileChangeRecord: Decodable {
         if tasks[index].status.isActive {
             let previous = tasks[index]
             tasks[index].requirements.append(TaskRequirement(text: redact(text, secret: configuration.apiKey)))
-            guard persistHistory() else { tasks[index] = previous; return }
+            guard tasks[index].isTemporary || persistHistory() else { tasks[index] = previous; return }
             if tasks[index].status != .stopping { continueWithRequirements.insert(taskID) }
             if continueWithRequirements.contains(taskID) { continuationConfigurations[taskID] = configuration }
             onAccepted?()
@@ -499,6 +676,15 @@ private struct FileChangeRecord: Decodable {
         }
         let previous = tasks[index]
         let recovery = tasks[index].requiresHistoryRecovery ? tasks[index] : nil
+        let savedPreferences = try? personalizationStore.load()
+        if let savedPreferences {
+            customInstructions = savedPreferences.customInstructions; soul = savedPreferences.soul ?? ""
+        } else { personalizationError = "个性化设置无法读取，本次未使用；原文件已保留。" }
+        let instructionSnapshot = savedPreferences?.customInstructions ?? ""
+        let soulSnapshot = savedPreferences?.soul ?? ""
+        let memoryState = tasks[index].isTemporary ? nil : try? memoryStore.load()
+        if let memoryState { applyMemoryState(memoryState) }
+        let memoryGeneration = memoryState?.enabled == true ? memoryState?.generation : nil
         let pendingRequirements = tasks[index].requirements.filter { $0.state == .received }
         let prompt = (pendingRequirements.map(\.text) + [text]).joined(separator: "\n\n")
         configurations[taskID] = configuration
@@ -514,7 +700,7 @@ private struct FileChangeRecord: Decodable {
         if tasks[index].messages.isEmpty { tasks[index].title = String(redact(text, secret: configuration.apiKey).prefix(32)) }
         tasks[index].messages.append(ChatMessage(role: "user", text: redact(prompt, secret: configuration.apiKey)))
         tasks[index].messages.append(ChatMessage(role: "assistant", text: ""))
-        guard persistHistory() else {
+        guard tasks[index].isTemporary || persistHistory() else {
             tasks[index] = previous
             tasks[index].status = .failed
             tasks[index].error = historyError
@@ -530,13 +716,16 @@ private struct FileChangeRecord: Decodable {
                 client = existing; session = existingSession
             } else {
                 client = try ACPProcess(executable: executable, secret: configuration.apiKey,
-                    runtimeDirectory: storageDirectory.appendingPathComponent("runtime/" + taskID.uuidString))
+                    runtimeDirectory: storageDirectory.appendingPathComponent("runtime/" + taskID.uuidString), ephemeral: tasks[index].isTemporary)
                 clients[taskID] = client
+                let memoryFile: Any = tasks[index].isTemporary ? NSNull() : memoryStore.file.path as Any
                 _ = try await client.request("desktop/configure", [
                     "cwd": workspacePath, "endpoint": configuration.endpoint,
                     "model": configuration.model, "apiKey": configuration.apiKey,
                     "imageInputEnabled": configuration.imageInputEnabled,
-                    "webSearchEnabled": configuration.webSearchEnabled
+                    "webSearchEnabled": configuration.webSearchEnabled,
+                    "memoryFile": memoryFile,
+                    "memoryWorkspaceKey": (tasks[index].hasUserWorkspace == false ? nil : memoryWorkspaceKey(tasks[index].workspace)).map { $0 as Any } ?? NSNull()
                 ])
                 _ = try await client.request("initialize", ["protocolVersion": 1, "clientCapabilities": [String: String]()])
                 let response = try await client.request("session/new", ["cwd": workspacePath, "mcpServers": [String]()])
@@ -604,6 +793,7 @@ private struct FileChangeRecord: Decodable {
                 guard configuration.imageInputEnabled, image.count <= 256 * 1024 else { throw ServiceError("图像检查样本无效或未启用。") }
                 blocks.append(["type": "image", "mimeType": "image/png", "data": image.base64EncodedString()])
             }
+            _ = try await client.request("desktop/preferences", ["sessionId": session, "customInstructions": instructionSnapshot, "soul": soulSnapshot])
             let result = try await client.request("session/prompt", ["sessionId": session, "prompt": blocks])
             guard runs[taskID] == runID, let i = tasks.firstIndex(where: { $0.id == taskID }) else { return }
             tasks[i].permissions.removeAll()
@@ -619,7 +809,9 @@ private struct FileChangeRecord: Decodable {
                 if hadFailure || tasks[i].error != nil {
                     tasks[i].status = .failed
                     if tasks[i].error == nil { tasks[i].error = "有工具操作未完成，请查看执行记录；已成功执行的操作会保留。" }
-                } else { tasks[i].status = .completed }
+                } else {
+                    tasks[i].status = .completed
+                }
             case "cancelled":
                 tasks[i].status = .stopped
                 tasks[i].controlNotice = "已停止。已完成的文件修改会保留；停止不会撤销。可补充要求后继续。"
@@ -659,6 +851,11 @@ private struct FileChangeRecord: Decodable {
                 tasks[i].error = "部分工具没有返回结果，请核对执行记录和已有成果后继续。"
             }
         }
+        if runs[taskID] == runID, let task = tasks.first(where: { $0.id == taskID }), task.status == .completed {
+            collectMemory(taskID: taskID, turn: task.messages.filter { $0.role == "user" }.count,
+                generation: memoryGeneration, input: prompt,
+                observations: task.tools.filter { $0.id.hasPrefix(runID.uuidString + ":") && $0.status == "完成" }.map(\.output).joined(separator: "\n"), configuration: configuration)
+        }
         let continuationConfiguration = continuationConfigurations.removeValue(forKey: taskID) ?? configuration
         if continueWithRequirements.remove(taskID) != nil,
            let task = tasks.first(where: { $0.id == taskID }), task.status == .stopped,
@@ -692,12 +889,12 @@ private struct FileChangeRecord: Decodable {
         var failure: String?
         var started = false
         do {
-            try historyStore.claim(taskID)
+            if !tasks[i].isTemporary { try historyStore.claim(taskID) }
             guard let identity = workspaceIdentity(tasks[i].workspace), identity == tasks[i].workspaceIdentity else {
                 throw ServiceError("工作文件夹已不存在或被替换，请恢复原文件夹后重试。")
             }
             guard UUID(uuidString: changeID) != nil else { throw ServiceError("修改记录编号无效") }
-            guard persistHistory() else { throw ServiceError(historyError ?? "无法保存任务历史") }
+            guard tasks[i].isTemporary || persistHistory() else { throw ServiceError(historyError ?? "无法保存任务历史") }
             clients.removeValue(forKey: taskID)?.close(); sessions[taskID] = nil
             tasks[i].requiresHistoryRecovery = true
             restorations.insert(taskID); runs[taskID] = runID
@@ -705,7 +902,7 @@ private struct FileChangeRecord: Decodable {
             tasks[i].status = .running; tasks[i].changes[c].restoreError = nil
             tasks[i].controlNotice = "正在检查文件并恢复；发生内容或路径冲突时会保留当前文件。"
             let client = try ACPProcess(executable: executable, secret: "",
-                runtimeDirectory: storageDirectory.appendingPathComponent("runtime/" + taskID.uuidString))
+                runtimeDirectory: storageDirectory.appendingPathComponent("runtime/" + taskID.uuidString), ephemeral: tasks[i].isTemporary)
             clients[taskID] = client
             defer {
                 client.close()
@@ -721,7 +918,12 @@ private struct FileChangeRecord: Decodable {
                 self.tasks[index].permissions.append(PermissionQuestion(id: requestID, description: title))
                 self.tasks[index].status = .waiting
             }
-            let result = try await client.request("desktop/restore_file", ["cwd": workspacePath, "changeId": changeID])
+            var restore: [String: Any] = ["cwd": workspacePath, "changeId": changeID]
+            if tasks[i].isTemporary {
+                guard let data = ephemeralRecords[taskID]?[changeID] else { throw ServiceError("临时恢复材料已不可用。") }
+                restore["inlineRecord"] = try JSONSerialization.jsonObject(with: data)
+            }
+            let result = try await client.request("desktop/restore_file", restore)
             guard result["restored"] as? Bool == true else { throw ServiceError("恢复结果未确认，请核对当前文件；恢复材料仍保留。") }
             restored = true
         } catch { failure = error.localizedDescription }
@@ -873,8 +1075,14 @@ private struct FileChangeRecord: Decodable {
                 let recordURL = URL(fileURLWithPath: recordPath)
                 do {
                     guard recordURL.standardizedFileURL == expected.standardizedFileURL else { throw ServiceError("修改记录不在当前任务存储目录") }
-                    let record = try JSONDecoder().decode(FileChangeRecord.self, from: Data(contentsOf: recordURL))
+                    let data: Data
+                    if tasks[i].isTemporary {
+                        guard let inline = change["inline_record"] as? [String: Any] else { throw ServiceError("缺少临时修改预览") }
+                        data = try JSONSerialization.data(withJSONObject: inline)
+                    } else { data = try Data(contentsOf: recordURL) }
+                    let record = try JSONDecoder().decode(FileChangeRecord.self, from: data)
                     guard record.id == changeID, record.path == path else { throw ServiceError("修改记录与实际工具结果不一致") }
+                    if tasks[i].isTemporary { ephemeralRecords[tasks[i].id, default: [:]][changeID] = data }
                     let summary: String
                     switch record.operation {
                     case "move": summary = "移动文件"
@@ -901,6 +1109,8 @@ private struct FileChangeRecord: Decodable {
         }
     }
     public func shutdown() {
+        ephemeralRecords.removeAll()
+        cancelMemoryJobs()
         runs.removeAll(); continueWithRequirements.removeAll(); restorations.removeAll(); credentialStarts.removeAll()
         continuationConfigurations.removeAll(); configurationProfileIDs.removeAll()
         for index in tasks.indices {
@@ -930,6 +1140,20 @@ private func workspaceIdentity(_ url: URL) -> String? {
           let device = attributes[.systemNumber] as? NSNumber,
           let inode = attributes[.systemFileNumber] as? NSNumber else { return nil }
     return "\(device):\(inode)"
+}
+
+private func memoryWorkspaceKey(_ url: URL) -> String? {
+    let canonical = url.resolvingSymlinksInPath().standardizedFileURL
+    guard let identity = workspaceIdentity(canonical) else { return nil }
+    return identity + "|" + canonical.path
+}
+
+private func memoryMatches(_ memory: SavedMemory, scope: MemoryClearScope, workspaceKey: String?) -> Bool {
+    switch scope {
+    case .all: return true
+    case .personal: return memory.scope == "personal"
+    case .workspace: return memory.scope == "project" && workspaceKey != nil && memory.workspaceKey == workspaceKey
+    }
 }
 
 private struct ServiceError: LocalizedError {
@@ -978,12 +1202,13 @@ private func redactStream(_ text: String, secret: String, final: Bool = false) -
     var onPermissionRequest: ((UUID, [String: Any]) -> Void)?
     var onQuestionRequest: ((UUID, [String: Any]) -> Void)?
 
-    init(executable: URL, secret: String, runtimeDirectory: URL) throws {
+    init(executable: URL, secret: String, runtimeDirectory: URL, ephemeral: Bool = false) throws {
         self.secret = secret
         process.executableURL = executable
         // No ambient model credentials, shell hooks or inherited provider overrides.
-        try FileManager.default.createDirectory(at: runtimeDirectory, withIntermediateDirectories: true, attributes: [.posixPermissions: 0o700])
+        if !ephemeral { try FileManager.default.createDirectory(at: runtimeDirectory, withIntermediateDirectories: true, attributes: [.posixPermissions: 0o700]) }
         process.environment = ["PATH": "/usr/bin:/bin:/usr/sbin:/sbin", "LANG": "en_US.UTF-8", "CLAURST_HOME": runtimeDirectory.path]
+        if ephemeral { process.environment?["CLAURST_DESKTOP_EPHEMERAL"] = "1" }
         process.standardInput = input
         process.standardOutput = output
         process.standardError = FileHandle.nullDevice

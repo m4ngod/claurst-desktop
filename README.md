@@ -8,9 +8,11 @@ Claurst Desktop 的项目新增代码按 **GNU General Public License 第 3 版�
 
 ## 下载与安装
 
-[下载 0.1.0-preview.1（Apple 芯片 Mac）](https://github.com/m4ngod/claurst-desktop/releases/tag/v0.1.0-preview.1)。这是使用 Apple Development 证书签名的未公证预览版，首次打开可能需要在 macOS「隐私与安全性」中手动允许。请先阅读发布说明并核对 `SHA256SUMS`；不要关闭 Gatekeeper 或移除隔离属性。
+[下载 0.1.0-preview.2（Apple 芯片 Mac）](https://github.com/m4ngod/claurst-desktop/releases/tag/v0.1.0-preview.2)。这是使用 Apple Development 证书签名的未公证预览版，首次打开可能需要在 macOS「隐私与安全性」中手动允许。请先阅读发布说明并核对 `SHA256SUMS`；不要关闭 Gatekeeper 或移除隔离属性。
 
 同一 Release 提供匹配的项目源码、第三方对应源码与重建材料。实际系统提示和下载验收结果见 [公开下载与启动记录](docs/build/public-download-verification.md)。应用运行无需安装 Xcode、Rust 或系统 TeX；需要自行配置有权限使用的模型服务。
+
+本次新增自定义指令、Soul、个人与项目记忆管理、临时会话，并更新桌面布局和键盘交互。使用方式见[个性化与记忆说明](docs/product/personalization-memory.md)，本版验证范围见[发布说明](docs/build/release-preview.2.md)。上一版的干净虚拟机下载记录只适用于上一版。
 
 ## 构建和运行
 

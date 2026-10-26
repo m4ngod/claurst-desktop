@@ -347,6 +347,7 @@ impl Tool for AgentTool {
             };
 
         let query_config = QueryConfig {
+            request_context: None,
             model,
             max_tokens: claurst_core::constants::DEFAULT_MAX_TOKENS,
             max_turns: resolved_max_turns,
@@ -387,6 +388,7 @@ impl Tool for AgentTool {
             retry: claurst_api::RetryConfig::with_max_retries(ctx.config.max_retries),
             auto_compact: true,
             // A sub-agent's history is not the parent session's.
+            background_memory: true,
             session_journal: None,
             is_subagent: true,
             // Filled by `run_query_loop` from the sub-agent's tool context.

@@ -7,6 +7,26 @@ import DesktopCore
 @MainActor struct ModelSettingsView: View {
     @ObservedObject var service: TaskService
     @Binding var activeProfileID: UUID?
+    var workspace: URL?
+    @State private var section = "模型服务"
+
+    var body: some View {
+        VStack(spacing: 0) {
+            Picker("设置分区", selection: $section) {
+                Text("模型服务").tag("模型服务")
+                Text("个性化").tag("个性化")
+                Text("记忆").tag("记忆")
+            }.pickerStyle(.segmented).padding(.horizontal, 24).padding(.top, 20)
+            if section == "模型服务" { ModelConnectionView(service: service, activeProfileID: $activeProfileID) }
+            else if section == "个性化" { PersonalizationSettingsView(service: service) }
+            else { MemorySettingsView(service: service, workspace: workspace) }
+        }.background(WorkspaceStyle.surface)
+    }
+}
+
+@MainActor private struct ModelConnectionView: View {
+    @ObservedObject var service: TaskService
+    @Binding var activeProfileID: UUID?
     @Environment(\.dismiss) private var dismiss
     @State private var editingID: UUID?
     @State private var name = ""

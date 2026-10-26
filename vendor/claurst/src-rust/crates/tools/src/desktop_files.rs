@@ -465,21 +465,28 @@ pub async fn restore(id: &str, ctx: &ToolContext) -> io::Result<()> {
     let record_path = claurst_core::paths::claurst_home()
         .join("changes")
         .join(format!("{id}.json"));
-    let mut file = OpenOptions::new()
-        .read(true)
-        .custom_flags(libc::O_NOFOLLOW | libc::O_NONBLOCK | libc::O_CLOEXEC)
-        .open(&record_path)?;
-    if !file.metadata()?.is_file() || file.metadata()?.len() > 256 * 1024 * 1024 {
-        return Err(io::Error::other("恢复记录格式或大小不受支持"));
-    }
-    // SAFETY: file owns the descriptor until recovery and its marker finish.
-    if unsafe { libc::flock(file.as_raw_fd(), libc::LOCK_EX | libc::LOCK_NB) } != 0 {
-        return Err(io::Error::other("此记录正在恢复，请等待完成"));
-    }
-    let mut bytes = Vec::new();
-    Read::by_ref(&mut file)
-        .take(256 * 1024 * 1024 + 1)
-        .read_to_end(&mut bytes)?;
+    let (file, bytes) = if super::is_ephemeral() {
+        let record =
+            super::ephemeral_record(&id).ok_or_else(|| io::Error::other("临时恢复材料已不可用"))?;
+        (None, serde_json::to_vec(&record)?)
+    } else {
+        let mut file = OpenOptions::new()
+            .read(true)
+            .custom_flags(libc::O_NOFOLLOW | libc::O_NONBLOCK | libc::O_CLOEXEC)
+            .open(&record_path)?;
+        if !file.metadata()?.is_file() || file.metadata()?.len() > 256 * 1024 * 1024 {
+            return Err(io::Error::other("恢复记录格式或大小不受支持"));
+        }
+        // SAFETY: file owns the descriptor until recovery finishes.
+        if unsafe { libc::flock(file.as_raw_fd(), libc::LOCK_EX | libc::LOCK_NB) } != 0 {
+            return Err(io::Error::other("此记录正在恢复，请等待完成"));
+        }
+        let mut bytes = Vec::new();
+        Read::by_ref(&mut file)
+            .take(256 * 1024 * 1024 + 1)
+            .read_to_end(&mut bytes)?;
+        (Some(file), bytes)
+    };
     let record: RecoveryRecord = serde_json::from_slice(&bytes)?;
     if record.id != id || !record.path.is_absolute() {
         return Err(io::Error::other("恢复记录标识或路径无效"));

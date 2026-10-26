@@ -128,6 +128,32 @@ impl AgentServer {
                 runtimes.insert(runtime.working_dir.clone(), Arc::new(runtime));
                 Ok(serde_json::json!({"configured": true}))
             }
+            "desktop/extract_memory" if self.desktop => {
+                if claurst_tools::desktop_write::is_ephemeral() {
+                    return Err(acp::Error::invalid_request());
+                }
+                let value = params.ok_or_else(acp::Error::invalid_params)?;
+                let input = value
+                    .get("input")
+                    .and_then(Value::as_str)
+                    .ok_or_else(acp::Error::invalid_params)?;
+                let runtime = self
+                    .runtimes
+                    .lock()
+                    .await
+                    .values()
+                    .next()
+                    .cloned()
+                    .ok_or_else(acp::Error::invalid_request)?;
+                let observations = value
+                    .get("observations")
+                    .and_then(Value::as_str)
+                    .unwrap_or_default();
+                let text = crate::desktop::extract_memory(&runtime, input, observations)
+                    .await
+                    .map_err(|_| acp::Error::internal_error())?;
+                Ok(serde_json::json!({"text": text}))
+            }
             "initialize" => {
                 let req: acp::InitializeRequest = parse_params(params)?;
                 let result = self.on_initialize(req).await?;
@@ -148,6 +174,37 @@ impl AgentServer {
                 // v1: not supported. Capability is advertised as false in
                 // initialize so a well-behaved client never calls this.
                 Err(acp::Error::method_not_found())
+            }
+            "desktop/preferences" if self.desktop => {
+                let value = params.ok_or_else(acp::Error::invalid_params)?;
+                let id = value
+                    .get("sessionId")
+                    .and_then(Value::as_str)
+                    .ok_or_else(acp::Error::invalid_params)?;
+                let text = value
+                    .get("customInstructions")
+                    .and_then(Value::as_str)
+                    .ok_or_else(acp::Error::invalid_params)?;
+                let soul = value
+                    .get("soul")
+                    .and_then(Value::as_str)
+                    .unwrap_or_default();
+                if text.len() > 32768 || soul.len() > 32768 {
+                    return Err(acp::Error::invalid_params());
+                }
+                let session = self
+                    .sessions
+                    .get(&acp::SessionId::new(id))
+                    .ok_or_else(acp::Error::invalid_params)?;
+                let _turn = session
+                    .begin_turn()
+                    .ok_or_else(acp::Error::invalid_request)?;
+                *session.desktop_preferences.lock() = if text.is_empty() && soul.is_empty() {
+                    String::new()
+                } else {
+                    serde_json::json!({"自定义指令": text, "Soul": soul}).to_string()
+                };
+                Ok(serde_json::json!({"updated": true}))
             }
             "desktop/restore" if self.desktop => {
                 let request: RestoreHistory = parse_params(params)?;

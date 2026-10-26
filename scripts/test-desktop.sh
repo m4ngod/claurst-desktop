@@ -72,3 +72,12 @@ swiftc -module-cache-path .build-tools/swift-cache -parse-as-library \
   desktop/Sources/DesktopCore/*.swift desktop/Tests/DesktopCoreTests/TaskResearchTests.swift \
   -o .build-tools/task-research-test
 .build-tools/task-research-test
+
+swiftc -module-cache-path .build-tools/swift-cache -parse-as-library \
+  desktop/Sources/DesktopCore/*.swift desktop/Tests/DesktopCoreTests/TaskPersonalizationTests.swift \
+  -o .build-tools/task-personalization-test
+.build-tools/task-personalization-test
+swiftc -module-cache-path .build-tools/swift-cache -parse-as-library \
+  desktop/Sources/DesktopCore/*.swift desktop/Tests/DesktopCoreTests/TaskTemporaryTests.swift \
+  -o .build-tools/task-temporary-test
+.build-tools/task-temporary-test

@@ -20,6 +20,7 @@ pub struct SessionState {
     /// Runtime built for `cwd`: settings, context, tools and MCP servers.
     pub runtime: Arc<AgentRuntime>,
     pub messages: parking_lot::Mutex<Vec<Message>>,
+    pub desktop_preferences: parking_lot::Mutex<String>,
     /// Cancellation token of the prompt currently running on this session,
     /// `None` while the session is idle. Each prompt gets a fresh token, so a
     /// `session/cancel` only ever affects the turn that was in flight.
@@ -43,6 +44,7 @@ impl SessionState {
             cwd: runtime.working_dir.clone(),
             runtime,
             messages: parking_lot::Mutex::new(Vec::new()),
+            desktop_preferences: parking_lot::Mutex::new(String::new()),
             active_turn: parking_lot::Mutex::new(None),
             pending_permissions: Arc::new(parking_lot::Mutex::new(
                 PendingPermissionStore::default(),
@@ -152,9 +154,15 @@ mod tests {
     fn second_concurrent_turn_is_rejected() {
         let state = session("busy", "/tmp");
         let first = state.begin_turn().expect("idle session accepts a turn");
-        assert!(state.begin_turn().is_none(), "a running turn must block a second one");
+        assert!(
+            state.begin_turn().is_none(),
+            "a running turn must block a second one"
+        );
         drop(first);
-        assert!(state.begin_turn().is_some(), "the session is idle again once the turn ends");
+        assert!(
+            state.begin_turn().is_some(),
+            "the session is idle again once the turn ends"
+        );
     }
 
     #[test]
@@ -181,10 +189,14 @@ mod tests {
         assert!(registry.get(&id).is_none());
 
         registry.insert(Arc::clone(&state));
-        let fetched = registry.get(&id).expect("session should be present after insert");
+        let fetched = registry
+            .get(&id)
+            .expect("session should be present after insert");
         assert!(Arc::ptr_eq(&fetched, &state));
 
-        let removed = registry.remove(&id).expect("session should be present to remove");
+        let removed = registry
+            .remove(&id)
+            .expect("session should be present to remove");
         assert!(Arc::ptr_eq(&removed, &state));
         assert!(registry.get(&id).is_none());
     }

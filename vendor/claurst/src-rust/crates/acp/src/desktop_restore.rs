@@ -13,12 +13,17 @@ use std::{path::PathBuf, sync::Arc};
 pub(crate) struct RestoreFile {
     cwd: PathBuf,
     change_id: String,
+    inline_record: Option<serde_json::Value>,
 }
 
 pub(crate) async fn handle(
     connection: Arc<Connection>,
     request: RestoreFile,
 ) -> Result<(), acp::Error> {
+    if let Some(record) = &request.inline_record {
+        claurst_tools::desktop_write::remember_ephemeral_record(&request.change_id, record)
+            .map_err(|_| acp::Error::invalid_params())?;
+    }
     if !request.cwd.is_absolute() || !request.cwd.is_dir() {
         return Err(acp::Error::invalid_params());
     }

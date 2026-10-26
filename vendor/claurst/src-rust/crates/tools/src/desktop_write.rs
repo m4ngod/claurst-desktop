@@ -11,7 +11,43 @@ use std::os::unix::ffi::OsStrExt;
 use std::os::unix::fs::{DirBuilderExt, MetadataExt, OpenOptionsExt};
 use std::os::unix::io::{AsRawFd, FromRawFd};
 use std::path::{Path, PathBuf};
-use std::sync::Arc;
+use std::sync::{Arc, OnceLock};
+
+// Temporary desktop processes never persist recovery payloads. The UI receives
+// these via ACP metadata, separate from the compact tool result sent to models.
+static EPHEMERAL_RECORDS: OnceLock<parking_lot::Mutex<HashMap<String, Vec<u8>>>> = OnceLock::new();
+
+pub fn is_ephemeral() -> bool {
+    std::env::var_os("CLAURST_DESKTOP_EPHEMERAL").as_deref() == Some(OsStr::new("1"))
+}
+
+pub fn ephemeral_record(id: &str) -> Option<Value> {
+    let records = EPHEMERAL_RECORDS.get()?.lock();
+    serde_json::from_slice(records.get(id)?).ok()
+}
+
+pub fn remember_ephemeral_record(id: &str, record: &Value) -> io::Result<()> {
+    if !is_ephemeral()
+        || uuid::Uuid::parse_str(id).is_err()
+        || record.get("id").and_then(Value::as_str) != Some(id)
+    {
+        return Err(io::Error::other("临时恢复记录无效"));
+    }
+    let bytes = serde_json::to_vec(record)?;
+    let mut records = EPHEMERAL_RECORDS.get_or_init(Default::default).lock();
+    let total: usize = records
+        .iter()
+        .filter(|(key, _)| key.as_str() != id)
+        .map(|(_, value)| value.len())
+        .sum();
+    if total.saturating_add(bytes.len()) > 128 * 1024 * 1024 {
+        return Err(io::Error::other(
+            "临时恢复材料达到内存上限；未执行新修改，请新建临时会话",
+        ));
+    }
+    records.insert(id.to_owned(), bytes);
+    Ok(())
+}
 
 #[path = "desktop_files.rs"]
 pub mod files;
@@ -296,6 +332,10 @@ impl Tool for DesktopWrite {
 /// unused backup; only a successful write publishes its receipt to the client.
 fn save_record(record: &impl Serialize, id: &str) -> io::Result<PathBuf> {
     let root = claurst_core::paths::claurst_home().join("changes");
+    if is_ephemeral() {
+        remember_ephemeral_record(id, &serde_json::to_value(record)?)?;
+        return Ok(root.join(format!("{id}.json")));
+    }
     DirBuilder::new()
         .recursive(true)
         .mode(0o700)
